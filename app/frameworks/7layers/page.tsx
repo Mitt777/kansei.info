@@ -3,71 +3,216 @@ import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
-  title: '世界観設記7層モデル — Frameworks | kansei.info',
-  description: '原初物語→世界観接触→境界侵入→没入環境→期待増幅→感動体験→伝播帰属。7層の因果構造。',
+  title: '世界観設計7層モデル — Frameworks',
+  description: '原初物語→世界観接触→境界侵入→没入環境→期待増幅→感動体験→伝播帰属。ディズニーのイマジニアリング哲学・Pine & Gilmore・楠木健と接続した顧客体験の因果構造モデル。',
 }
 
 const layers = [
-  { num: '\u2460', name: '\u539f\u521d\u7269\u8a9e', en: 'Origin Story', color: '#C9A84C', desc: '\u300c\u306a\u305c\u5b58\u5728\u3059\u308b\u306e\u304b\u300d\u2014\u2014\u7406\u5ff5\u30fb\u54f2\u5b66\u30fb\u8d77\u6e90\u3002\u3053\u3053\u304c\u5f31\u3044\u5834\u6240\u306f\u9577\u671f\u7684\u306b\u4e16\u754c\u89b3\u304c\u4e0d\u5b89\u5b9a\u306b\u306a\u308b\u3002', disney: 'It All Begins with a Story', theory: 'Brand Myth / \u6954\u6728\u5065\u300c\u56e0\u679c\u8ad6\u7406\u300d' },
-  { num: '\u2461', name: '\u4e16\u754c\u89b3\u63a5\u89e6', en: 'World Contact', color: '#8B5CF6', desc: 'SNS\u30fb\u52d5\u753a\u30fb\u53e3\u30b3\u30df\u2014\u2014\u6700\u521d\u306e\u63a5\u89e6\u3068\u671f\u5f85\u5f62\u6210\u3002Instagram\u3067\u300c\u4fdd\u5b58\u300d\u3055\u308c\u305f\u6642\u70b9\u3067\u3001\u9867\u5ba2\u306e\u4f53\u9a13\u306f\u3059\u3067\u306b\u59cb\u307e\u3063\u3066\u3044\u308b\u3002', disney: '\u30d1\u30fc\u30af\u524d\u306e\u671f\u5f85\u5f62\u6210\u8a2d\u8a08', theory: 'Customer Journey / Anticipation Design' },
-  { num: '\u2462', name: '\u5883\u754c\u4fb5\u5165', en: 'Threshold Crossing', color: '#3B82F6', desc: '\u99d0\u8eca\u5834\u30fb\u5165\u53e3\u30fb\u770b\u677f\u2014\u2014\u65e5\u5e38\u304b\u3089\u4e16\u754c\u89b3\u3078\u306e\u79fb\u884c\u3002Weenie\u7406\u8ad6\u3002\u826f\u3044\u5e97\u8217\u307b\u3069\u3001\u5c11\u3057\u305a\u3064\u7a7a\u6c17\u304c\u5909\u308f\u3063\u3066\u3044\u304f\u3002', disney: 'Weenie\u7406\u8ad6 / \u30b7\u30f3\u30c7\u30ec\u30e9\u57ce', theory: 'Transition Design / Environmental Psychology' },
-  { num: '\u2463', name: '\u6ca1\u5165\u74b0\u5883', en: 'Immersive Environment', color: '#10B981', desc: '\u97f3\u30fb\u5306\u3044\u30fb\u5149\u30fb\u63a5\u5ba2\u30fb\u5c0e\u7dda\u2014\u2014\u7a7a\u9593\u5168\u4f53\u304c\u6a5f\u80fd\u3059\u308b\u3002\u4e16\u754c\u89b3\u3068\u306f\u300c\u30ce\u30a4\u30ba\u3092\u6e1b\u3089\u3059\u6280\u8853\u300d\u3067\u3082\u3042\u308b\u3002', disney: 'Art of the Show / Mickey\u2019s 10\u6212', theory: 'Atmosphere Theory / Atmospheric UX' },
-  { num: '\u2464', name: '\u671f\u5f85\u5897\u5e45', en: 'Anticipation', color: '#F59E0B', desc: '\u5f85\u3061\u6642\u9593\u30fb\u884c\u5217\u30fb\u524d\u8aac\u2014\u2014\u300c\u4e88\u611f\u300d\u306e\u8a2d\u8a08\u3002\u30c7\u30a3\u30ba\u30cb\u30fc\u306e\u30d7\u30ec\u30fb\u30b7\u30e7\u30fc\u3002\u300c\u3082\u3046\u3059\u3050\u59cb\u307e\u308b\u300d\u3068\u3044\u3046\u4e88\u611f\u304c\u611f\u60c5\u3092\u5897\u5e45\u3055\u305b\u308b\u3002', disney: '\u30d7\u30ec\u30fb\u30b7\u30e7\u30fc / \u300c\u4f38\u3073\u308b\u90e8\u5c4b\u300d', theory: 'Flow Theory / Anticipation Design' },
-  { num: '\u2465', name: '\u611f\u52d5\u4f53\u9a13', en: 'Peak Experience', color: '#EC4899', desc: '\u98f2\u98df\u30fb\u666f\u8272\u30fb\u30e9\u30a4\u30d6\u30fb\u4f1a\u8a71\u2014\u2014\u30d4\u30fc\u30af\u4f53\u9a13\u306e\u8cea\u3002\u524d\u6bb5\u306e\u4e16\u754c\u89b3\u304c\u3042\u308b\u304b\u3089\u3001\u611f\u52d5\u304c\u6df1\u304f\u306a\u308b\u3002', disney: 'Plussing\u6587\u5316 / \u5e38\u306b\u4e0a\u4e57\u305b\u3059\u308b', theory: 'Experience Economy / Peak-End Rule' },
-  { num: '\u2466', name: '\u4f1d\u64ad\u5e30\u5c5e', en: 'Propagation', color: '#6366F1', desc: 'SNS\u30fb\u518d\u8a2a\u30fb\u30d5\u30a1\u30f3\u5316\u2014\u2014\u300c\u3042\u306e\u5834\u6240\u306b\u3044\u305f\u81ea\u5206\u300d\u306e\u8a18\u61b6\u3002\u300c\u3042\u306e\u5834\u6240\u306b\u3044\u305f\u81ea\u5206\u300d\u3092\u8a18\u61b6\u3057\u3066\u3044\u308b\u304b\u3089\u3001\u307e\u305f\u623b\u308a\u305f\u304f\u306a\u308b\u3002', disney: 'Fan Experience\u62e1\u5f35 / \u300c\u9b54\u6cd5\u3092\u6301\u3061\u5e30\u308b\u300d', theory: 'Social Identity Theory / Place Attachment' },
+  {
+    num: '①',
+    name: '原初物語',
+    en: 'Origin Story',
+    desc: '「なぜ存在するのか」——理念・哲学・起源。ここが弱い場所は、長期的に世界観が不安定になる。ウォルト・ディズニーは「親と子が共に楽しめる場所」という原初物語を持っていた。那須のカフェ店主は、言語化されていないが確実に存在する原初物語を持っている。',
+    disney: 'It All Begins with a Story（ウォルト・ディズニー・イマジニアリング公式原則）',
+    theory: 'Brand Myth / 楠木健「因果論理」/ Storytelling',
+    examples: ['ディズニー：「夢と魔法の王国」', 'スタバ：「サードプレイス」', 'SHOZO：「まちづくり」への思い'],
+    color: '#C9A84C',
+  },
+  {
+    num: '②',
+    name: '世界観接触',
+    en: 'World Contact',
+    desc: 'SNS・動画・口コミ——最初の接触と期待形成。人は体験そのものだけではなく、体験前の想像によって感情を増幅させる。ディズニーランドに向かう高速道路で、すでに気持ちが高まっている人は多い。Instagramで「保存」された時点で、顧客の体験はすでに始まっている。',
+    disney: 'パーク前の期待形成設計 / SNS・YouTube戦略',
+    theory: 'Customer Journey / Anticipation Design',
+    examples: ['Instagram保存（Save行動）', 'YouTube比較検討（Plan行動）', 'TikTok衝動（Impulse行動）'],
+    color: '#8B5CF6',
+  },
+  {
+    num: '③',
+    name: '境界侵入',
+    en: 'Threshold Crossing',
+    desc: '駐車場・入口・看板——日常から世界観への移行。ウォルト・ディズニーが命名した「Weenie（ウィニー）」理論がここに該当する。シンデレラ城という視覚的磁石が、意識的な決断をする前に人を引き寄せる。良い店舗ほど、突然世界観が始まるのではなく、少しずつ空気が変わっていく。',
+    disney: '「Weenie」理論 / シンデレラ城の視覚誘導 / Mickey's 10戒：「Create a Wienie」',
+    theory: 'Transition Design / Environmental Psychology / Threshold Theory',
+    examples: ['駐車場から世界観が始まっているか', 'エントランスで空気が変わるか', '「ここから別の世界」という感覚'],
+    color: '#3B82F6',
+  },
+  {
+    num: '④',
+    name: '没入環境',
+    en: 'Immersive Environment',
+    desc: '音・匂い・光・接客・導線——空間全体が機能する。「Art of the Show」という概念が、ここの理論的核心だ。建築・照明・小道具・造園のすべてが、意図された物語と感情的なトーンを伝えるよう機能する。世界観とは「ノイズを減らす技術」でもある。',
+    disney: 'Mickey's 10戒「Communicate with visual literacy」「Avoid overload」/ Art of the Show（John Hench）',
+    theory: 'Atmosphere Theory（Böhme）/ Atmospheric UX / Emotional Design（Norman）',
+    examples: ['SHOZO CAFEの静けさそのもの', '過剰POPの排除', '木・光・音の一貫性'],
+    color: '#10B981',
+  },
+  {
+    num: '⑤',
+    name: '期待増幅',
+    en: 'Anticipation Amplification',
+    desc: '待ち時間・行列・前説——「予感」の設計。ディズニーの「プレ・ショー（Pre-show）」がここに該当する。ホーンテッドマンションの「伸びる部屋」は待ち時間を「物語への導入」へと変換する。人間は「もうすぐ始まる」という感覚で期待を増幅させる。',
+    disney: 'プレ・ショー設計 / 行列の世界観化 / 「伸びる部屋」（ホーンテッドマンション）',
+    theory: 'Flow Theory（Csikszentmihalyi）/ Anticipation Design / 心理的待機時間',
+    examples: ['行列が「退屈」にならないか', '「予感」が存在するか', 'ペニーレインの駐車場から聞こえる音楽'],
+    color: '#F59E0B',
+  },
+  {
+    num: '⑥',
+    name: '感動体験',
+    en: 'Peak Experience',
+    desc: '飲食・景色・ライブ・会話——ピーク体験の質。感動は単体で存在しているわけではない。前段の世界観があるから、感動が深くなる。同じコーヒーでも、空間によって記憶が変わる。ディズニーの「Plussing（プラッシング）」——常に上乗せし続ける文化。',
+    disney: '「Plussing」文化 / 常に上乗せする / Walt Disney自身の姿勢',
+    theory: 'Experience Economy（Pine & Gilmore）/ Emotional Design 3層（Norman）/ Peak-End Rule',
+    examples: ['前段の世界観が感動を深める', 'SHOZO：コーヒーより「空気」を記憶する', 'ピーク体験の設計'],
+    color: '#EC4899',
+  },
+  {
+    num: '⑦',
+    name: '伝播帰属',
+    en: 'Propagation & Belonging',
+    desc: 'SNS・再訪・ファン化——「あの場所にいた自分」の記憶。人は単に「良かった」だけでは再訪しない。「あの場所にいた自分」を記憶しているから、また戻りたくなる。ディズニーのFan Experienceは、パークを出た後も世界観を持続させるメカニズムを設計している。',
+    disney: 'Fan Experience拡張 / Disney Pin Trading / Disney Bounding / 「魔法を持ち帰る」',
+    theory: 'Social Identity Theory / Place Attachment（Tuan）/ WOM研究 / Community Theory',
+    examples: ['SNS投稿が「空気」を伝えているか', '「また来たい理由」が価格以外にあるか', 'ファン・常連の形成'],
+    color: '#6366F1',
+  },
 ]
 
-export default function Page() {
+export default function SevenLayersPage() {
   return (
     <>
-      <div style={{ padding: "48px 24px 0", maxWidth: "720px", margin: "0 auto" }}>
-        <div style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "32px", display: "flex", gap: "8px" }}>
-          <Link href="/frameworks" style={{ color: "var(--color-text-muted)" }}>Frameworks</Link>
-          <span>{"\u203a"}</span>
-          <span>{"7\u5c64\u30e2\u30c7\u30eb"}</span>
+      <div className="sl-hero">
+        <div className="sl-hero-inner">
+          <div className="sl-breadcrumb">
+            <Link href="/frameworks">Frameworks</Link>
+            <span>›</span>
+            <span>7 Layers Model</span>
+          </div>
+          <div className="sl-label">Framework — 7 Layers Model</div>
+          <h1 className="sl-title">世界観設計7層モデル</h1>
+          <p className="sl-desc">
+            「また来たくなる場所」には、体験が線でつながっている。
+            原初物語から伝播帰属まで——顧客体験の因果構造を7層で整理したモデル。
+            ディズニーのイマジニアリング哲学・Pine & Gilmoreの経験経済論・楠木健の因果論理と接続している。
+          </p>
         </div>
       </div>
-      <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 24px 96px" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-frameworks)", marginBottom: "12px" }}>
-          Framework {"\u2014"} 7 Layers Model
+
+      <div className="sl-body">
+
+        {/* 方程式 */}
+        <div className="sl-equation">
+          <div className="sl-eq-label">Worldview Value Equation — 世界観価値の方程式</div>
+          <div className="sl-eq-text">
+            <span className="sl-eq-val">世界観価値</span>
+            {" ＝ "}
+            <span className="sl-eq-val">意味的一貫性</span>
+            {" × "}
+            <span className="sl-eq-val">感覚的没入</span>
+            {" × "}
+            <span className="sl-eq-val">社会的帰属</span>
+            {" × "}
+            <span className="sl-eq-val">伝播性</span>
+          </div>
+          <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "10px", fontFamily: "var(--font-mono)" }}>
+            どれか一つが弱いと、世界観全体が崩れる掛け算の構造
+          </p>
         </div>
-        <h1 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: "300", marginBottom: "16px" }}>
-          {"\u4e16\u754c\u89b3\u8a2d\u8a187\u5c64\u30e2\u30c7\u30eb"}
-        </h1>
-        <p style={{ fontSize: "15px", color: "var(--color-text-sub)", lineHeight: "1.85", marginBottom: "48px" }}>
-          {"\u300c\u307e\u305f\u6765\u305f\u304f\u306a\u308b\u5834\u6240\u300d\u306b\u306f\u3001\u4f53\u9a13\u304c\u7dda\u3067\u3064\u306a\u304c\u3063\u3066\u3044\u308b\u3002\u539f\u521d\u7269\u8a9e\u304b\u3089\u4f1d\u64ad\u5e30\u5c5e\u307e\u3067\u2014\u2014\u9867\u5ba2\u4f53\u9a13\u306e\u56e0\u679c\u69cb\u9020\u30027\u5c64\u3067\u6574\u7406\u3057\u305f\u30e2\u30c7\u30eb\u3002"}
-        </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginBottom: "48px" }}>
+
+        {/* 7層 */}
+        <div className="sl-layers">
           {layers.map((layer) => (
-            <div key={layer.num} style={{ border: "1px solid var(--color-border)", background: "var(--color-surface)", borderLeft: "4px solid " + layer.color }}>
-              <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "16px", padding: "18px 22px", alignItems: "center" }}>
-                <div style={{ fontSize: "1.4rem", fontWeight: "300", color: layer.color, fontFamily: "var(--font-mono)" }}>{layer.num}</div>
-                <div>
-                  <div style={{ fontSize: "16px", fontWeight: "500", marginBottom: "2px" }}>{layer.name}</div>
-                  <div style={{ fontSize: "11px", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)" }}>{layer.en}</div>
+            <div
+              key={layer.num}
+              className="sl-layer"
+              style={{ "--layer-color": layer.color } as React.CSSProperties}
+            >
+              <div className="sl-layer-head">
+                <div className="sl-layer-num">{layer.num}</div>
+                <div className="sl-layer-names">
+                  <div className="sl-layer-name">{layer.name}</div>
+                  <div className="sl-layer-en">{layer.en}</div>
                 </div>
               </div>
-              <div style={{ padding: "0 22px 18px 72px" }}>
-                <p style={{ fontSize: "14px", color: "var(--color-text-sub)", lineHeight: "1.85", marginBottom: "10px" }}>{layer.desc}</p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-                  <div>
-                    <div style={{ fontSize: "9px", letterSpacing: "0.15em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "3px" }}>Disney</div>
-                    <div style={{ fontSize: "12px", color: layer.color, fontStyle: "italic" }}>{layer.disney}</div>
+              <div className="sl-layer-body">
+                <p className="sl-layer-desc">{layer.desc}</p>
+                <div className="sl-layer-meta">
+                  <div className="sl-meta-block">
+                    <div className="sl-meta-label">Disney 実践例</div>
+                    <div className="sl-meta-text disney">{layer.disney}</div>
                   </div>
-                  <div>
-                    <div style={{ fontSize: "9px", letterSpacing: "0.15em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "3px" }}>Theory</div>
-                    <div style={{ fontSize: "12px", color: "var(--color-text-sub)" }}>{layer.theory}</div>
+                  <div className="sl-meta-block">
+                    <div className="sl-meta-label">理論接続</div>
+                    <div className="sl-meta-text">{layer.theory}</div>
                   </div>
+                </div>
+                <div className="sl-examples">
+                  {layer.examples.map((ex) => (
+                    <span key={ex} className="sl-example">{ex}</span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* 理論接続 */}
+        <div className="sl-theory-note">
+          <div className="sl-theory-label">Academic Foundations — 学術的接続</div>
+          <div className="sl-theory-tags">
+            {[
+              "Pine & Gilmore — Experience Economy, Harvard Business Review 1998（被引用4294）",
+              "Walt Disney Imagineering — Mickey's Ten Commandments（Marty Sklar）",
+              "John Hench — Art of the Show（Designing Disney, 2003）",
+              "楠木健 — ストーリーとしての競争戦略（2010）",
+              "Don Norman — Emotional Design（2004）",
+              "Gernot Böhme — Atmosphere Theory（1993）",
+              "Mihaly Csikszentmihalyi — Flow Theory（1990）",
+              "Yi-Fu Tuan — Topophilia（1974）",
+              "Merleau-Ponty — Phenomenology of Perception（1945）",
+              "Michael Porter — Competitive Strategy（1980）",
+            ].map((t) => (
+              <span key={t} className="sl-theory-tag">{t}</span>
+            ))}
+          </div>
+        </div>
+
+        
+        <div style={{ marginTop: "48px", marginBottom: "48px" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "16px" }}>
+            各層の詳細ページ
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1px" }}>
+            {[
+              { slug: "origin-story", num: "①", name: "原初物語", en: "Origin Story", color: "#C9A84C" },
+              { slug: "world-contact", num: "②", name: "世界観接触", en: "World Contact", color: "#8B5CF6" },
+              { slug: "threshold-crossing", num: "③", name: "境界侵入", en: "Threshold Crossing", color: "#3B82F6" },
+              { slug: "immersive-environment", num: "④", name: "没入環境", en: "Immersive Environment", color: "#10B981" },
+              { slug: "anticipation", num: "⑤", name: "期待増幅", en: "Anticipation", color: "#F59E0B" },
+              { slug: "peak-experience", num: "⑥", name: "感動体験", en: "Peak Experience", color: "#EC4899" },
+              { slug: "propagation", num: "⑦", name: "伝播帰属", en: "Propagation", color: "#6366F1" },
+            ].map((l) => (
+              <Link key={l.slug} href={`/frameworks/7layers/${l.slug}`} style={{ display: "flex", alignItems: "center", gap: "16px", padding: "14px 20px", border: "1px solid var(--color-border)", background: "var(--color-surface)", textDecoration: "none", color: "inherit", borderLeft: `4px solid ${l.color}` }}>
+                <span style={{ fontSize: "16px", fontFamily: "var(--font-mono)", color: l.color, minWidth: "24px" }}>{l.num}</span>
+                <div style={{ flex: 1 }}>
+                  <span style={{ fontSize: "14px", fontWeight: "500" }}>{l.name}</span>
+                  <span style={{ fontSize: "11px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", marginLeft: "8px" }}>{l.en}</span>
+                </div>
+                <span style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>詳細 →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <RelatedKnowledge
           items={[
-            { href: "/frameworks/three-types", type: "framework" as const, title: "\u4e09\u985e\u578b\uff08A / A\u2019 / B\uff09", description: "\u30c7\u30a3\u30ba\u30cb\u30fc\u30fb\u30b5\u30f3\u30ea\u30aa\u30fb\u5730\u57df\u5e97\u306e\u9055\u3044" },
-            { href: "/diagnosis", type: "framework" as const, title: "7\u5c64\u8a3a\u65ad\u30c4\u30fc\u30eb", description: "\u81ea\u5206\u306e\u5834\u6240\u3092\u6e2c\u5b9a\u3059\u308b" },
-            { href: "/books/sekaikan/chapter-3", type: "book" as const, title: "\u7b2c\u4e09\u7ae0", description: "7\u5c64\u30e2\u30c7\u30eb\u306e\u8a73\u7d30\u89e3\u8aac" },
+            { href: "/frameworks/three-types", type: "framework", title: "三類型（A / A' / B）", description: "ディズニー・サンリオ・地域店の世界観の違い" },
+            { href: "/frameworks/worldview-value", type: "framework", title: "世界観価値の方程式", description: "意味×感覚×帰属×伝播性" },
+            { href: "/research/hcii2026", type: "research", title: "HCII2026 Save-Plan-Impulse", description: "国際学会採択論文" },
+            { href: "/books/sekaikan", type: "book", title: "世界観マーケティングと顧客体験の方程式", description: "7層モデルを詳述した書籍" },
+            { href: "/diagnosis", type: "framework", title: "7層セルフ診断ツール", description: "あなたの場所を7層で測定" },
           ]}
         />
       </div>
