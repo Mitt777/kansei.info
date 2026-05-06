@@ -27,71 +27,7 @@ export default function RelatedKnowledge({
 }: RelatedKnowledgeProps) {
   return (
     <>
-      <style>{`
-        .rk-section {
-          margin-top: 64px;
-          padding-top: 40px;
-          border-top: 1px solid var(--color-border);
-        }
-        .rk-heading {
-          font-size: 11px;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          font-family: var(--font-mono);
-          color: var(--color-text-muted);
-          margin-bottom: 20px;
-        }
-        .rk-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-          gap: 12px;
-        }
-        .rk-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          padding: 16px;
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-sm);
-          background: var(--color-surface);
-          text-decoration: none;
-          color: inherit;
-          transition: border-color var(--transition), box-shadow var(--transition);
-        }
-        .rk-item:hover {
-          border-color: var(--item-color);
-          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .rk-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: var(--item-color);
-          flex-shrink: 0;
-          margin-top: 5px;
-        }
-        .rk-content {}
-        .rk-type {
-          font-size: 9px;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          font-family: var(--font-mono);
-          color: var(--item-color);
-          margin-bottom: 3px;
-        }
-        .rk-title {
-          font-size: 13px;
-          font-weight: 500;
-          color: var(--color-text);
-          line-height: 1.4;
-        }
-        .rk-desc {
-          font-size: 12px;
-          color: var(--color-text-muted);
-          margin-top: 3px;
-          line-height: 1.5;
-        }
-      `}</style>
+      
 
       <div className="rk-section">
         <div className="rk-heading">{heading}</div>

@@ -8,50 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <style>{`
-        .page-hero {
-          padding: 80px 24px 64px;
-          border-bottom: 1px solid var(--color-border);
-        }
-        .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
-        .page-label {
-          font-size: 10px;
-          letter-spacing: 0.25em;
-          text-transform: uppercase;
-          font-family: var(--font-mono);
-          color: var(--color-books);
-          margin-bottom: 20px;
-        }
-        .page-title {
-          font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-          font-weight: 300;
-          margin-bottom: 16px;
-          color: var(--color-text);
-        }
-        .page-desc {
-          font-size: 15px;
-          color: var(--color-text-sub);
-          line-height: 1.85;
-          max-width: 560px;
-          margin-bottom: 32px;
-        }
-        .wip-note {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 11px;
-          font-family: var(--font-mono);
-          color: var(--color-text-muted);
-          border: 1px solid var(--color-border);
-          padding: 6px 14px;
-          border-radius: 2px;
-        }
-        .page-body {
-          max-width: var(--max-width);
-          margin: 0 auto;
-          padding: 64px 24px 96px;
-        }
-      `}</style>
+      
 
       <div className="page-hero">
         <div className="page-hero-inner">

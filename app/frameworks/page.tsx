@@ -66,69 +66,7 @@ const frameworks = [
 export default function FrameworksPage() {
   return (
     <>
-      <style>{`
-        .fw-hero {
-          padding: 80px 24px 56px;
-          border-bottom: 1px solid var(--color-border);
-        }
-        .fw-hero-inner { max-width: var(--max-width); margin: 0 auto; }
-        .fw-label {
-          font-size: 10px;
-          letter-spacing: 0.25em;
-          text-transform: uppercase;
-          font-family: var(--font-mono);
-          color: var(--color-frameworks);
-          margin-bottom: 20px;
-        }
-        .fw-title {
-          font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-          font-weight: 300;
-          margin-bottom: 16px;
-        }
-        .fw-desc {
-          font-size: 15px;
-          color: var(--color-text-sub);
-          line-height: 1.85;
-          max-width: 560px;
-        }
-        .fw-grid-area {
-          max-width: var(--max-width);
-          margin: 0 auto;
-          padding: 64px 24px 96px;
-        }
-        .fw-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 16px;
-          margin-top: 32px;
-        }
-        .fw-theory-note {
-          margin-top: 64px;
-          padding: 32px;
-          background: var(--color-bg-alt);
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-md);
-        }
-        .fw-theory-note h3 {
-          font-size: 14px;
-          font-weight: 500;
-          margin-bottom: 12px;
-          color: var(--color-text);
-        }
-        .fw-theory-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-        }
-        .fw-theory-tag {
-          font-size: 12px;
-          padding: 4px 10px;
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-sm);
-          color: var(--color-text-sub);
-          font-family: var(--font-mono);
-        }
-      `}</style>
+      
 
       <div className="fw-hero">
         <div className="fw-hero-inner">
