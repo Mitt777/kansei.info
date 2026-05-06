@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
@@ -26,6 +27,9 @@ export default function AboutPage() {
       <div className="ab-hero">
         <div className="ab-hero-inner">
           <div>
+            <div className="ab-portrait" aria-hidden="true">
+              <Image src="/images/about-room.jpg" alt="" fill priority sizes="(max-width: 768px) 100vw, 560px" className="quiet-image" />
+            </div>
             <div className="ab-label">About — 著者</div>
             <h1 className="ab-name">藤井 実彦</h1>
             <div className="ab-name-en">Mitsuhiko Fujii</div>

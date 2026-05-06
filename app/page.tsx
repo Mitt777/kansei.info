@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import SectionCard from '@/components/SectionCard'
 
@@ -77,43 +78,55 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="hero">
-        <div className="hero-label">Knowledge OS — kansei.info</div>
-        <h1 className="hero-title">
-          人間は、<strong>どこで</strong><br />
-          呼吸するのか。
-        </h1>
-        <p className="hero-subtitle">
-          世界観マーケティング・Atmospheric UX・Pre-Meaning・HCI研究・フィールドワーク・書籍。
-          藤井実彦による「AI時代の知識OS」。ディズニーも那須の小さなカフェも使える、世界観設計の物差し。
-        </p>
-        <div className="hero-cta-row">
-          <Link href="/manifesto" className="btn-primary">
-            思想を読む →
-          </Link>
-          <Link href="/frameworks" className="btn-secondary">
-            7層モデルを見る
-          </Link>
-          <Link href="/books" className="btn-secondary">
-            書籍を無料で読む
-          </Link>
+        <div>
+          <div className="hero-label">Knowledge OS — kansei.info</div>
+          <h1 className="hero-title">
+            人間は、<strong>どこで</strong><br />
+            呼吸するのか。
+          </h1>
+          <p className="hero-subtitle">
+            世界観マーケティング・Atmospheric UX・Pre-Meaning・HCI研究・フィールドワーク・書籍。
+            藤井実彦による「AI時代の知識OS」。ディズニーも那須の小さなカフェも使える、世界観設計の物差し。
+          </p>
+          <div className="hero-cta-row">
+            <Link href="/manifesto" className="btn-primary">
+              思想を読む →
+            </Link>
+            <Link href="/frameworks" className="btn-secondary">
+              7層モデルを見る
+            </Link>
+            <Link href="/books" className="btn-secondary">
+              書籍を無料で読む
+            </Link>
+          </div>
+          <div className="hero-meta">
+            <div className="hero-meta-item">
+              <span className="hero-meta-val">468</span>
+              <span className="hero-meta-label">観測動画本数</span>
+            </div>
+            <div className="hero-meta-item">
+              <span className="hero-meta-val">300万+</span>
+              <span className="hero-meta-label">インプレッション</span>
+            </div>
+            <div className="hero-meta-item">
+              <span className="hero-meta-val">9冊</span>
+              <span className="hero-meta-label">著書（日英）</span>
+            </div>
+            <div className="hero-meta-item">
+              <span className="hero-meta-val">HCII</span>
+              <span className="hero-meta-label">国際学会採択</span>
+            </div>
+          </div>
         </div>
-        <div className="hero-meta">
-          <div className="hero-meta-item">
-            <span className="hero-meta-val">468</span>
-            <span className="hero-meta-label">観測動画本数</span>
-          </div>
-          <div className="hero-meta-item">
-            <span className="hero-meta-val">300万+</span>
-            <span className="hero-meta-label">インプレッション</span>
-          </div>
-          <div className="hero-meta-item">
-            <span className="hero-meta-val">9冊</span>
-            <span className="hero-meta-label">著書（日英）</span>
-          </div>
-          <div className="hero-meta-item">
-            <span className="hero-meta-val">HCII</span>
-            <span className="hero-meta-label">国際学会採択</span>
-          </div>
+        <div className="hero-image-panel" aria-hidden="true">
+          <Image
+            src="/images/hero-lab.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 420px"
+            className="quiet-image"
+          />
         </div>
       </section>
 

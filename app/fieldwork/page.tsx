@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
@@ -123,15 +124,20 @@ export default function FieldworkPage() {
   return (
     <>
       <div className="page-hero">
-        <div className="page-hero-inner">
-          <div className="page-label" style={{ color: 'var(--color-fieldwork)' }}>
-            Fieldwork — 感性民族誌
+        <div className="page-hero-inner page-hero-grid">
+          <div>
+            <div className="page-label" style={{ color: 'var(--color-fieldwork)' }}>
+              Fieldwork — 感性民族誌
+            </div>
+            <h1 className="page-title">現場で観測した<br />世界観の生成と崩壊</h1>
+            <p className="page-desc">
+              那須・草津・ペニーレイン・SHOZO CAFE・Franklin&#39;s Cafe・ディズニー——
+              実際に診れ、空気を感じ、7層モデルで構造化した現場記録。
+            </p>
           </div>
-          <h1 className="page-title">現場で観測した<br />世界観の生成と崩壊</h1>
-          <p className="page-desc">
-            那須・草津・ペニーレイン・SHOZO CAFE・Franklin&#39;s Cafe・ディズニー——
-            実際に診れ、空気を感じ、7層モデルで構造化した現場記録。
-          </p>
+          <div className="page-hero-media" aria-hidden="true">
+            <Image src="/images/fieldwork-nature.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 360px" className="quiet-image" />
+          </div>
         </div>
       </div>
       <div className="page-body">

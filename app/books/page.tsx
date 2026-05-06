@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Books — 著作全文',
@@ -11,12 +12,17 @@ export default function Page() {
       
 
       <div className="page-hero">
-        <div className="page-hero-inner">
-          <div className="page-label">Books — 著作全文</div>
-          <h1 className="page-title">著作・調査レポートの全文公開</h1>
-          <p className="page-desc">日本語6冊・英語3冊・調査レポート8本。すべて無料全文公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。</p>
-          <div className="wip-note">
-            ⟳ コンテンツ準備中 — 順次公開します
+        <div className="page-hero-inner page-hero-grid">
+          <div>
+            <div className="page-label">Books — 著作全文</div>
+            <h1 className="page-title">著作・調査レポートの全文公開</h1>
+            <p className="page-desc">日本語6冊・英語3冊・調査レポート8本。すべて無料全文公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。</p>
+            <div className="wip-note">
+              ⟳ コンテンツ準備中 — 順次公開します
+            </div>
+          </div>
+          <div className="page-hero-media" aria-hidden="true">
+            <Image src="/images/books-shelf.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 360px" className="quiet-image" />
           </div>
         </div>
       </div>

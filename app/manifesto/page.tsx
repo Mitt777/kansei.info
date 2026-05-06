@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
@@ -14,6 +15,14 @@ export default function ManifestoPage() {
       
 
       <div className="mf-hero">
+        <Image
+          src="/images/manifesto-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="mf-hero-bg quiet-image"
+        />
         <div className="mf-hero-inner">
           <div className="mf-label">Manifesto — 思想宣言</div>
           <h1 className="mf-title">

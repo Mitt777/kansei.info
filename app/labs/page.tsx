@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
@@ -85,24 +86,29 @@ export default function LabsPage() {
   return (
     <>
       <div className="page-hero">
-        <div className="page-hero-inner">
-          <div className="page-label" style={{ color: 'var(--color-labs)' }}>
-            Labs — 思想実験室
+        <div className="page-hero-inner page-hero-grid">
+          <div>
+            <div className="page-label" style={{ color: 'var(--color-labs)' }}>
+              Labs — 思想実験室
+            </div>
+            <h1 className="page-title">進化中の概念・<br />思想実験室</h1>
+            <p className="page-desc">
+              Atmospheric UX・Pre-Meaning・Human-side Alignment——
+              これらは世界でkansei.infoが初めて命名・定義した独自概念群だ。
+              研究室の黒板のように、思考は現在も進行中。
+            </p>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              fontSize: '11px', fontFamily: 'var(--font-mono)',
+              color: 'var(--color-labs)',
+              border: '1px solid rgba(139,92,246,0.3)',
+              padding: '6px 14px', borderRadius: '2px',
+            }}>
+              ⟳ 思考進行中 — 随時更新される概念群
+            </div>
           </div>
-          <h1 className="page-title">進化中の概念・<br />思想実験室</h1>
-          <p className="page-desc">
-            Atmospheric UX・Pre-Meaning・Human-side Alignment——
-            これらは世界でkansei.infoが初めて命名・定義した独自概念群だ。
-            研究室の黒板のように、思考は現在も進行中。
-          </p>
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            fontSize: '11px', fontFamily: 'var(--font-mono)',
-            color: 'var(--color-labs)',
-            border: '1px solid rgba(139,92,246,0.3)',
-            padding: '6px 14px', borderRadius: '2px',
-          }}>
-            ⟳ 思考進行中 — 随時更新される概念群
+          <div className="page-hero-media" aria-hidden="true">
+            <Image src="/images/lab-desk.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 360px" className="quiet-image" />
           </div>
         </div>
       </div>
