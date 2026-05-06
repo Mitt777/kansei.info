@@ -29,7 +29,7 @@ export default function Page() {
         </p>
         <div style={{ padding: "16px 20px", background: "var(--color-bg-alt)", border: "1px solid var(--color-border)", borderLeft: "3px solid var(--color-labs)", marginBottom: "48px" }}>
           <div style={{ fontSize: "10px", letterSpacing: "0.15em", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "6px" }}>Theory Foundation</div>
-          <p style={{ fontSize: "13px", color: "var(--color-text-sub)", lineHeight: "1.7", fontStyle: "italic" }}>ウォルト・ディズニー・イマジニアリングの設計哲学（Art of the Show、Mickey's Ten Commandments）と、Pine & Gilmoreの経験経済論を統合した設計思想。</p>
+          <p style={{ fontSize: "13px", color: "var(--color-text-sub)", lineHeight: "1.7", fontStyle: "italic" }}>ウォルト・ディズニー・イマジニアリングの設計哲学（Art of the Show、Mickey’s Ten Commandments）と、Pine & Gilmoreの経験経済論を統合した設計思想。</p>
         </div>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>定義</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>Worldview Design（世界観設計）とは、「また来たくなる場所」を意図的に構築するための総合的な設計思想だ。世界観は偶然ではなく構造であり、設計可能だという立場に基づく。7層モデル・三類型・世界観価値の方程式・文脈継続性・Atmospheric UXを統合した実践フレームワーク。</p>
