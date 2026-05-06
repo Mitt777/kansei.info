@@ -1,39 +1,393 @@
-export default function Home() {
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import SectionCard from '@/components/SectionCard'
+
+export const metadata: Metadata = {
+  title: 'kansei.info — AI時代の知識OS',
+  description:
+    '世界観マーケティング・Atmospheric UX・Pre-Meaning・HCI研究・フィールドワーク・書籍を統合した知識空間。藤井実彦による「AI時代の知識OS」。',
+}
+
+const sections = [
+  {
+    href: '/frameworks',
+    label: 'Frameworks',
+    labelJa: '理論体系',
+    title: '世界観設計の理論フレームワーク',
+    description:
+      '7層モデル・三類型・文脈継続性・共鳴型経済圏。「また来たい場所」の構造を設計可能にするフレームワーク群。',
+    accentColor: 'var(--color-frameworks)',
+    tags: ['7 Layers', '3 Types', 'Worldview Value'],
+  },
+  {
+    href: '/labs',
+    label: 'Labs',
+    labelJa: '思想実験室',
+    title: '進化中の概念・実験的思想',
+    description:
+      'Atmospheric UX・Pre-Meaning・Human-side Alignment・GEO Theory。現在も思考が進行中の概念群。',
+    accentColor: 'var(--color-labs)',
+    tags: ['Atmospheric UX', 'Pre-Meaning', 'Human-side Alignment'],
+  },
+  {
+    href: '/research',
+    label: 'Research',
+    labelJa: '調査・論文',
+    title: 'なすぱらTV 観測データと論文群',
+    description:
+      '25日・44日・60日の段階的観測。感性波動論・二流立地理論・HCII2026学会発表。468本・300万インプレッションの一次データ。',
+    accentColor: 'var(--color-research)',
+    tags: ['HCII2026', '468本', '300万IMP', 'SPI Model'],
+  },
+  {
+    href: '/fieldwork',
+    label: 'Fieldwork',
+    labelJa: '感性民族誌',
+    title: '那須フィールドワークの記録',
+    description:
+      'SHOZO CAFE・草津温泉・ペニーレイン・Franklin\'s Cafe。現場で観測した世界観の生成と崩壊のプロセス。',
+    accentColor: 'var(--color-fieldwork)',
+    tags: ['那須', '7層分析', 'SHOZO', '草津温泉'],
+  },
+  {
+    href: '/books',
+    label: 'Books',
+    labelJa: '著作全文',
+    title: '著作・調査レポートの全文公開',
+    description:
+      '日本語6冊・英語3冊・調査レポート8本。すべて無料全文公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。',
+    accentColor: 'var(--color-books)',
+    tags: ['全文公開', '9冊', 'EN / JP'],
+  },
+  {
+    href: '/en',
+    label: 'English',
+    labelJa: '国際知識空間',
+    title: 'International Knowledge Space',
+    description:
+      'Sekaikan Marketing · Atmospheric UX · Pre-Meaning · Save-Plan-Impulse. English books and HCII research available.',
+    accentColor: 'var(--color-en)',
+    tags: ['HCII2026', 'Kansei Design', 'English Books'],
+  },
+]
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#f7f5ef] text-[#1f1f1f]">
-      <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-20">
-        <p className="mb-6 text-sm tracking-[0.35em] text-neutral-500">
-          KANSEI.INFO
-        </p>
+    <>
+      <style>{`
+        .hero {
+          padding: 96px 24px 80px;
+          max-width: var(--max-width);
+          margin: 0 auto;
+          border-bottom: 1px solid var(--color-border);
+        }
+        .hero-label {
+          font-size: 10px;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          font-family: var(--font-mono);
+          color: var(--color-gold);
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .hero-label::before {
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 1px;
+          background: var(--color-gold);
+        }
+        .hero-title {
+          font-size: clamp(2rem, 5vw, 3.2rem);
+          font-weight: 300;
+          line-height: 1.25;
+          color: var(--color-text);
+          margin-bottom: 16px;
+          letter-spacing: -0.01em;
+        }
+        .hero-title strong {
+          font-weight: 500;
+          color: var(--color-text);
+        }
+        .hero-subtitle {
+          font-size: 15px;
+          color: var(--color-text-sub);
+          line-height: 1.85;
+          max-width: 560px;
+          margin-bottom: 40px;
+        }
+        .hero-cta-row {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .btn-primary {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 12px 24px;
+          background: var(--color-text);
+          color: var(--color-text-inv);
+          border-radius: var(--radius-sm);
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.04em;
+          transition: opacity var(--transition);
+        }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-secondary {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 12px 24px;
+          background: transparent;
+          color: var(--color-text);
+          border: 1px solid var(--color-border);
+          border-radius: var(--radius-sm);
+          font-size: 13px;
+          font-weight: 400;
+          transition: border-color var(--transition), background var(--transition);
+        }
+        .btn-secondary:hover {
+          border-color: var(--color-text);
+          background: var(--color-bg-alt);
+        }
+        .hero-meta {
+          margin-top: 48px;
+          display: flex;
+          gap: 32px;
+          flex-wrap: wrap;
+        }
+        .hero-meta-item {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .hero-meta-val {
+          font-size: 22px;
+          font-weight: 500;
+          color: var(--color-text);
+          font-family: var(--font-mono);
+        }
+        .hero-meta-label {
+          font-size: 11px;
+          color: var(--color-text-muted);
+        }
 
-        <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-          AI時代に、<br />
-          人はどこへ帰るのか。
+        .sections-area {
+          padding: 80px 24px;
+          max-width: var(--max-width);
+          margin: 0 auto;
+        }
+        .sections-label {
+          font-size: 10px;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          font-family: var(--font-mono);
+          color: var(--color-text-muted);
+          margin-bottom: 32px;
+        }
+        .sections-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 16px;
+        }
+
+        .manifesto-band {
+          background: var(--color-bg-alt);
+          border-top: 1px solid var(--color-border);
+          border-bottom: 1px solid var(--color-border);
+          padding: 48px 24px;
+        }
+        .manifesto-band-inner {
+          max-width: var(--max-width);
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px;
+          flex-wrap: wrap;
+        }
+        .manifesto-band-text h2 {
+          font-size: 22px;
+          font-weight: 400;
+          color: var(--color-text);
+          margin-bottom: 8px;
+        }
+        .manifesto-band-text p {
+          font-size: 14px;
+          color: var(--color-text-sub);
+          line-height: 1.75;
+          max-width: 480px;
+        }
+
+        .diagnosis-band {
+          padding: 64px 24px;
+          max-width: var(--max-width);
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+          align-items: center;
+        }
+        .diagnosis-band h2 {
+          font-size: 24px;
+          font-weight: 400;
+          margin-bottom: 12px;
+        }
+        .diagnosis-band p {
+          font-size: 14px;
+          color: var(--color-text-sub);
+          line-height: 1.8;
+          margin-bottom: 24px;
+        }
+        .diagnosis-visual {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .dv-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .dv-label {
+          font-size: 11px;
+          font-family: var(--font-mono);
+          color: var(--color-text-sub);
+          min-width: 80px;
+        }
+        .dv-bar {
+          flex: 1;
+          height: 4px;
+          background: var(--color-border);
+          border-radius: 2px;
+          overflow: hidden;
+        }
+        .dv-fill {
+          height: 100%;
+          background: var(--color-gold);
+          border-radius: 2px;
+        }
+
+        @media (max-width: 640px) {
+          .hero { padding: 64px 20px 56px; }
+          .sections-grid { grid-template-columns: 1fr; }
+          .diagnosis-band { grid-template-columns: 1fr; }
+          .hero-meta { gap: 20px; }
+        }
+      `}</style>
+
+      {/* ── HERO ── */}
+      <section className="hero">
+        <div className="hero-label">Knowledge OS — kansei.info</div>
+        <h1 className="hero-title">
+          人間は、<strong>どこで</strong><br />
+          呼吸するのか。
         </h1>
-
-        <p className="mt-8 max-w-2xl text-lg leading-9 text-neutral-700">
-          Kansei.info は、感性・世界観・場所体験・AI時代の人間空間を研究する
-          Independent Kansei Knowledge Platform です。
+        <p className="hero-subtitle">
+          世界観マーケティング・Atmospheric UX・Pre-Meaning・HCI研究・フィールドワーク・書籍。
+          藤井実彦による「AI時代の知識OS」。ディズニーも那須の小さなカフェも使える、世界観設計の物差し。
         </p>
+        <div className="hero-cta-row">
+          <Link href="/manifesto" className="btn-primary">
+            思想を読む →
+          </Link>
+          <Link href="/frameworks" className="btn-secondary">
+            7層モデルを見る
+          </Link>
+          <Link href="/books" className="btn-secondary">
+            書籍を無料で読む
+          </Link>
+        </div>
+        <div className="hero-meta">
+          <div className="hero-meta-item">
+            <span className="hero-meta-val">468</span>
+            <span className="hero-meta-label">観測動画本数</span>
+          </div>
+          <div className="hero-meta-item">
+            <span className="hero-meta-val">300万+</span>
+            <span className="hero-meta-label">インプレッション</span>
+          </div>
+          <div className="hero-meta-item">
+            <span className="hero-meta-val">9冊</span>
+            <span className="hero-meta-label">著書（日英）</span>
+          </div>
+          <div className="hero-meta-item">
+            <span className="hero-meta-val">HCII</span>
+            <span className="hero-meta-label">国際学会採択</span>
+          </div>
+        </div>
+      </section>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-4">
-          {["Research", "Fieldwork", "Books", "Frameworks"].map((item) => (
-            <div
-              key={item}
-              className="rounded-2xl border border-neutral-300 bg-white/60 p-5 shadow-sm"
-            >
-              <h2 className="text-lg font-medium">{item}</h2>
-              <p className="mt-3 text-sm leading-6 text-neutral-600">
-                Coming soon
-              </p>
-            </div>
+      {/* ── MANIFESTO BAND ── */}
+      <div className="manifesto-band">
+        <div className="manifesto-band-inner">
+          <div className="manifesto-band-text">
+            <h2>「また来たい場所」には、構造がある。</h2>
+            <p>
+              ディズニーランドの経営者も、那須の小さなカフェの店主も、動物園のスタッフも、温泉宿のおかみも——
+              全員が同じ問いを持っている。この知識空間は、その問いへの共通の物差しを提供する。
+            </p>
+          </div>
+          <Link href="/manifesto" className="btn-primary">
+            Manifesto を読む →
+          </Link>
+        </div>
+      </div>
+
+      {/* ── SECTIONS ── */}
+      <section className="sections-area">
+        <div className="sections-label">Knowledge Domains — 知識の領域</div>
+        <div className="sections-grid">
+          {sections.map((section) => (
+            <SectionCard key={section.href} {...section} />
           ))}
         </div>
-
-        <p className="mt-16 text-sm leading-7 text-neutral-500">
-          Editor-in-Chief: Mitsuhiko Fujii / 感性WEB編集長
-        </p>
       </section>
-    </main>
-  );
+
+      {/* ── DIAGNOSIS BAND ── */}
+      <div style={{ borderTop: '1px solid var(--color-border)', background: 'var(--color-bg-alt)' }}>
+        <div className="diagnosis-band">
+          <div>
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'var(--color-gold)', fontFamily: 'var(--font-mono)', marginBottom: '12px' }}>
+              SELF DIAGNOSIS
+            </p>
+            <h2>あなたの場所の<br />「世界観力」を測る</h2>
+            <p>
+              7つの層をスライダーで自己評価するだけ。
+              弱い層が可視化され、改善の優先順位がわかる。
+              ディズニーも地域の人気カフェも、同じ物差しで測れる。
+            </p>
+            <Link href="/diagnosis" className="btn-primary">
+              無料で診断する →
+            </Link>
+          </div>
+          <div className="diagnosis-visual">
+            {[
+              { label: '①原初物語', pct: 85 },
+              { label: '②世界観接触', pct: 70 },
+              { label: '③境界侵入', pct: 60 },
+              { label: '④没入環境', pct: 90 },
+              { label: '⑤期待増幅', pct: 55 },
+              { label: '⑥感動体験', pct: 80 },
+              { label: '⑦伝播帰属', pct: 65 },
+            ].map((row) => (
+              <div key={row.label} className="dv-row">
+                <span className="dv-label">{row.label}</span>
+                <div className="dv-bar">
+                  <div className="dv-fill" style={{ width: `${row.pct}%` }} />
+                </div>
+                <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)', minWidth: '32px' }}>
+                  {row.pct}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
