@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: 'About — 藤井実彦 | kansei.info',
-  description: 'WEBマーケッター・漫画原作者・AI・SNSマーケティング実践者。1972年博多生まれ。青山学院大学心理学専攻卒。HCII2026採択。株式会社エックスブレインズ代表取締役。',
+  description: 'WEBマーケッター・漫画原作者・AI・SNSマーケティング実践者。1972年博多生まれ。青山学院大学心理学専攻卒。HCII2026採択。株式会社エックスブレ-ンズ代表取締役。',
 }
 
 const manga = [
@@ -55,9 +55,9 @@ export default function AboutPage() {
         <div>
           <div className="ab-section">
             <div className="ab-section-label">Company</div>
-            <h2>株式会社エックスブレインズ</h2>
+            <h2>株式会社エックスブレ-ンズ</h2>
             <div style={{ display: "grid", gridTemplateColumns: "90px 1fr", gap: "0 16px", fontSize: "14px", color: "var(--color-text-sub)" }}>
-              {[["サービス名","エックスブレインズ"],["会社名","株式会社エックスブレインズ"],["設立","2011年3月"],["代表取締役","藤井 実彦"],["業務","WEBコンサルティング / 漫画制作（iComiX）/ AIマーケティング"],["所在地","栃木県那須町"]].map(([label, val]) => (
+              {[["サービス名","エックスブレ-ンズ"],["会社名","株式会社エックスブレ-ンズ"],["設立","2011年3月"],["代表取締役","藤井 実彦"],["業務","WEBコンサルティング / 漫画制作（iComiX）/ AIマーケティング"],["所在地","栃木県那須町"]].map(([label, val]) => (
                 <div key={label} style={{ display: "contents" }}>
                   <span style={{ color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", fontSize: "11px", padding: "6px 0", borderBottom: "1px solid var(--color-border-light)" }}>{label}</span>
                   <span style={{ padding: "6px 0", borderBottom: "1px solid var(--color-border-light)" }}>{val}</span>
