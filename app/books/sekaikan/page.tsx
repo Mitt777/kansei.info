@@ -131,15 +131,6 @@ export default function SekaikanBookPage() {
                   border: '1px solid var(--color-border)',
                   background: 'var(--color-surface)',
                   textDecoration: 'none', color: 'inherit',
-                  transition: 'background 0.2s, border-color 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--color-bg-alt)'
-                  e.currentTarget.style.borderColor = 'var(--color-gold)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'var(--color-surface)'
-                  e.currentTarget.style.borderColor = 'var(--color-border)'
                 }}
               >
                 <span style={{
