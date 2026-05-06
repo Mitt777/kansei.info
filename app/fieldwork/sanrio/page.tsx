@@ -1,0 +1,51 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import RelatedKnowledge from '@/components/RelatedKnowledge'
+
+export const metadata: Metadata = {
+  title: 'サンリオピューロランド — Fieldwork | kansei.info',
+  description: '「かわいい」というPre-Meaningが世界観の核。ディズニーが物語を所有するのに対し、サンリオは愛着を増幅させる。IP活用型世界観の典型事例。1990年開園。',
+}
+
+export default function Page() {
+  return (
+    <>
+      <div style={{ padding: "48px 24px 0", maxWidth: "720px", margin: "0 auto" }}>
+        <div style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "32px", display: "flex", gap: "8px" }}>
+          <Link href="/fieldwork" style={{ color: "var(--color-text-muted)" }}>Fieldwork</Link>
+          <span>›</span>
+          <span>サンリオピューロランド</span>
+        </div>
+      </div>
+      <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 24px 96px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-labs)", marginBottom: "12px" }}>
+          Type A’ — IP活用型 — 東京都多摩市
+        </div>
+        <h1 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)", fontWeight: "300", marginBottom: "16px" }}>
+          サンリオピューロランド
+        </h1>
+        <p style={{ fontSize: "15px", color: "var(--color-text-sub)", lineHeight: "1.85", marginBottom: "48px", padding: "20px 24px", background: "var(--color-bg-alt)", borderLeft: "3px solid var(--color-labs)" }}>
+          「かわいい」というPre-Meaningが世界観の核。ディズニーが物語を所有するのに対し、サンリオは愛着を増幅させる。IP活用型世界観の典型事例。1990年開園。
+        </p>
+        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>7層評価</h2>
+        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>①原初物語：○ Hello Kittyというキャラクター神話。②世界観接触：◎ IPの圧倒的な認知度。③境界侵入：○。④没入環境：○ キャラクター世界の徹底。⑤期待増幅：○。⑥感動体験：○。⑦伝播帰属：◎ 熱狂的ファン文化。</p>
+        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>Pre-Meaningとサンリオ</h2>
+        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>「かわいい」は典型的なPre-Meaningだ。Hello Kittyを見た瞬間、人は論理的評価をする前に感情的反応を示す。サンリオはこのPre-Meaningを最大化することに特化した世界観設計を実践している。</p>
+        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>ディズニーとの本質的な違い</h2>
+        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>ディズニーは「物語」を所有するが、サンリオは「愛着」を増幅させる。どちらも優れた世界観設計だが、源泉が異なる。ディズニーが没落しない理由は物語の所有にあり、サンリオが変化に対応できる理由は愛着という感情に依拠しているからだ。</p>
+        <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "32px", marginTop: "48px" }}>
+          <Link href="/fieldwork" style={{ fontSize: "13px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>
+            ← フィールドワーク一覧
+          </Link>
+        </div>
+        <RelatedKnowledge
+          items={[
+            { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },
+            { href: "/fieldwork", type: "fieldwork" as const, title: "全スポット一覧", description: "11スポットの比較" },
+            { href: "/diagnosis", type: "framework" as const, title: "自分の場所を診断", description: "7層セルフ診断ツール" },
+          ]}
+        />
+      </div>
+    </>
+  )
+}

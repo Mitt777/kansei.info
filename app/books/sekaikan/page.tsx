@@ -12,7 +12,7 @@ const chapters = [
   { href: '/books/sekaikan/chapter-1', num: '第一章', title: 'なぜ「また来たくなる場所」が生まれるのか', desc: '人は何に帰りたくなるのか。便利だけでは記憶に残らない理由。' },
   { href: '/books/sekaikan/chapter-2', num: '第二章', title: '世界観マーケティングとは何か', desc: '「また来たくなる場所」の構造。三類型比較表・楠木健接続。' },
   { href: '/books/sekaikan/chapter-3', num: '第三章', title: '顧客体験の方程式', desc: '世界観設計7層モデルとその理論的基盤。ディズニー×学術理論対応表。' },
-  { href: '/books/sekaikan/chapter-4', num: '第四章', title: '物語の源泉', desc: 'Type A/A’/B三類型・借景概念・文脈継続性の詳細解説。' },
+  { href: '/books/sekaikan/chapter-4', num: '第四章', title: '物語の源泉', desc: 'Type A/A'/B三類型・借景概念・文脈継続性の詳細解説。' },
   { href: '/books/sekaikan/chapter-5', num: '第五章', title: '戦わないマーケティング', desc: '共鳴型経済圏と地域価値の守り方。地域OS戦略。' },
   { href: '/books/sekaikan/chapter-6', num: '第六章', title: 'AI時代に、なぜ「空気」が価値になるのか', desc: 'Pre-Meaning・Human-side Alignment・GEO論。' },
   { href: '/books/sekaikan/chapter-7', num: '第七章', title: '世界観マーケティング実践チェックリスト', desc: '各STEPにチェック表。「また来たい場所」の設計方法。' },
@@ -167,7 +167,7 @@ export default function SekaikanBookPage() {
           }}>Key Concepts</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {[
-              '世界観設計7層モデル', '三類型（A/A’/B）', '世界観価値の方程式',
+              '世界観設計7層モデル', '三類型（A/A'/B）', '世界観価値の方程式',
               '文脈継続性', '共鳴型経済圏', '借景', 'Atmospheric UX',
               'Pre-Meaning', 'Human-side Alignment', '地域OS',
               'ディズニー イマジニアリング', 'Pine & Gilmore', '楠木健',
