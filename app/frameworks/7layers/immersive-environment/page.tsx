@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第四層 没入環境（Immersive Environment）— 7層モデル | kansei.info',
-  description: 'Atmospheric UXが最も機能する層。世界観とは「ノイズを減らす技術」でもある。過剰POP・世界観に合わないBGM・情報過多は没入を壊す。ディズニーのArt of the Show・Mickey's Ten Commandmentsと直結。',
+  description: 'Atmospheric UXが最も機能する層。世界観とは「ノイズを減らす技術」でもある。過剰POP・世界観に合わないBGM・情報過多は没入を壊す。ディズニーのArt of the Show・Mickey’s Ten Commandmentsと直結。',
 }
 
 const jsonLd = {
@@ -13,7 +13,7 @@ const jsonLd = {
     {
       "@type": "Article",
       "headline": "第四層 没入環境 — Immersive Environment",
-      "description": "Atmospheric UXが最も機能する層。世界観とは「ノイズを減らす技術」でもある。過剰POP・世界観に合わないBGM・情報過多は没入を壊す。ディズニーのArt of the Show・Mickey's Ten Commandmentsと直結。",
+      "description": "Atmospheric UXが最も機能する層。世界観とは「ノイズを減らす技術」でもある。過剰POP・世界観に合わないBGM・情報過多は没入を壊す。ディズニーのArt of the Show・Mickey’s Ten Commandmentsと直結。",
       "url": "https://kansei.info/frameworks/7layers/immersive-environment",
       "author": { "@type": "Person", "name": "藤井実彦", "url": "https://kansei.info/about" },
       "isPartOf": { "@type": "Article", "name": "世界観設記7層モデル", "url": "https://kansei.info/frameworks/7layers" }
@@ -61,7 +61,7 @@ export default function Page() {
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>Atmospheric UXとの接続</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>没入環境は、Atmospheric UX（空気のUX設計）が最も機能する層だ。Gernot Böhme（1993）が提唱した「雰囲気（Atmosphäre）」理論——空間が人間に与える感覚的な存在様式——がここで実践される。重要なのは、「足す」のではなく「引く」という設計思想だ。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>ノイズを減らすことが世界観を強くする</h2>
-        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>那須で店舗観察を続ける中で気づいたことがある。強い場所ほど、「削っている」。過剰なPOP、世界観に合わないBGM、情報過多、SNS映えだけの装飾——これらは、顧客の没入を妨げる「ノイズ」だ。ディズニーのMickey's Ten Commandmentsの「Avoid overload（過負荷を避けよ）」も同じ思想だ。</p>
+        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>那須で店舗観察を続ける中で気づいたことがある。強い場所ほど、「削っている」。過剰なPOP、世界観に合わないBGM、情報過多、SNS映えだけの装飾——これらは、顧客の没入を妨げる「ノイズ」だ。ディズニーのMickey’s Ten Commandmentsの「Avoid overload（過負荷を避けよ）」も同じ思想だ。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>Art of the Showという設計哲学</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>ディズニーの「Art of the Show」は、「すべての要素がショーの一部である」という設計哲学だ。清掃員の動き方も、ゴミ箱の位置も、植栽の高さも——すべてが「世界観のショー」を構成する要素として設計されている。これは没入環境設計の極致だ。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>SHOZO CAFEの静けさの設計</h2>
@@ -71,7 +71,7 @@ export default function Page() {
 
         <div style={{ padding: "16px 20px", background: "var(--color-bg-alt)", border: "1px solid var(--color-border)", marginTop: "40px", marginBottom: "40px" }}>
           <div style={{ fontSize: "9px", letterSpacing: "0.15em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "8px" }}>Disney Connection</div>
-          <div style={{ fontSize: "13px", color: "var(--color-text-sub)", fontStyle: "italic", lineHeight: "1.7" }}>Art of the Show / Mickey's Ten Commandments「Avoid overload」/ 全要素の世界観統合</div>
+          <div style={{ fontSize: "13px", color: "var(--color-text-sub)", fontStyle: "italic", lineHeight: "1.7" }}>Art of the Show / Mickey’s Ten Commandments「Avoid overload」/ 全要素の世界観統合</div>
         </div>
 
         <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "12px", marginTop: "48px" }}>FAQ</div>
