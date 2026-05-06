@@ -62,7 +62,7 @@ export default function ManifestoPage() {
               </div>
             </div>
             <div className="mf-three-item">
-              <div className="mf-three-label">Type A' — IP活用型</div>
+              <div className="mf-three-label">Type A’ — IP活用型</div>
               <div className="mf-three-title">サンリオピューロランド</div>
               <div className="mf-three-desc">
                 キャラクターへの愛着を軸に感情的共鳴を生む。
