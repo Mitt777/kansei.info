@@ -33,7 +33,7 @@ const layers = [
     name: '境界侵入',
     en: 'Threshold Crossing',
     desc: '駐車場・入口・看板——日常から世界観への移行。ウォルト・ディズニーが命名した「Weenie（ウィニー）」理論がここに該当する。シンデレラ城という視覚的磁石が、意識的な決断をする前に人を引き寄せる。良い店舗ほど、突然世界観が始まるのではなく、少しずつ空気が変わっていく。',
-    disney: '「Weenie」理論 / シンデレラ城の視覚誘導 / Mickey's 10戒：「Create a Wienie」',
+    disney: '「Weenie」理論 / シンデレラ城の視覚誘導 / Mickey’s 10戒：「Create a Wienie」',
     theory: 'Transition Design / Environmental Psychology / Threshold Theory',
     examples: ['駐車場から世界観が始まっているか', 'エントランスで空気が変わるか', '「ここから別の世界」という感覚'],
     color: '#3B82F6',
@@ -43,7 +43,7 @@ const layers = [
     name: '没入環境',
     en: 'Immersive Environment',
     desc: '音・匂い・光・接客・導線——空間全体が機能する。「Art of the Show」という概念が、ここの理論的核心だ。建築・照明・小道具・造園のすべてが、意図された物語と感情的なトーンを伝えるよう機能する。世界観とは「ノイズを減らす技術」でもある。',
-    disney: 'Mickey's 10戒「Communicate with visual literacy」「Avoid overload」/ Art of the Show（John Hench）',
+    disney: 'Mickey’s 10戒「Communicate with visual literacy」「Avoid overload」/ Art of the Show（John Hench）',
     theory: 'Atmosphere Theory（Böhme）/ Atmospheric UX / Emotional Design（Norman）',
     examples: ['SHOZO CAFEの静けさそのもの', '過剰POPの排除', '木・光・音の一貫性'],
     color: '#10B981',
@@ -164,7 +164,7 @@ export default function SevenLayersPage() {
           <div className="sl-theory-tags">
             {[
               "Pine & Gilmore — Experience Economy, Harvard Business Review 1998（被引用4294）",
-              "Walt Disney Imagineering — Mickey's Ten Commandments（Marty Sklar）",
+              "Walt Disney Imagineering — Mickey’s Ten Commandments（Marty Sklar）",
               "John Hench — Art of the Show（Designing Disney, 2003）",
               "楠木健 — ストーリーとしての競争戦略（2010）",
               "Don Norman — Emotional Design（2004）",
