@@ -1,17 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
-import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'AI失業2026 一次産業・地方店舗復活編 — Books | kansei.info',
   description: '地方・農業・地域店舗がAIを活用して競争優位を築く戦略。AIが個人を「企業」に変える時代に、地域から反撃する方法を論じる。',
 }
-
-const faqs = [
-  { question: "「AI失業2026一次産業・地方店舗復活編」はどんな本ですか？", answer: "地方・農業・地域店舗がAIを活用して競争優位を築く戦略を論じた本です。AIが個人を「企業」に変える時代に、地方から反撃する方法を提示します。那須での観測から確信した「地方の一次産業と地域店舗は、AIを最も有効活用できる主体」という逆説的な発見が核心です。" },
-  { question: "なぜ地方の店舗がAI活用で有利なのですか？", answer: "大企業はシステム・組織・ブランドの制約がありますが、個人・小規模事業者はAIを即座に実装できます。また地方の店舗は「感性・世界観・地域性」という、AIが最も苦手とする領域で競争できます。AI×感性×地域の組み合わせが、地方からの逆転を可能にします。" },
-]
 
 export default function Page() {
   return (
@@ -20,44 +14,56 @@ export default function Page() {
         <div style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "32px", display: "flex", gap: "8px" }}>
           <Link href="/books" style={{ color: "var(--color-text-muted)" }}>Books</Link>
           <span>›</span>
-          <span style={{ color: "var(--color-text)" }}>AI失業2026 一次産業・地方店舗復活...</span>
+          <span>AI失業2026 一次産業・地方店舗復活...</span>
         </div>
       </div>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 24px 96px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-books)", marginBottom: "12px" }}>
-          Book — 全文公開
+          Book — 章別全文公開
         </div>
-        <h1 style={{ fontSize: "clamp(1.3rem, 2.8vw, 2rem)", fontWeight: "300", marginBottom: "8px", lineHeight: "1.4" }}>
+        <h1 style={{ fontSize: "clamp(1.4rem, 3vw, 2.2rem)", fontWeight: "300", marginBottom: "8px", lineHeight: "1.4" }}>
           AI失業2026 一次産業・地方店舗復活編
         </h1>
-        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", marginBottom: "8px" }}>
-          ―― AIが、個人を“企業”に変える時代
+        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", marginBottom: "24px" }}>
+          ―― AIが、個人を「企業」に変える時代
         </p>
-        <p style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)", marginBottom: "28px" }}>
-          藤井実彦 著
-        </p>
-        <p style={{ fontSize: "15px", color: "var(--color-text-sub)", lineHeight: "1.9", marginBottom: "24px" }}>
+        <p style={{ fontSize: "15px", color: "var(--color-text-sub)", lineHeight: "1.9", marginBottom: "32px" }}>
           地方・農業・地域店舗がAIを活用して競争優位を築く戦略。AIが個人を「企業」に変える時代に、地域から反撃する方法を論じる。
         </p>
-        <p style={{ fontSize: "15px", color: "var(--color-text-sub)", lineHeight: "1.9", marginBottom: "32px", padding: "20px 24px", background: "var(--color-bg-alt)", borderLeft: "3px solid var(--color-books)" }}>
-          那須での観測から確信したのは、地方の一次産業と地域店舗は、AIを最も有効活用できる主体だということだ。大企業はシステム・組織・ブランドの制約があるが、個人・小規模事業者はAIを即座に実装できる。AIが個人を「企業」に変える時代に、地方からの逆転が始まる。
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "32px" }}>
-          <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>一次産業</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>地方店舗</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>AI活用</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>個人企業化</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>地域復活</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>那須</span>
-        </div>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "64px" }}>
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "48px" }}>
           <a href="https://amzn.asia/d/01v9GNQG" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Amazonで購入 →
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
-        <FaqSection faqs={faqs} />
+
+        <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "16px" }}>
+          目次 — 各章を読む
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginBottom: "48px" }}>
+              <Link href="/books/ai-local/chapter-1" style={{ display: "flex", gap: "16px", padding: "14px 20px", border: "1px solid var(--color-border)", background: "var(--color-surface)", textDecoration: "none", color: "inherit", borderLeft: "3px solid var(--color-gold)" }}>
+                <span style={{ fontSize: "14px", color: "var(--color-text)" }}>第1章 シリコンバレーは、農業を再発明している</span>
+                <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
+              </Link>
+              <Link href="/books/ai-local/chapter-2" style={{ display: "flex", gap: "16px", padding: "14px 20px", border: "1px solid var(--color-border)", background: "var(--color-surface)", textDecoration: "none", color: "inherit", borderLeft: "3px solid var(--color-gold)" }}>
+                <span style={{ fontSize: "14px", color: "var(--color-text)" }}>第2章 地方店舗にAIが来る</span>
+                <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
+              </Link>
+              <Link href="/books/ai-local/chapter-3" style={{ display: "flex", gap: "16px", padding: "14px 20px", border: "1px solid var(--color-border)", background: "var(--color-surface)", textDecoration: "none", color: "inherit", borderLeft: "3px solid var(--color-gold)" }}>
+                <span style={{ fontSize: "14px", color: "var(--color-text)" }}>第3章 個人が企業になる時代</span>
+                <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
+              </Link>
+              <Link href="/books/ai-local/chapter-4" style={{ display: "flex", gap: "16px", padding: "14px 20px", border: "1px solid var(--color-border)", background: "var(--color-surface)", textDecoration: "none", color: "inherit", borderLeft: "3px solid var(--color-gold)" }}>
+                <span style={{ fontSize: "14px", color: "var(--color-text)" }}>第4章 地方からの逆転戦略</span>
+                <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
+              </Link>
+        </div>
 
         <RelatedKnowledge
           items={[
-            { href: "/research/1000stores-strategy", type: "research" as const, title: "1000店舗戦略", description: "AI動画の実装" },
-            { href: "/fieldwork/nasu", type: "fieldwork" as const, title: "那須フィールドワーク", description: "観測の舞台" },
-            { href: "/books/ai-shitsugyo-2026", type: "book" as const, title: "AI失業2026本編", description: "シリーズの出発点" },
+            { href: "/labs/human-side-alignment", type: "lab" as const, title: "Human-side Alignment", description: "AI時代の人間性" },
+            { href: "/labs/pre-meaning", type: "lab" as const, title: "Pre-Meaning", description: "意味になる前の感覚" },
+            { href: "/books", type: "book" as const, title: "著作一覧", description: "9冊全文公開" },
           ]}
         />
       </div>
