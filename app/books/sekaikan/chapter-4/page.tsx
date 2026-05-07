@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第四章 物語の源泉 — 世界観マーケティング',
-  description: 'ディズニー・サンリオ・地域店の三類型。世界観マーケティングと顧客体験の方程式・第四章・全文公開。',
+  description: 'ディズニー・サンリオ・地域店の三類型。世界観マーケティングと顧客体験の方程式・第四章・抜粋公開。',
 }
 
 export default function Page() {

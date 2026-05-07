@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第五章 戦わないマーケティング — 世界観マーケティング',
-  description: '共鳴型経済圏と、地域価値の守り方。世界観マーケティングと顧客体験の方程式・第五章・全文公開。',
+  description: '共鳴型経済圏と、地域価値の守り方。世界観マーケティングと顧客体験の方程式・第五章・抜粋公開。',
 }
 
 export default function Page() {

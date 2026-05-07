@@ -25,7 +25,7 @@ export default function Page() {
       </div>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 24px 96px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-books)", marginBottom: "12px" }}>
-          Book — 全文公開
+          Book — 抜粋公開
         </div>
         <h1 style={{ fontSize: "clamp(1.3rem, 2.8vw, 2rem)", fontWeight: "300", marginBottom: "8px", lineHeight: "1.4" }}>
           【完全解説】2026年 会社は消える

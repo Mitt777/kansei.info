@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第二章 世界観マーケティングとは何か — 世界観マーケティング',
-  description: '「また来たくなる場所」の構造を考える。世界観マーケティングと顧客体験の方程式・第二章・全文公開。',
+  description: '「また来たくなる場所」の構造を考える。世界観マーケティングと顧客体験の方程式・第二章・抜粋公開。',
 }
 
 export default function Page() {

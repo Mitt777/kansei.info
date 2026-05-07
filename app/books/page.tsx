@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
-  title: 'Books — 著作全文公開',
-  description: '日本語6冊・英語3冊・調査レポート8本。すべて無料全文公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
+  title: 'Books — 著作抜粋公開',
+  description: '日本語6冊・英語3冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
 }
 
 const jpBooks = [
@@ -15,7 +15,7 @@ const jpBooks = [
     description: '「また来たい」の構造——ディズニーも那須の小さなカフェも使える、AI時代の世界観設計の物差し。7層モデル・三類型・世界観価値の方程式を体系化。',
     accentColor: 'var(--color-gold)',
     tags: ['7層モデル', '三類型', '世界観価値', 'ディズニー対応'],
-    meta: '全章無料公開 / 日本語',
+    meta: '章別抜粋公開 / 日本語',
   },
   {
     href: '/books/spi-regional-dx',
@@ -25,7 +25,7 @@ const jpBooks = [
     description: '那須フィールドスタディからの行動観測ノート。Instagram保存・YouTube比較検討・TikTok衝動——SNS行動の三分類を実証データで解明。',
     accentColor: 'var(--color-books)',
     tags: ['Save/Plan/Impulse', '那須', 'SNS行動', 'フィールドワーク'],
-    meta: '全文公開 / ネクストドアー出版',
+    meta: '抜粋公開 / ネクストドアー出版',
   },
   {
     href: '/books/pre-meaning',
@@ -35,7 +35,7 @@ const jpBooks = [
     description: '意味の前で、人は立ち止まってきた。「なんか落ち着く」「また来たい気がする」——意味として言語化する前に身体が先に感じていることの哲学的・実践的考察。',
     accentColor: 'var(--color-books)',
     tags: ['Pre-Meaning', '現象学', 'Merleau-Ponty接続', 'AI時代'],
-    meta: '全文公開 / ネクストドアー出版',
+    meta: '抜粋公開 / ネクストドアー出版',
   },
   {
     href: '/books/ai-shitsugyo-2026',
@@ -45,7 +45,7 @@ const jpBooks = [
     description: '日米AIリストラ新潮流。AIによって失われる仕事と、感性・世界観という人間固有の価値の逆説的な上昇を論じる。',
     accentColor: 'var(--color-books)',
     tags: ['AI失業', '日米比較', 'リストラ', '2026'],
-    meta: '全文公開 / 日本語',
+    meta: '抜粋公開 / 日本語',
   },
   {
     href: '/books/ai-creator',
@@ -55,7 +55,7 @@ const jpBooks = [
     description: '下請け消滅とソロプレナー革命。デザイナー・ライター・動画クリエイターが感性設計で生き残る道を論じる。',
     accentColor: 'var(--color-books)',
     tags: ['フリーランス', 'ソロプレナー', 'クリエイター', 'AI'],
-    meta: '全文公開 / 日本語',
+    meta: '抜粋公開 / 日本語',
   },
   {
     href: '/books/ai-local',
@@ -65,7 +65,7 @@ const jpBooks = [
     description: 'AIが、個人を"企業"に変える時代。地方・農業・地域店舗がAIを活用して競争優位を築く戦略を論じる。',
     accentColor: 'var(--color-books)',
     tags: ['地方', '一次産業', 'AI活用', '個人企業化'],
-    meta: '全文公開 / 日本語',
+    meta: '抜粋公開 / 日本語',
   },
   {
     href: '/books/company-disappears',
@@ -75,7 +75,7 @@ const jpBooks = [
     description: 'AI時代の組織・働き方の変革。会社という形態が変容していく中で、個人と組織はどう再設計されるべきかを論じる。',
     accentColor: 'var(--color-books)',
     tags: ['組織変革', 'AI時代', '2026', '働き方'],
-    meta: '全文公開 / 日本語',
+    meta: '抜粋公開 / 日本語',
   },
 ]
 
@@ -88,7 +88,7 @@ const enBooks = [
     description: 'Action Observation Notes from the Nasu Field Study. The English academic edition of the SNS behavior observation research. Foundation for HCII2026 presentation.',
     accentColor: 'var(--color-en)',
     tags: ['English', 'HCII2026', 'Kansei', 'Regional DX'],
-    meta: 'Full text / English Edition',
+    meta: 'Excerpt / English Edition',
   },
   {
     href: '/en/books/eternal-millimeter-short',
@@ -98,7 +98,7 @@ const enBooks = [
     description: 'A short philosophical fable exploring Pre-Meaning — the moment before meaning, when the body already knows. Condensed edition for international readers.',
     accentColor: 'var(--color-en)',
     tags: ['English', 'Pre-Meaning', 'Philosophy', 'Short Edition'],
-    meta: 'Full text / English Edition',
+    meta: 'Excerpt / English Edition',
   },
   {
     href: '/en/books/eternal-millimeter-full',
@@ -108,7 +108,7 @@ const enBooks = [
     description: 'The complete edition of the Pre-Meaning fable. Full-density philosophical exploration of Atmospheric UX, Human-side Alignment, and the human experience in the AI era.',
     accentColor: 'var(--color-en)',
     tags: ['English', 'Pre-Meaning', 'Atmospheric UX', 'Full Edition'],
-    meta: 'Full text / English Edition',
+    meta: 'Excerpt / English Edition',
   },
 ]
 
@@ -117,15 +117,15 @@ export default function BooksPage() {
     <>
       <div className="bk-hero">
         <div className="bk-hero-inner">
-          <div className="bk-label">Books — 著作全文公開</div>
-          <h1 className="bk-title">著作・調査レポートの<br />全文無料公開</h1>
+          <div className="bk-label">Books — 著作抜粋公開</div>
+          <h1 className="bk-title">著作・調査レポートの<br />抜粋公開</h1>
           <p className="bk-desc">
             日本語6冊・英語3冊・調査レポート8本。
-            知識は公開することで価値を持つ——すべての著作をこの知識空間で全文公開する。
+            知識は公開することで価値を持つ——各著作の抜粋や概要をこの知識空間で公開する。
             書籍として手元に置きたい方はAmazonからも購入できる。
           </p>
           <div className="bk-policy">
-            ◎ すべて全文無料公開 — 知識は共有されることで価値を持つ
+            ◎ 抜粋・概要を無料公開 — 知識は共有されることで価値を持つ
           </div>
         </div>
       </div>

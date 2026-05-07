@@ -127,7 +127,7 @@ export default function AboutPage() {
               { href: "/manifesto", type: "essay" as const, title: "Manifesto", description: "思想宣言" },
               { href: "/research/hcii2026", type: "research" as const, title: "HCII2026論文", description: "学術的検証" },
               { href: "/fieldwork/nasu", type: "fieldwork" as const, title: "那須フィールドワーク", description: "60日468本の観測記録" },
-              { href: "/books", type: "book" as const, title: "著作一覧", description: "9冊全文無料公開" },
+              { href: "/books", type: "book" as const, title: "著作一覧", description: "9冊抜粋公開" },
             ]}
           />
         </div>

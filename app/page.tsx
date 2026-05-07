@@ -53,12 +53,12 @@ const sections = [
   {
     href: '/books',
     label: 'Books',
-    labelJa: '著作全文',
-    title: '著作・調査レポートの全文公開',
+    labelJa: '著作抜粋',
+    title: '著作・調査レポートの抜粋公開',
     description:
-      '日本語6冊・英語3冊・調査レポート8本。すべて無料全文公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。',
+      '日本語6冊・英語3冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。',
     accentColor: 'var(--color-books)',
-    tags: ['全文公開', '9冊', 'EN / JP'],
+    tags: ['抜粋公開', '9冊', 'EN / JP'],
   },
   {
     href: '/en',
@@ -96,7 +96,7 @@ export default function HomePage() {
               7層モデルを見る
             </Link>
             <Link href="/books" className="btn-secondary">
-              書籍を無料で読む
+              書籍の抜粋を読む
             </Link>
           </div>
           <div className="hero-meta">

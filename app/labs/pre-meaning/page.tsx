@@ -116,7 +116,7 @@ export default function PreMeaningPage() {
             { href: "/labs/atmospheric-ux", type: "lab" as const, title: "Atmospheric UX", description: "Pre-Meaningを生む空間設計" },
             { href: "/labs/human-side-alignment", type: "lab" as const, title: "Human-side Alignment", description: "AI時代の人間性整合" },
             { href: "/fieldwork/sanrio", type: "fieldwork" as const, title: "サンリオピューロランド", description: "Pre-Meaningの典型事例" },
-            { href: "/books/pre-meaning-theory", type: "book" as const, title: "AI時代のPre-Meaning概論", description: "書籍全文" },
+            { href: "/books/pre-meaning-theory", type: "book" as const, title: "AI時代のPre-Meaning概論", description: "書籍抜粋" },
           ]}
         />
       </div>

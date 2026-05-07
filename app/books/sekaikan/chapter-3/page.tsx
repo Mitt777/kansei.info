@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第三章 顧客体験の方程式 — 世界観マーケティング',
-  description: '世界観設計7層モデルと、その理論的基盤。世界観マーケティングと顧客体験の方程式・第三章・全文公開。',
+  description: '世界観設計7層モデルと、その理論的基盤。世界観マーケティングと顧客体験の方程式・第三章・抜粋公開。',
 }
 
 export default function Page() {

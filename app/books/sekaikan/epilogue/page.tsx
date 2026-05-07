@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '終章 小さな灯の時代へ — 世界観マーケティング',
-  description: 'AI時代に、人間はどこで呼吸するのか。世界観マーケティングと顧客体験の方程式・終章・全文公開。',
+  description: 'AI時代に、人間はどこで呼吸するのか。世界観マーケティングと顧客体験の方程式・終章・抜粋公開。',
 }
 
 export default function Page() {

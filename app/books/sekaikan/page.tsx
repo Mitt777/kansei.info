@@ -3,8 +3,8 @@ import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
-  title: '世界観マーケティングと顧客体験の方程式 — 全文公開',
-  description: '「また来たい」の構造——ディズニーも那須の小さなカフェも使える、AI時代の世界観設計の物差し。7層モデル・三類型・世界観価値の方程式を体系化。藤井実彦著。全文無料公開。',
+  title: '世界観マーケティングと顧客体験の方程式 — 抜粋公開',
+  description: '「また来たい」の構造——ディズニーも那須の小さなカフェも使える、AI時代の世界観設計の物差し。7層モデル・三類型・世界観価値の方程式を体系化。藤井実彦著。抜粋公開。',
 }
 
 const chapters = [
@@ -76,7 +76,7 @@ export default function SekaikanBookPage() {
                 { val: '9章', label: '章構成' },
                 { val: '7層', label: 'コアモデル' },
                 { val: '21本', label: '参考文献' },
-                { val: '全文', label: '無料公開' },
+                { val: '抜粋', label: '一部公開' },
               ].map((s) => (
                 <div key={s.label} style={{
                   textAlign: 'center', padding: '14px',

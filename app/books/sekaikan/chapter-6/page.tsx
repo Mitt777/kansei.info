@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第六章 AI時代に、なぜ「空気」が価値になるのか — 世界観マーケティング',
-  description: 'Human-side Alignmentという考え方。世界観マーケティングと顧客体験の方程式・第六章・全文公開。',
+  description: 'Human-side Alignmentという考え方。世界観マーケティングと顧客体験の方程式・第六章・抜粋公開。',
 }
 
 export default function Page() {

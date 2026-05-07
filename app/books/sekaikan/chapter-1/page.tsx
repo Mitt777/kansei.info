@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第一章 なぜ「また来たくなる場所」が生まれるのか — 世界観マーケティング',
-  description: '人は、何に帰りたくなるのか。世界観マーケティングと顧客体験の方程式・第一章・全文公開。',
+  description: '人は、何に帰りたくなるのか。世界観マーケティングと顧客体験の方程式・第一章・抜粋公開。',
 }
 
 export default function Page() {

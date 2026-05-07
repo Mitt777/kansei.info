@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '第七章 世界観マーケティング実践チェックリスト — 世界観マーケティング',
-  description: '「また来たい場所」は、どう設計できるのか。世界観マーケティングと顧客体験の方程式・第七章・全文公開。',
+  description: '「また来たい場所」は、どう設計できるのか。世界観マーケティングと顧客体験の方程式・第七章・抜粋公開。',
 }
 
 export default function Page() {

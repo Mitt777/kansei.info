@@ -125,7 +125,7 @@ export default function ManifestoPage() {
               → 7層モデルを見る
             </Link>
             <Link href="/books/sekaikan" style={{ fontSize: '13px', color: 'var(--color-text-sub)', fontFamily: 'var(--font-mono)', letterSpacing: '0.1em' }}>
-              → 書籍全文を読む
+              → 書籍抜粋を読む
             </Link>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function ManifestoPage() {
             { href: '/frameworks/7layers', type: 'framework', title: '世界観設計7層モデル', description: 'また来たくなる体験の因果構造' },
             { href: '/labs/pre-meaning', type: 'lab', title: 'Pre-Meaning論', description: '意味になる前に身体が感じていること' },
             { href: '/fieldwork/nasu', type: 'fieldwork', title: '那須フィールドワーク', description: '60日468本の観測記録' },
-            { href: '/books/sekaikan', type: 'book', title: '世界観マーケティングと顧客体験の方程式', description: '書籍全文' },
+            { href: '/books/sekaikan', type: 'book', title: '世界観マーケティングと顧客体験の方程式', description: '書籍抜粋' },
           ]}
         />
       </div>

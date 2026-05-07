@@ -19,7 +19,7 @@ export default function Page() {
       </div>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 24px 96px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-books)", marginBottom: "12px" }}>
-          Book — 章別全文公開
+          Book — 章別抜粋公開
         </div>
         <h1 style={{ fontSize: "clamp(1.4rem, 3vw, 2.2rem)", fontWeight: "300", marginBottom: "8px", lineHeight: "1.4" }}>
           AI失業2026 クリエイター・フリーランス編
@@ -87,7 +87,7 @@ export default function Page() {
           items={[
             { href: "/labs/human-side-alignment", type: "lab" as const, title: "Human-side Alignment", description: "AI時代の人間性" },
             { href: "/labs/pre-meaning", type: "lab" as const, title: "Pre-Meaning", description: "意味になる前の感覚" },
-            { href: "/books", type: "book" as const, title: "著作一覧", description: "9冊全文公開" },
+            { href: "/books", type: "book" as const, title: "著作一覧", description: "9冊抜粋公開" },
           ]}
         />
       </div>

@@ -4,7 +4,7 @@ import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
   title: '序章 なぜ今、「世界観」なのか — 世界観マーケティング',
-  description: 'AI時代に、人はどこへ帰るのか。世界観マーケティングと顧客体験の方程式・序章・全文公開。',
+  description: 'AI時代に、人はどこへ帰るのか。世界観マーケティングと顧客体験の方程式・序章・抜粋公開。',
 }
 
 export default function Page() {
