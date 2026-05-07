@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const enSections = [
   {
+    href: '/en/manifesto',
+    label: 'Manifesto — English',
+    labelJa: '',
+    title: 'Where Humans Breathe',
+    description: 'A manifesto for human experience in the AI era. The philosophical foundation of Kansei.info for international HCI, UX, and human-centered AI readers.',
+    accentColor: 'var(--color-en)',
+    tags: ['Manifesto', 'Human Experience', 'AI Era', 'Fieldwork'],
+  },
+  {
     href: '/en/glossary',
     label: 'Glossary — Concepts',
     labelJa: '',

@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${base}/diagnosis`, priority: 0.9, changeFrequency: 'monthly' },
     { url: `${base}/en`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/en/manifesto`, priority: 0.85, changeFrequency: 'monthly' },
     { url: `${base}/en/glossary`, priority: 0.85, changeFrequency: 'monthly' },
 
     // Frameworks

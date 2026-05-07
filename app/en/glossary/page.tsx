@@ -116,6 +116,7 @@ const glossaryItems = [
 
 const internalLinks = [
   { href: '/en', label: 'English Home', description: 'International knowledge space' },
+  { href: '/en/manifesto', label: 'English Manifesto', description: 'Why this knowledge space exists' },
   { href: '/labs/atmospheric-ux', label: 'Atmospheric UX', description: 'Original concept page' },
   { href: '/labs/pre-meaning', label: 'Pre-Meaning', description: 'Original concept page' },
   { href: '/labs/spi-model', label: 'Save → Plan → Impulse', description: 'Behavioral model' },
@@ -259,14 +260,6 @@ export default function EnglishGlossaryPage() {
                 </div>
               </Link>
             ))}
-            <div className="rk-item" style={{ '--item-color': 'var(--color-text-muted)' } as React.CSSProperties}>
-              <div className="rk-dot" />
-              <div className="rk-content">
-                <div className="rk-type">Future Page</div>
-                <div className="rk-title">English Manifesto</div>
-                <div className="rk-desc">A future English version of the Kansei.info manifesto.</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
