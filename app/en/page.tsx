@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const enSections = [
   {
+    href: '/en/glossary',
+    label: 'Glossary — Concepts',
+    labelJa: '',
+    title: 'Glossary of Kansei Concepts',
+    description: 'A concept map for atmosphere, human experience, and worldview design in the AI era. English concept bridges for Sekaikan, Atmospheric UX, Pre-Meaning, SPI, and Kansei Driven Regional DX.',
+    accentColor: 'var(--color-en)',
+    tags: ['Glossary', 'Kansei Concepts', 'Worldview Design', 'AI Era'],
+  },
+  {
     href: '/en/books/spi-regional-dx',
     label: 'Book — English',
     labelJa: '',

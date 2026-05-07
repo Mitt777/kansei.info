@@ -210,6 +210,11 @@ h1,h2,h3,h4,h5 { font-weight: 500; line-height: 1.35; }
 .rk-type { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; font-family: var(--font-mono); color: var(--item-color, var(--color-gold)); margin-bottom: 3px; }
 .rk-title { font-size: 13px; font-weight: 500; color: var(--color-text); line-height: 1.4; }
 .rk-desc { font-size: 12px; color: var(--color-text-muted); margin-top: 3px; line-height: 1.5; }
+.glossary-field-label {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  font-family: var(--font-mono); color: var(--color-text-muted); padding-top: 4px;
+}
+.glossary-field-body { font-size: 14px; color: var(--color-text); line-height: 1.85; }
 
 /* ── トップページ ── */
 .hero {
@@ -472,6 +477,7 @@ h1,h2,h3,h4,h5 { font-weight: 500; line-height: 1.35; }
   .ab-stat { flex: 1; min-width: 100px; }
   .ab-body { grid-template-columns: 1fr; gap: 32px; }
   .archive-heading { grid-template-columns: 1fr; gap: 12px; }
+  .glossary-field-label { padding-top: 0; }
   .mf-three-grid { grid-template-columns: 1fr; }
   .rs-data-grid { grid-template-columns: repeat(2, 1fr); }
   .sl-layer-body { padding-left: 24px; }
@@ -484,4 +490,5 @@ h1,h2,h3,h4,h5 { font-weight: 500; line-height: 1.35; }
   .hero-meta { gap: 20px; }
   .bk-grid { grid-template-columns: 1fr; }
   .rs-grid { grid-template-columns: 1fr; }
+  [id^="term-"] > div:last-child { grid-template-columns: 1fr !important; }
 }
