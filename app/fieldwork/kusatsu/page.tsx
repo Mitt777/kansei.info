@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '草津温泉街 — Fieldwork | kansei.info',
   description: '湯畑を中心に半径500mに凝縮された世界観。街全体が一つのテーマパークとして機能する。那須との比較から多くを学んだスポット。',
 }
+
+const faqs = [
+  { question: "草津温泉街が世界観設計の参考になる理由は何ですか？", answer: "草津温泉街は「街全体が一つの世界観」として機能している稀有な事例です。湯畑という圧倒的なWeenie（視覚的磁石）を中心に、硫黄の香り・石畳・温泉の湯煙・湯もみショーが一体となって世界観を形成しています。個店ではなく、地域全体が世界観設計の単位になっています。" },
+  { question: "那須と草津の世界観の違いは何ですか？", answer: "那須が「静けさ・木・余白」を世界観の核とするなら、草津は「温泉という体験・賑わい・歴史」を核とします。どちらも地域全体が世界観として機能していますが、源泉が異なります。両者の比較から、Type B（無意識共鳴型）世界観にも多様なかたちがあることがわかります。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

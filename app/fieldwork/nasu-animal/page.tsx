@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '那須どうぶつ王国 — Fieldwork | kansei.info',
   description: '那須の空を借景したバードショー——空そのものをショーの舞台装置にした唯一の事例。高原の自然と動物の共存という世界観。',
 }
+
+const faqs = [
+  { question: "那須どうぶつ王国のバードショーはなぜ独自性が高いのですか？", answer: "那須の空そのものをショーの舞台装置にしているからです。人工的な装置ではなく、那須高原の青空・広大な自然を借景した点が独自です。ディズニーのArt of the Showが「すべてを人工的に設計する」とすれば、那須どうぶつ王国は「自然を設計に取り込む」借景型Peak Experienceの実践です。" },
+  { question: "動物テーマパークの世界観設計で重要なことは何ですか？", answer: "「動物と自然の共存」という原初物語を一貫させることです。那須どうぶつ王国の場合、那須高原という地域の自然（外部の物語）と動物という主役を、意図的な設計（Type A）で組み合わせることで独自の世界観が成立しています。Type AとType Bの特性を両方持つハイブリッド型の事例です。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

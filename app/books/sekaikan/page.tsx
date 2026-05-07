@@ -125,12 +125,14 @@ export default function SekaikanBookPage() {
               <Link
                 key={ch.href}
                 href={ch.href}
+                className="toc-link"
                 style={{
                   display: 'grid', gridTemplateColumns: '80px 1fr',
                   gap: '16px', padding: '16px 20px',
                   border: '1px solid var(--color-border)',
                   background: 'var(--color-surface)',
                   textDecoration: 'none', color: 'inherit',
+                  transition: 'background 0.2s, border-color 0.2s',
                 }}
               >
                 <span style={{

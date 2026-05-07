@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'ベーカリーハウス・マイ（MY） — Fieldwork | kansei.info',
   description: '観光地でも、SNS映えスポットでもない地元のパン屋。「世界観は観光地だけの話ではない」という命題を証明する事例。常連客の振る舞いが世界観を作る。',
 }
+
+const faqs = [
+  { question: "ベーカリーハウスMYはなぜ観光地でなくても人気なのですか？", answer: "日常型の世界観が機能しているからです。観光地でも、SNS映えスポットでもない地元のパン屋ですが、強い常連コミュニティ（社会層・第三層）が世界観を支えています。焼きたてパンの香り・店主との関係・地域コミュニティの中心としての役割——これらが「また来たい理由」を生み出しています。" },
+  { question: "日常型の世界観と観光型の世界観の違いは何ですか？", answer: "日常型は「社会層（第三層）」が核になり、観光型は「感動体験（第六層）」が核になる傾向があります。日常型は常連の積み重ねで世界観が深まり、観光型は初回体験のインパクトで世界観が伝わります。どちらも7層モデルで設計できますが、力を入れる層の優先順位が異なります。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

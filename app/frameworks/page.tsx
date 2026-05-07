@@ -66,8 +66,6 @@ const frameworks = [
 export default function FrameworksPage() {
   return (
     <>
-      
-
       <div className="fw-hero">
         <div className="fw-hero-inner">
           <div className="fw-label">Frameworks — 理論体系</div>

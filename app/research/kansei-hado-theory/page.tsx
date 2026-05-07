@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '感性波動論 × 二流立地 × 地域SNS — Research | kansei.info',
   description: '三つの軸を接続した独自理論フレームの構築。「立地が悪い場所でもSNSで逆転できる」——二流立地理論の誕生。感性波動論・二流立地・地域SNSの統合。',
 }
+
+const faqs = [
+  { question: "二流立地理論とは何ですか？", answer: "二流立地理論とは、交通の便が悪い・人通りが少ない・観光地の中心から外れているなど、従来の「立地評価」では不利とされる場所でも、感性波動を起こすことで「また来たい場所」として成立できるという理論です。SNSによって「空気」が伝わるようになった時代に特に有効です。" },
+  { question: "感性波動論・二流立地・地域SNSの関係は？", answer: "三つは統合理論を形成しています。感性波動論（なぜ拡散するか）×二流立地理論（どこでも成立するか）×地域SNS（どう伝わるか）——この三軸を統合することで、地域の小さな店舗が「また来たい場所」になるための包括的な理論フレームが完成します。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
           </Link>
           <Link href="/research/1000stores-strategy" className="btn-primary">1000店舗戦略へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/kansei-hado", type: "research" as const, title: "感性波動レポート", description: "分析の出発点" },

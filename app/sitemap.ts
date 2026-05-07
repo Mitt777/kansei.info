@@ -1,0 +1,100 @@
+import { MetadataRoute } from 'next'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = 'https://kansei.info'
+  const now = new Date()
+
+  const routes = [
+    // トップ・主要ページ
+    { url: base, priority: 1.0, changeFrequency: 'weekly' },
+    { url: `${base}/manifesto`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/about`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/contact`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/diagnosis`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/en`, priority: 0.8, changeFrequency: 'monthly' },
+
+    // Frameworks
+    { url: `${base}/frameworks`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers`, priority: 0.95, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/origin-story`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/world-contact`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/threshold-crossing`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/immersive-environment`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/anticipation`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/peak-experience`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/7layers/propagation`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/three-types`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/worldview-value`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/resonance-economy`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/three-layers`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/frameworks/contextual-continuity`, priority: 0.85, changeFrequency: 'monthly' },
+
+    // Labs
+    { url: `${base}/labs`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/labs/atmospheric-ux`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/labs/pre-meaning`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/labs/human-side-alignment`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/labs/spi-model`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/labs/contextual-continuity`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/labs/geo-theory`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/labs/calm-technology`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/labs/worldview-design`, priority: 0.85, changeFrequency: 'monthly' },
+
+    // Research
+    { url: `${base}/research`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/research/hcii2026`, priority: 0.95, changeFrequency: 'monthly' },
+    { url: `${base}/research/nasupara-60days`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/research/nasupara-44days`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/research/nasupara-25days`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/research/kansei-hado`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/research/kansei-hado-theory`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/research/1000stores-strategy`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/research/integrated-theory`, priority: 0.85, changeFrequency: 'monthly' },
+
+    // Fieldwork
+    { url: `${base}/fieldwork`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/nasu`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/shozo`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/kusatsu`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/pennyln`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/franklins`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/disney`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/sanrio`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/nasu-animal`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/spajam`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/ashino-onsen`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/bakery-my`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/fieldwork/ramen-takahashi`, priority: 0.8, changeFrequency: 'monthly' },
+
+    // Books
+    { url: `${base}/books`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan`, priority: 0.95, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/prologue`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-1`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-2`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-3`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-4`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-5`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-6`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/chapter-7`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/sekaikan/epilogue`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/spi-regional-dx`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/books/pre-meaning-theory`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/ai-shitsugyo-2026`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/ai-creator`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/ai-local`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/books/company-disappears`, priority: 0.85, changeFrequency: 'monthly' },
+
+    // English
+    { url: `${base}/en/books/spi-regional-dx`, priority: 0.85, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/eternal-millimeter-short`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/eternal-millimeter-full`, priority: 0.8, changeFrequency: 'monthly' },
+  ] as const
+
+  return routes.map(route => ({
+    url: route.url,
+    lastModified: now,
+    changeFrequency: route.changeFrequency as 'weekly' | 'monthly',
+    priority: route.priority,
+  }))
+}

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'Save → Plan → Impulse 感性ドリブン地域DX論 — Books | kansei.info',
   description: '那須地域でのSNS行動観測から導き出されたSave→Plan→Impulseモデルの詳細。468本・300万インプレッションの一次データに基づく、感性ドリブン地域DXの実践論。',
 }
+
+const faqs = [
+  { question: "「Save→Plan→Impulse 感性ドリブン地域DX論」はどんな本ですか？", answer: "那須地域での60日間・468本・300万インプレッション以上のSNS動画観測から導き出された行動観測ノートです。なぜInstagramでは保存されるのか、YouTubeでは比較検討されるのか、TikTokでは衝動行動が起きるのか——プラットフォームごとに異なる顧客行動の構造を解明します。HCII2026国際学会採択論文の書籍版です。" },
+  { question: "この本は地方の事業者に役立ちますか？", answer: "特に地方・地域の事業者に有用です。二流立地理論（立地が悪くても感性波動で逆転できる）・Save→Plan→Impulseモデル（プラットフォーム別SNS戦略）・感性ドリブンアプローチ（資本より感性で競争する）——これらはすべて、大資本ではなく感性と戦略で戦う地域事業者のための理論です。" },
+]
 
 export default function Page() {
   return (
@@ -45,6 +51,8 @@ export default function Page() {
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/spi-model", type: "lab" as const, title: "Save→Plan→Impulse", description: "行動モデルの詳細" },

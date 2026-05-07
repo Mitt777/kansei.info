@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '芦野温泉旅館 — Fieldwork | kansei.info',
   description: '施設への道を進むにつれ木々の密度が増し、車内の会話が自然に静かになっていく——到着前に世界観が始まる。「文脈継続性」を最も深く感じた場所。',
 }
+
+const faqs = [
+  { question: "芦野温泉旅館の文脈継続性はなぜ高いのですか？", answer: "SNSで見た格式ある旅館のイメージ→那須の山道→木々の密度→静寂→温泉、というすべてのプロセスが矛盾なく接続されているからです。特に「道中から始まる境界侵入」が特徴的で、施設への道を進むにつれ木々の密度が増し、車内の会話が自然に静かになっていく——到着前に世界観が始まっています。" },
+  { question: "旅館の世界観設計で最も重要なことは何ですか？", answer: "「到着前から体験が始まっている」という意識を持つことです。予約確認メール・道案内・アプローチ——これらすべてが世界観の一部です。芦野温泉旅館の事例が示すように、施設の入口ではなく「道中」から世界観が始まることで、より深い没入感が生まれます。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

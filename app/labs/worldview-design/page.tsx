@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'Worldview Design — Labs | kansei.info',
   description: '「世界観は偶然ではなく、構造だ」——意図的に設計可能な世界観の設計思想。7層モデル・三類型・世界観価値の方程式を統合した実践的フレームワーク。',
 }
+
+const faqs = [
+  { question: "世界観設計とは何ですか？", answer: "世界観設計（Worldview Design）とは、「また来たくなる場所」を意図的に構築するための総合的な設計思想です。世界観は偶然ではなく構造であり、設計可能だという立場に基づきます。7層モデル・三類型・世界観価値の方程式・文脈継続性・Atmospheric UXを統合した実践フレームワークです。" },
+  { question: "小さな店舗でも世界観は設計できますか？", answer: "むしろ小さな店舗の方が柔軟に設計できます。那須の人気カフェ店主が実践していたように、「なぜ存在するのか」を言語化し、ノイズを減らし、地域と接続するだけで強い世界観が生まれます。世界観設計は莫大な資本ではなく、小さな一貫性の積み重ねです。" },
+]
 
 export default function Page() {
   return (
@@ -39,6 +45,8 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>Type A（意図的設計型）は、Worldview Designを最も意識的に実践する。しかしType B（無意識共鳴型）も、意識化することでWorldview Designの実践者になれる。「自分はすでに地域の物語と共鳴している」と気づくことが、Type BのWorldview Design的変革の出発点だ。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>誰でも実践できるWorldview Design</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>莫大な資本がなくても、Worldview Designは実践できる。那須の小さなカフェ店主が実践していたように、「なぜ存在するのか」を言語化し、ノイズを減らし、地域と接続するだけで良い。Worldview Designは、巨大戦略ではなく、小さな一貫性の積み重ねだ。</p>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "Worldview Designの核心" },

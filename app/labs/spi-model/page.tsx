@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'Save → Plan → Impulse — Labs | kansei.info',
   description: 'Instagram保存（Save）・YouTube比較検討（Plan）・TikTok衝動（Impulse）——SNSプラットフォームによって世界観の伝わり方が根本的に異なる観測モデル。HCII2026採択論文の核心。',
 }
+
+const faqs = [
+  { question: "Save→Plan→Impulseモデルとは何ですか？", answer: "SNSプラットフォームによって顧客の行動様式が根本的に異なるという観測モデルです。Instagram保存（Save）、YouTube比較検討（Plan）、TikTok衝動（Impulse）の三段階からなり、那須地域での60日間・468本の動画観測から帰納的に導き出されました。HCII2026国際学会に採択されています。" },
+  { question: "どのSNSに力を入れるべきですか？", answer: "自分の場所の特性によって優先すべきSNSが変わります。「後でゆっくり行きたい場所」はInstagramのSave行動と相性が良く、「比較検討してから行く場所」はYouTubeが効果的です。TikTokは衝動的な来店を促すため、即座に行動できる場所（近隣・営業中）に向いています。" },
+]
 
 export default function Page() {
   return (
@@ -39,6 +45,8 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>このSave→Plan→Impulseモデルは、国際HCI学会HCII2026に採択された論文の核心をなす。「Save-Plan-Impulse: Kansei Driven Regional DX——Action Observation Notes from the Nasu Field Study」として発表。学術的に検証されたフィールドワーク発の理論だ。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>世界観マーケティングへの接続</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>このモデルは7層モデルの②世界観接触層と直結する。Instagramで「保存」された時点で、顧客の体験はすでに始まっている。媒体によって「期待の種類」が変わるため、SNS戦略も世界観設計の一部として考える必要がある。</p>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/hcii2026", type: "research" as const, title: "HCII2026論文", description: "学術的検証" },

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '【完全解説】2026年 会社は消える — Books | kansei.info',
   description: 'AI時代に会社という形態が変容していく中で、個人と組織はどう再設計されるべきかを論じる。2026年という近未来に焦点を当てた組織変革論。',
 }
+
+const faqs = [
+  { question: "「2026年会社は消える」はどんな本ですか？", answer: "AI時代に会社という形態が根本的な変容を迫られる中、個人と組織はどう再設計されるべきかを論じた本です。意思決定・採用・管理・コミュニケーションがAIによって代替・補助される時代に、会社の存在意義を再定義します。2026年という具体的な時点を設定した組織変革論です。" },
+  { question: "会社が消えた後、個人はどう生き残ればいいですか？", answer: "感性・世界観・身体感覚という人間固有の能力を核にした個人ブランドの構築が有効です。AIが処理できない「Pre-Meaning」「Atmospheric UX」「Human-side Alignment」を設計できる人間が、AI時代の最も重要な存在になります。世界観マーケティングはその具体的な実践フレームワークです。" },
+]
 
 export default function Page() {
   return (
@@ -45,6 +51,8 @@ export default function Page() {
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/books/ai-creator", type: "book" as const, title: "クリエイター編", description: "個人の生き残り" },

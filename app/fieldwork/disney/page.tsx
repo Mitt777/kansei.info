@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '東京ディズニーランド — Fieldwork | kansei.info',
   description: '世界観設計の頂点。7層モデルのすべてがイマジニアリング哲学と接続している。比較基準点として最重要なスポット。1983年開園。',
 }
+
+const faqs = [
+  { question: "ディズニーランドの世界観設計で最も重要な概念は何ですか？", answer: "「It All Begins with a Story（すべては物語から始まる）」という原則です。物語の所有・Weenie理論（視覚的磁石）・Art of the Show（全要素が世界観の一部）・Plussing（常に上乗せ）・Mickey’s Ten Commandments——これらが統合されて、70年以上にわたり一貫した世界観を維持しています。" },
+  { question: "小さな店舗がディズニーから学べることは何ですか？", answer: "規模ではなく「一貫性」の思想です。「なぜ存在するのか」（原初物語）を明確にし、すべての要素（音・光・接客・導線）をその原初物語に基づいて設計する——この思想はどんな規模の場所でも適用できます。また「Avoid overload（情報過多を避ける）」「ノイズを削る」という設計思想も小さな店舗に直接応用できます。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'AI失業2026 一次産業・地方店舗復活編 — Books | kansei.info',
   description: '地方・農業・地域店舗がAIを活用して競争優位を築く戦略。AIが個人を「企業」に変える時代に、地域から反撃する方法を論じる。',
 }
+
+const faqs = [
+  { question: "「AI失業2026一次産業・地方店舗復活編」はどんな本ですか？", answer: "地方・農業・地域店舗がAIを活用して競争優位を築く戦略を論じた本です。AIが個人を「企業」に変える時代に、地方から反撃する方法を提示します。那須での観測から確信した「地方の一次産業と地域店舗は、AIを最も有効活用できる主体」という逆説的な発見が核心です。" },
+  { question: "なぜ地方の店舗がAI活用で有利なのですか？", answer: "大企業はシステム・組織・ブランドの制約がありますが、個人・小規模事業者はAIを即座に実装できます。また地方の店舗は「感性・世界観・地域性」という、AIが最も苦手とする領域で競争できます。AI×感性×地域の組み合わせが、地方からの逆転を可能にします。" },
+]
 
 export default function Page() {
   return (
@@ -45,6 +51,8 @@ export default function Page() {
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/1000stores-strategy", type: "research" as const, title: "1000店舗戦略", description: "AI動画の実装" },

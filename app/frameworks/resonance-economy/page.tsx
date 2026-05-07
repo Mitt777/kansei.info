@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '共鳴型経済圏（Resonance Economy） — Frameworks | kansei.info',
   description: '共鳴型経済圏とは、個々の店舗や人が、相互に世界観を傷つけず、共鳴し合うことで成立する経済構造。地域＝OS、店舗＝アプリケーション。',
 }
+
+const faqs = [
+  { question: "共鳴型経済圏とは何ですか？", answer: "共鳴型経済圏（Resonance Economy）とは、個々の店舗や人が相互に世界観を傷つけず、共鳴し合うことで成立する地域経済構造です。那須での観測から発見した概念で、同業者同士が自然に紹介し合い、地域全体で一つの空気を育てている経済モデルです。藤井実彦によるkansei.infoの独自概念です。" },
+  { question: "共鳴型経済圏を作るために個店ができることは何ですか？", answer: "最も重要なのは「地域の空気価値を壊さないこと」です。価格競争・過剰集客・世界観と合わない改装——これらは地域OS全体を傷つけます。同業者を紹介する、地域の空気と合った営業スタイルを選ぶ、地域の物語と共鳴した世界観を守る——これらが個店にできる共鳴型経済圏への貢献です。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
             ← フレームワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/fieldwork/shozo", type: "fieldwork" as const, title: "SHOZO CAFE", description: "共鳴型経済圏の核" },

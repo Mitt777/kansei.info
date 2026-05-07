@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '感性ドリブン地域DX論 —— 那須における二流立地構造・SNS行動データ・AI動画テンプレートの統合理論 — Research | kansei.info',
   description: '書籍「Save→Plan→Impulse」の学術的基盤。那須地域での実証データを理論として体系化した統合論文。自治体・DMO・研究者への一次資料。',
 }
+
+const faqs = [
+  { question: "感性ドリブン地域DX論の全体像を教えてください。", answer: "感性ドリブン地域DX論は四層構造を持つ統合理論です。①感性波動論（なぜ拡散するか）②二流立地理論（どこでも成立するか）③SNS行動データ（どう行動が変わるか）④AI動画テンプレート（どう実装するか）。それぞれが独立した発見でありながら、有機的に接続しています。" },
+  { question: "那須での実証はなぜ重要ですか？", answer: "那須地域という具体的なフィールドでの実証が、この理論の最大の強みです。60日間・468本という規模の一次データは、机上の理論ではなく現場から生まれた理論であることを証明します。HCII2026採択はその学術的妥当性の国際的承認です。" },
+]
 
 export default function Page() {
   return (
@@ -40,6 +46,8 @@ export default function Page() {
           </Link>
           <Link href="/research/hcii2026" className="btn-primary">HCII2026論文へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/hcii2026", type: "research" as const, title: "HCII2026論文", description: "学術的頂点" },

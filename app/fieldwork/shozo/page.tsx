@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'SHOZO CAFE — Fieldwork | kansei.info',
   description: '「僕の趣味はまちづくりなんですよ」——那須黒磯を街ごと変えたカフェ。1998年創業。地域OSの核として機能する世界観の最高峰。',
 }
+
+const faqs = [
+  { question: "SHOZO CAFEの世界観が強い理由は何ですか？", answer: "「僕の趣味はまちづくりなんですよ」という原初物語が核心です。カフェを経営しているのではなく、まちをつくっている。この明確な原初物語が、空間設計・接客・導線・BGM選択のすべての判断基準になっています。7層モデルの全層が高レベルで一致しているため、「また来たくなる場所」として成立しています。" },
+  { question: "SHOZO経済圏とは何ですか？", answer: "SHOZO CAFEのオーナーが認めた方々が周辺に次々と出店し、SHOZO CAFEを核とした共鳴型経済圏が形成されています。土日・祝日はSHOZO経済圏として那須黒磯が一つの世界観を持つ地域になっています。これは共鳴型経済圏の最も成功した実例です。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '世界観価値の方程式 — Frameworks | kansei.info',
   description: '世界観価値＝意味的一貫性×感覚的没入×社会的帰属×伝播性。掛け算であるため、どれか一つがゼロに近づくと全体が崩れる。',
 }
+
+const faqs = [
+  { question: "世界観価値の方程式とは何ですか？", answer: "世界観価値＝意味的一貫性×感覚的没入×社会的帰属×伝播性という方程式です。掛け算であるため、どれか一つがゼロに近づくと世界観全体が崩れます。この方程式は「世界観は偶然ではなく構造だ」という思想を数式化したものです。藤井実彦によるkansei.infoの独自フレームワークです。" },
+  { question: "世界観価値の方程式で最初に見直すべき要素はどれですか？", answer: "意味的一貫性（原初物語）が最優先です。「なぜ存在するのか」が明確でなければ、他の三要素のどれを高めても世界観は不安定のままです。原初物語が確立した後、感覚的没入（Atmospheric UX）→社会的帰属（常連コミュニティ）→伝播性（SNS・口コミ）の順で強化していくことが効果的です。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
             ← フレームワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/diagnosis", type: "framework" as const, title: "7層診断ツール", description: "四要素を自己診断" },

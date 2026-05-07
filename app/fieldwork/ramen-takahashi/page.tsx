@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'ラーメンたかはし — Fieldwork | kansei.info',
   description: '店主が常連客の名前を呼んでいた——その一言で世界観がわかった。「社会層（第三層）」の強さが世界観を形成することを体験した場所。',
 }
+
+const faqs = [
+  { question: "ラーメンたかはしはなぜ「名前を呼ぶ」だけで世界観がわかるのですか？", answer: "「社会層（第三層）」が世界観の核になっているからです。店主が常連客の名前を呼ぶという行為が、「あなたはここのメンバーだ」という社会的帰属感を即座に示します。7層モデルの③社会的帰属が強い場所は、常連客が世界観の一部として機能し、新規客にも「特別な場所」という印象を与えます。" },
+  { question: "社会層が世界観の核になる場所を設計するにはどうすればいいですか？", answer: "常連客との関係を意図的に深めることが第一歩です。名前を覚える、好みを記憶する、特別な関係性を作る——これらは大きなコストなしに実践できます。また常連が「ここのメンバー」として誇りを持てる雰囲気を作ることで、常連自身が世界観の発信者になります。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

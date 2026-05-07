@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'AI時代のPre-Meaning概論 — Books | kansei.info',
   description: '「なんか落ち着く」「また来たい気がする」——意味として言語化する前に、すでに身体が感じていること。Merleau-Pontyの現象学とHCIの身体性研究を接続した、AI時代の感性論。',
 }
+
+const faqs = [
+  { question: "「AI時代のPre-Meaning概論」はどんな本ですか？", answer: "「なんか落ち着く」「また来たい気がする」という、意味として言語化する前に身体が感じる感覚——Pre-Meaning——を哲学・HCI・マーケティングの三つの視点から論じた本です。Merleau-Pontyの現象学とHCIの身体性研究を接続し、AI時代にこの「意味になる前の感覚」の価値がなぜ上がるかを解明します。" },
+  { question: "Pre-Meaningはビジネスにどう活かせますか？", answer: "Pre-Meaningを引き起こす空間設計（Atmospheric UX）の実践に直結します。「削ること」「余白を作ること」「感覚的要素を整えること」が核心です。また、SNSコンテンツにおいてもPre-Meaningを意識した「空気が写る動画・写真」の重要性を論じています。" },
+]
 
 export default function Page() {
   return (
@@ -45,6 +51,8 @@ export default function Page() {
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/pre-meaning", type: "lab" as const, title: "Pre-Meaning", description: "概念の詳細" },

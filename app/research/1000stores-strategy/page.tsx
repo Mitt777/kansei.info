@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '感性が地域を動かす —— 二流立地×SNS×AIの1000店舗動画戦略 — Research | kansei.info',
   description: '理論・データ・AI戦略を統合した総括論文。1000店舗が自走する感性設計×AI自動化×SNS動画の統合モデル。kansei.infoのサービスの根拠資料。',
 }
+
+const faqs = [
+  { question: "1000店舗自走モデルとは何ですか？", answer: "1000店舗自走モデルとは、感性設計（世界観マーケティング）・AI動画テンプレート・SNS最適化を組み合わせることで、地域の1000店舗が個別のSNS運用なしに動画マーケティングを実践できる仕組みです。感性波動論・二流立地理論・Save→Plan→Impulseモデルを実装した実践的システムです。" },
+  { question: "AI動画テンプレートは世界観を壊しませんか？", answer: "AIが世界観を「作る」のではなく、すでに存在する世界観を「伝える」ために使う点が重要です。各店舗が持つ独自の空気・物語をAIを使って効率的に動画化します。世界観の設計は人間が行い、AIはその表現・配信を補助するという役割分担が核心です。" },
+]
 
 export default function Page() {
   return (
@@ -40,6 +46,8 @@ export default function Page() {
           </Link>
           <Link href="/research/integrated-theory" className="btn-primary">統合理論へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/kansei-hado-theory", type: "research" as const, title: "論文思想編", description: "理論的基盤" },

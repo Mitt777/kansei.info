@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'ペニーレイン — Fieldwork | kansei.info',
   description: 'ビートルズへの愛着というIPを軸に構築された世界観。駐車場から音楽が聞こえる——「境界侵入」が最も早く始まる店。',
 }
+
+const faqs = [
+  { question: "ペニーレインの境界侵入設計が優れている点は何ですか？", answer: "駐車場に着いた瞬間からBeatlesが聞こえる点が最大の特徴です。通常、世界観は「入口」から始まりますが、ペニーレインは「駐車場」から始まっています。音という感覚が、車を降りた瞬間から日常を非日常に変える。7層モデルの第三層・境界侵入が最も早く機能している事例です。" },
+  { question: "Beatles IPを活用した世界観のリスクは何ですか？", answer: "IPの人気変動リスクがあります。ただしペニーレインの場合、Beatlesという時代を超えたIPを選択しているため、このリスクを最小化しています。また「音楽への愛着」という普遍的なPre-Meaningに訴えかけているため、Beatles世代以外にも世界観が伝わりやすい設計になっています。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

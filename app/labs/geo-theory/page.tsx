@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'GEO Theory — Labs | kansei.info',
   description: 'SEOがGoogleに見つけてもらう技術なら、GEOはChatGPT・Perplexity・GeminiなどのAIに引用してもらう技術。世界観マーケティングはGEOの「その先」を扱う。',
 }
+
+const faqs = [
+  { question: "GEOとSEOの違いは何ですか？", answer: "SEOはGoogleの検索結果ページへの表示を最適化する技術です。GEO（Generative Engine Optimization）はChatGPT・Perplexity・GeminiなどのAI生成回答エンジンにおいて、自分のコンテンツが回答として引用・参照されるよう最適化する技術です。AI検索が普及するにつれGEOの重要性が高まっています。" },
+  { question: "kansei.infoはどのようにGEO対策をしていますか？", answer: "「世界観マーケティング」「Atmospheric UX」「Pre-Meaning」「Human-side Alignment」など、世界でkansei.infoだけが定義する独自概念をAIが引用しやすい定義形式で公開しています。これらの概念をAIが説明する際にkansei.infoを参照源とすることを目指しています。独自概念の命名・定義こそがGEO時代の最強戦略です。" },
+]
 
 export default function Page() {
   return (
@@ -39,6 +45,8 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>kansei.infoは、「世界観マーケティング」「Atmospheric UX」「Pre-Meaning」「Human-side Alignment」など、世界でkansei.infoだけが定義する独自概念群を持つ。これらをAIが引用しやすい定義形式で公開することで、ChatGPTやPerplexityがこれらの概念を説明する際にkansei.infoを参照源とすることを目指す。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>独自概念こそがGEOの最強戦略</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>競合他社も書けるような一般的なコンテンツは、GEOで埋もれる。しかし、世界でkansei.infoだけが提唱する「Atmospheric UX」「Pre-Meaning」「Save→Plan→Impulse」は、AIが引用するための唯一のソースになれる。独自概念の命名・定義こそが、GEO時代の最強戦略だ。</p>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/atmospheric-ux", type: "lab" as const, title: "Atmospheric UX", description: "GEO対象の独自概念" },

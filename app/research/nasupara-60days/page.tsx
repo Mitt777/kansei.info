@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'なすぱらTV活動報告（60日間） — Research | kansei.info',
   description: '468本・300万インプレッション以上。60日間の観測が完結し、世界観マーケティング理論の実証的基盤となったデータの全記録。HCII2026論文の一次データ。',
 }
+
+const faqs = [
+  { question: "60日間の観測データの全体像を教えてください。", answer: "2025年9月12日〜11月12日の60日間で468本の動画を制作・観測し、総インプレッション数は300万以上に達しました。この一次データからSave→Plan→Impulseモデルが確立され、HCII2026国際学会に採択された論文の実証的基盤となっています。" },
+  { question: "300万インプレッションはどのように達成されましたか？", answer: "那須という地域の「世界観の強さ」が大きな要因です。同じ内容でも、地域の空気感・世界観が伝わる動画ほど多くの人に届き、より多くの保存・比較検討・衝動を引き起こしました。特定のバズ動画ではなく、継続的な世界観の蓄積が300万インプレッションを生み出しました。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
           </Link>
           <Link href="/research/hcii2026" className="btn-primary">HCII2026論文へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/hcii2026", type: "research" as const, title: "HCII2026論文", description: "学術的検証" },

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '実地検証レポート × 感性波動レポート — Research | kansei.info',
   description: '観測データから「感性波動」という概念を抽出した分析フェーズ。なぜある動画が爆発的に拡散するのか——感性の波動構造を解明する。',
 }
+
+const faqs = [
+  { question: "感性波動とは何ですか？", answer: "感性波動（Kansei Wave）とは、ある場所・体験・コンテンツが持つ感性的な力が、SNSを通じて波のように周囲に広がる現象です。「また行きたい」という感覚が個人から個人へと伝播していく構造を指します。那須地域での動画観測から帰納的に導き出された概念です。" },
+  { question: "感性波動が起きる条件は何ですか？", answer: "感性波動が起きる動画には共通点があります。①場所の空気（Atmospheric UX）が伝わっている、②Pre-Meaning——見た瞬間に「行きたい」と感じる何か——がある、③世界観の一貫性が保たれている。この三要素が揃った時に感性波動が起きます。" },
+]
 
 export default function Page() {
   return (
@@ -40,6 +46,8 @@ export default function Page() {
           </Link>
           <Link href="/research/kansei-hado-theory" className="btn-primary">論文思想編へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/atmospheric-ux", type: "lab" as const, title: "Atmospheric UX", description: "感性波動を生む要素" },

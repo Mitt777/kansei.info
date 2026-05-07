@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'なすぱらTV活動報告（25日間） — Research | kansei.info',
   description: '那須地域SNS行動観測の最初の記録。25日間で何が見えたか——発見の物語の第一章。Instagram・YouTube・TikTokの反応の違いが初めて現れ始めた段階の生データ。',
 }
+
+const faqs = [
+  { question: "なすぱらTVとは何ですか？", answer: "なすぱらTVは、藤井実彦が2025年に立ち上げたYouTube・Instagram・TikTokを横断するSNS動画企画です。那須地域の自然・食・人をテーマに、3ヶ月で600本以上の動画を制作・配信しました。この観測活動がSave→Plan→ImpulseモデルとHCII2026採択論文の実証的基盤となっています。" },
+  { question: "25日間の観測で何がわかりましたか？", answer: "最初の25日間で、SNSプラットフォームによって反応の質が全く異なることが判明しました。同じ場所を紹介しても、Instagramでは保存が多く、YouTubeでは再生時間が長く、TikTokでは即座の反応が起きる。これがSave→Plan→Impulseモデルの萌芽となりました。" },
+]
 
 export default function Page() {
   return (
@@ -40,6 +46,8 @@ export default function Page() {
           </Link>
           <Link href="/research/nasupara-44days" className="btn-primary">44日間報告へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/nasupara-44days", type: "research" as const, title: "44日間報告", description: "発見の深化" },

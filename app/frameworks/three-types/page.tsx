@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '世界観の三類型（A / A’ / B） — Frameworks | kansei.info',
   description: 'Type A：意図的設計型 / Type A’：IP活用型 / Type B：無意識共鳴型。どれが優れているのではなく、それぞれの文脈で機能する異なる世界観の生み出し方。',
 }
+
+const faqs = [
+  { question: "世界観の三類型（A/A’/B）とは何ですか？", answer: "世界観には三つの根本的に異なるアプローチがあります。Type A（意図的設計型）は自ら物語を創造・所有するディズニー型。Type A'（IP活用型）は既存キャラクターへの愛着を活用するサンリオ型。Type B（無意識共鳴型）は地域の物語と無意識に共鳴する那須の地域店舗型です。藤井実彦がkansei.infoで提唱する独自分類です。" },
+  { question: "自分の場所はどの類型に当てはまるか確認する方法は？", answer: "「世界観の源泉は何か」を問うことが出発点です。自ら物語を創造・所有している→Type A。既存のIPやキャラクターの愛着を軸にしている→Type A'。地域・自然・歴史と無意識に共鳴している→Type Bです。多くの地域店舗はType Bであることに気づいていません。これを意識化することが世界観設計の第一歩です。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
             ← フレームワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/fieldwork/disney", type: "fieldwork" as const, title: "東京ディズニーランド", description: "Type Aの最高峰" },

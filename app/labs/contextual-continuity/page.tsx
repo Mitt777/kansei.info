@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'Contextual Continuity — Labs | kansei.info',
   description: 'SNSで見た世界観→地域へ向かう道→駐車場→入口→匂い→音→店員→料理→帰り道→再訪。この流れに矛盾が少ないことが「また帰りたい」を生む。',
 }
+
+const faqs = [
+  { question: "文脈継続性とは何ですか？", answer: "文脈継続性（Contextual Continuity）とは、顧客がSNSで見た世界観から、移動・到着・体験・帰宅後の記憶まで、すべてのプロセスで世界観の文脈に矛盾が生じないことです。この連続性が高いほど「また帰りたい」という感情が生まれやすくなります。藤井実彦による独自概念です。" },
+  { question: "文脈継続性が崩れる典型的なパターンは何ですか？", answer: "SNSで見た「静かなカフェ」が実際は混雑していてBGMが大音量だった、駐車場に雑然とした看板群があった、接客のトーンが空間の雰囲気と合っていなかった——これらが典型例です。「削ること」「ノイズを減らすこと」が文脈継続性を高める核心です。" },
+]
 
 export default function Page() {
   return (
@@ -39,6 +45,8 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>文脈継続性は、思いがけないところで崩れる。例えば、静けさが魅力のカフェが、売上を追って情報過多なPOPを増やした瞬間。SNSで見た空気と実際の空気が乖離する。あるいは、地域の時間速度と合わない高速回転の接客。これが「世界観崩壊」の始まりだ。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>意識化の価値</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>多くのType B店舗オーナーは、自分が地域の文脈と接続していることに気づいていない。無意識の共鳴を意識化することが、文脈継続性を守ることになる。本書が提案する実践STEPはすべて、この文脈継続性を高めるための行動だ。</p>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/resonance-economy", type: "framework" as const, title: "共鳴型経済圏", description: "地域全体の文脈" },

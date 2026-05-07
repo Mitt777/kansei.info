@@ -1,143 +1,38 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
-  title: 'Fieldwork — 感性民族誌',
-  description: '那須・草津・ペニーレイン・SHOZO CAFE・Franklin’s Cafe。現場で観測した世界観の生成と崩壊のプロセス。7層モデルによるスポット別分析。',
+  title: 'Fieldwork \u2014 \u611f\u6027\u6c11\u65cf\u8a8c | kansei.info',
+  description: '\u90a3\u9808\u30fb\u8349\u6d25\u30fbSHOZO CAFE\u30fbFranklin\u2019s Cafe\u30fb\u30c7\u30a3\u30ba\u30cb\u30fc\u3002\u73fe\u5834\u3067\u89b3\u6e2c\u3057\u305f\u4e16\u754c\u89b3\u306e\u751f\u6210\u3068\u5d29\u58ca\u306e\u30d7\u30ed\u30bb\u30b9\u30027\u5c64\u30e2\u30c7\u30eb\u306b\u3088\u308b\u5206\u6790\u3002',
 }
 
 const spots = [
-  {
-    href: '/fieldwork/shozo',
-    label: 'Type B — 無意識共鳴型',
-    labelJa: '那須黒磯',
-    title: 'SHOZO CAFE',
-    description: '「僕の趣味はまちづくりなんですよ」——那須黒磯を街ごと変えたカフェ。静けさ・木・光・余白。地域OSの核として機能する世界観の最高峰。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['Type B', '地域OS核', '共鳴型経済圈', 'まちづくり'],
-    meta: '那須黒磯 / 1998年創業',
-  },
-  {
-    href: '/fieldwork/kusatsu',
-    label: 'Type B — 地域全体型',
-    labelJa: '草津温泉街',
-    title: '草津温泉街',
-    description: '湯畏を中心に半径500mに凝縮された世界観。街全体が一つのテーマパークとして機能する。那須との比較で「地域全体が世界観になる」構造が鮮明になる。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['地域全体型', '湯畏', '那須との比較', '街OS'],
-    meta: '群馬県草津町 / 温泉地ブランド',
-  },
-  {
-    href: '/fieldwork/pennyln',
-    label: 'Type A’ — IP活用型',
-    labelJa: '那須高原',
-    title: 'ペニーレイン',
-    description: 'ビートルズへの感情というIPを軸に構築された世界観。駐車場から音楽が聞こえる——「境界侵入」が最も早く始まる店。音という感覚層の設計が際立っている。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['音の設計', 'Beatles IP', '境界侵入★', '那須高原'],
-    meta: '那須高原 / ビートルズIPパン屋',
-  },
-  {
-    href: '/fieldwork/franklins',
-    label: 'Type B — 僻地型',
-    labelJa: '那須 隐れ家',
-    title: "Franklin’s Cafe",
-    description: 'アクセスのしにくさが世界観の一部。細い道を進む不安が、到着した瞬間の安堵と喜びを倍にする。「期待増幅」が地理的に設計されている稀有な事例。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['期待増幅★', 'アクセス設計', '僻地型', '隐れ家'],
-    meta: '那須高原 / 隐れ家カフェ',
-  },
-  {
-    href: '/fieldwork/nasu-animal',
-    label: 'Type A — 意図的設計型',
-    labelJa: '那須高原',
-    title: '那須どうぶつ王国',
-    description: '那須の空を借景したバードショー——空そのものをショーの舞台装置にした唯一の事例。高原の広大な自然と動物の共存という世界観が実現されている。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['空を借景', 'バードショー', 'Type A', '自然設計'],
-    meta: '那須高原 / 動物テーマパーク',
-  },
-  {
-    href: '/fieldwork/spajam',
-    label: 'Type A — 都市型',
-    labelJa: '東久留米',
-    title: 'スパジアム・ジャポン',
-    description: '那須の静けさとは真逆——賦かさが価値になる都市型スーパー錢湯。「静けさ」だけが世界観ではないという発見を得た場所。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['都市型', '賦かさの価値', '対比事例', '東久留米'],
-    meta: '東久留米市 / スーパー錢湯',
-  },
-  {
-    href: '/fieldwork/ashino-onsen',
-    label: 'Type B — 旅館型',
-    labelJa: '那須 芦野',
-    title: '芦野温泉旅館',
-    description: '施設への道を進むにつれ木々の密度が増し、車内の会話が自然に静かになっていく——到着前に世界観が始まる。「文脈継続性」を最も深く感じた場所。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['文脈継続性★', '到着前から始まる', '老舗旅館', '那須'],
-    meta: '那須町芦野 / 老舗温泉旅館',
-  },
-  {
-    href: '/fieldwork/bakery-my',
-    label: 'Type B — 日常型',
-    labelJa: '東久留米',
-    title: 'ベーカリーハウス・マイ（MY）',
-    description: '観光地でも、SNS映えスポットでもない。地元・東久留米の日常のパン屋。「世界観は観光地だけの話ではない」という命題を証明する事例。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['日常型', '地域密着', 'Type B', '東久留米'],
-    meta: '東久留米市 / 地域密着ベーカリー',
-  },
-  {
-    href: '/fieldwork/ramen-takahashi',
-    label: 'Type B — ラーメン',
-    labelJa: '那須塔原',
-    title: 'ラーメンたかはし',
-    description: '店主が常連客の名前を呼んでいた——その一言で世界観がわかった。「社会層（第三層）」の強さが世界観を形成するかを体験した場所。',
-    accentColor: 'var(--color-fieldwork)',
-    tags: ['社会層★', '常連の名前', '地域密着', '那須塔原'],
-    meta: '那須塔原市 / 地域人気ラーメン店',
-  },
-  {
-    href: '/fieldwork/disney',
-    label: 'Type A — 意図的設計型',
-    labelJa: '千葉 舞浜',
-    title: '東京ディズニーランド',
-    description: '世界観設計の頂点。Weenie理論・Art of the Show・Plussing——7層モデルのすべてがイマジニアリング哲学と接続している。比較基準点として最重要なスポット。',
-    accentColor: 'var(--color-frameworks)',
-    tags: ['Type A★', 'Weenie理論', '7層完全対応', 'イマジニアリング'],
-    meta: '千葉県浦安市 / 1983年開園',
-  },
-  {
-    href: '/fieldwork/sanrio',
-    label: 'Type A’ — IP活用型',
-    labelJa: '東京 多摩',
-    title: 'サンリオピューロランド',
-    description: '「かわいい」というPre-Meaningが世界観の核。ディズニーが「物語」を所有するのに対し、サンリオは「感情的感情」を増幅させる。IP活用型世界観の典型事例。',
-    accentColor: 'var(--color-labs)',
-    tags: ["Type A’", 'Pre-Meaning★', 'IP活用', 'かわいい'],
-    meta: '東京都多摩市 / 1990年開園',
-  },
+  { href: "/fieldwork/shozo", label: "Type B", labelJa: "\u9ed2\u78ef", title: "SHOZO CAFE", description: "\u90a3\u9808\u9ed2\u78ef\u3092\u8857\u3054\u3068\u5909\u3048\u305f\u30ab\u30d5\u30a7\u3002\u5171\u9cf4\u578b\u7d4c\u6e08\u5708\u306e\u6838\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u5171\u9cf4\u578b\u7d4c\u6e08\u5708", "Type B", "\u5730\u57dfOS\u6838"] },
+  { href: "/fieldwork/kusatsu", label: "Type B", labelJa: "\u8349\u6d25\u6e29\u6cc9\u8857", title: "\u8349\u6d25\u6e29\u6cc9\u8857", description: "\u6e6f\u754c\u3092\u4e2d\u5fc3\u306b\u5730\u57df\u5168\u4f53\u304c\u4e00\u3064\u306e\u30c6\u30fc\u30de\u30d1\u30fc\u30af\u3068\u3057\u3066\u6a5f\u80fd\u3059\u308b\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u5730\u57df\u5168\u4f53\u578b", "\u6e6f\u754c", "\u8857OS"] },
+  { href: "/fieldwork/pennyln", label: "Type A\u2019", labelJa: "\u90a3\u9808\u9ad8\u539f", title: "\u30da\u30cb\u30fc\u30ec\u30a4\u30f3", description: "\u99d0\u8eca\u5834\u304b\u3089Beatles\u304c\u805e\u3053\u3048\u308b\u3002\u5883\u754c\u4fb5\u5165\u304c\u6700\u3082\u65e9\u304f\u59cb\u307e\u308b\u5e97\u3002", accentColor: "var(--color-fieldwork)", tags: ["Beatles IP", "\u5883\u754c\u4fb5\u5165\u2605", "\u90a3\u9808\u9ad8\u539f"] },
+  { href: "/fieldwork/franklins", label: "Type B", labelJa: "\u90a3\u9808\u9ad8\u539f", title: "Franklin\u2019s Cafe", description: "\u30a2\u30af\u30bb\u30b9\u306e\u3057\u306b\u304f\u3055\u304c\u671f\u5f85\u5897\u5e45\u306b\u306a\u308b\u3002\u5730\u7406\u7684\u306b\u8a2d\u8a08\u3055\u308c\u305f\u5f85\u6a5f\u4f53\u9a13\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u671f\u5f85\u5897\u5e45\u2605", "\u50fb\u5730\u578b", "\u9690\u308c\u5bb6"] },
+  { href: "/fieldwork/nasu-animal", label: "Type A", labelJa: "\u90a3\u9808\u9ad8\u539f", title: "\u90a3\u9808\u3069\u3046\u3076\u3064\u738b\u56fd", description: "\u90a3\u9808\u306e\u7a7a\u3092\u501f\u666f\u3057\u305f\u30d0\u30fc\u30c9\u30b7\u30e7\u30fc\u3002\u81ea\u7136\u3092\u821e\u53f0\u88c5\u7f6e\u306b\u3057\u305f\u552f\u4e00\u306e\u4e8b\u4f8b\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u7a7a\u3092\u501f\u666f\u2605", "\u30d0\u30fc\u30c9\u30b7\u30e7\u30fc", "Type A"] },
+  { href: "/fieldwork/spajam", label: "Type A", labelJa: "\u6771\u4e45\u7559\u7c73", title: "\u30b9\u30d1\u30b8\u30a2\u30e0\u30fb\u30b8\u30e3\u30dd\u30f3", description: "\u90a3\u9808\u306e\u9759\u3051\u3055\u3068\u306f\u771f\u9006\u2014\u2014\u8ce6\u304b\u3055\u304c\u4fa1\u5024\u306b\u306a\u308b\u90fd\u5e02\u578b\u30b9\u30fc\u30d1\u30fc\u9322\u6e6f\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u90fd\u5e02\u578b", "\u8ce6\u304b\u3055\u306e\u4fa1\u5024", "\u6771\u4e45\u7559\u7c73"] },
+  { href: "/fieldwork/ashino-onsen", label: "Type B", labelJa: "\u90a3\u9808 \u82a6\u91ce", title: "\u82a6\u91ce\u6e29\u6cc9\u65c5\u9928", description: "\u9053\u4e2d\u304b\u3089\u59cb\u307e\u308b\u5883\u754c\u4fb5\u5165\u3002\u6587\u8108\u7d99\u7d9a\u6027\u3092\u6700\u3082\u6df1\u304f\u611f\u3058\u305f\u5834\u6240\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u6587\u8108\u7d99\u7d9a\u6027\u2605", "\u5230\u7740\u524d\u304b\u3089", "\u8001\u8217\u65c5\u9928"] },
+  { href: "/fieldwork/bakery-my", label: "Type B", labelJa: "\u6771\u4e45\u7559\u7c73", title: "\u30d9\u30fc\u30ab\u30ea\u30fc\u30cf\u30a6\u30b9\u30fb\u30de\u30a4", description: "\u89b3\u5149\u5730\u3067\u3082\u3001SNS\u6620\u3048\u30b9\u30dd\u30c3\u30c8\u3067\u3082\u306a\u3044\u5730\u5143\u306e\u30d1\u30f3\u5c4b\u3002\u65e5\u5e38\u578b\u4e16\u754c\u89b3\u306e\u4e8b\u4f8b\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u65e5\u5e38\u578b", "\u5730\u57df\u5bc6\u7740", "Type B"] },
+  { href: "/fieldwork/ramen-takahashi", label: "Type B", labelJa: "\u90a3\u9808\u5854\u539f", title: "\u30e9\u30fc\u30e1\u30f3\u305f\u304b\u306f\u3057", description: "\u5e97\u4e3b\u304c\u5e38\u9023\u5ba2\u306e\u540d\u524d\u3092\u547c\u3093\u3067\u3044\u305f\u3002\u793e\u4f1a\u5c64\u304c\u4e16\u754c\u89b3\u3092\u4f5c\u308b\u4e8b\u4f8b\u3002", accentColor: "var(--color-fieldwork)", tags: ["\u793e\u4f1a\u5c64\u2605", "\u5e38\u9023\u306e\u540d\u524d", "\u90a3\u9808\u5854\u539f"] },
+  { href: "/fieldwork/disney", label: "Type A", labelJa: "\u5343\u8449 \u821e\u6d5c", title: "\u6771\u4eac\u30c7\u30a3\u30ba\u30cb\u30fc\u30e9\u30f3\u30c9", description: "\u4e16\u754c\u89b3\u8a2d\u8a08\u306e\u9802\u70b9\u3002Weenie\u7406\u8ad6\u30fbArt of the Show\u30fbPlussing\u3002", accentColor: "var(--color-frameworks)", tags: ["Type A", "Weenie\u7406\u8ad6", "\u30a4\u30de\u30b8\u30cb\u30a2\u30ea\u30f3\u30b0"] },
+  { href: "/fieldwork/sanrio", label: "Type A\u2019", labelJa: "\u6771\u4eac \u591a\u6469", title: "\u30b5\u30f3\u30ea\u30aa\u30d4\u30e5\u30fc\u30ed\u30e9\u30f3\u30c9", description: "Pre-Meaning\u304c\u4e16\u754c\u89b3\u306e\u6838\u3002IP\u6d3b\u7528\u578b\u4e16\u754c\u89b3\u306e\u5178\u578b\u4e8b\u4f8b\u3002", accentColor: "var(--color-labs)", tags: ["Pre-Meaning", "IP\u6d3b\u7528", "\u304b\u308f\u3044\u3044"] },
 ]
 
 export default function FieldworkPage() {
   return (
     <>
       <div className="page-hero">
-        <div className="page-hero-inner page-hero-grid">
-          <div>
-            <div className="page-label" style={{ color: 'var(--color-fieldwork)' }}>
-              Fieldwork — 感性民族誌
-            </div>
-            <h1 className="page-title">現場で観測した<br />世界観の生成と崩壊</h1>
-            <p className="page-desc">
-              那須・草津・ペニーレイン・SHOZO CAFE・Franklin&#39;s Cafe・ディズニー——
-              実際に診れ、空気を感じ、7層モデルで構造化した現場記録。
-            </p>
+        <div className="page-hero-inner">
+          <div className="page-label" style={{ color: "var(--color-fieldwork)" }}>
+            Fieldwork {"\u2014"} {"\u611f\u6027\u6c11\u65cf\u8a8c"}
           </div>
-          <div className="page-hero-media" aria-hidden="true">
-            <Image src="/images/fieldwork-nature.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 360px" className="quiet-image" />
-          </div>
+          <h1 className="page-title">{"\u73fe\u5834\u3067\u89b3\u6e2c\u3057\u305f"}<br />{"\u4e16\u754c\u89b3\u306e\u751f\u6210\u3068\u5d29\u58ca"}</h1>
+          <p className="page-desc">
+            {"\u90a3\u9808\u30fb\u8349\u6d25\u30fbSHOZO CAFE\u30fbFranklin\u2019s Cafe\u30fb\u30c7\u30a3\u30ba\u30cb\u30fc"}
+            {"\u2014\u2014\u5b9f\u969b\u306b\u8a3a\u308c\u3001\u7a7a\u6c17\u3092\u611f\u3058\u30017\u5c64\u30e2\u30c7\u30eb\u3067\u69cb\u9020\u5316\u3057\u305f\u73fe\u5834\u8a18\u9332\u3002"}
+          </p>
         </div>
       </div>
       <div className="page-body">

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'Human-side Alignment — Labs | kansei.info',
   description: 'AI業界の「Alignment」の逆——人間側がAI時代にどう整合するか。空気・余白・地域・帰属・身体感覚が、人間性のインターフェースとして機能する設計思想。',
 }
+
+const faqs = [
+  { question: "Human-side Alignmentとは何ですか？", answer: "Human-side Alignmentとは、AI時代において人間側がいかに「人間らしさ」を維持・設計するかという思想です。AI Alignment（AIを人間の価値観に合わせる）の逆転発想で、人間側がAI時代の空間・環境・体験をどう設計するかを問います。藤井実彦がkansei.infoで提唱する独自概念（2024）です。" },
+  { question: "AI時代に人間らしさを守るにはどうすればいいですか？", answer: "空気・余白・地域性・身体感覚・偶然性を意図的に設計することです。AIが便利さを最適化するほど、静けさ・余白・帰れる場所の価値が上がります。世界観マーケティングの7層モデルは、まさにHuman-side Alignmentを実践するフレームワークです。" },
+]
 
 export default function Page() {
   return (
@@ -39,6 +45,8 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>Mark Weiser & John Seely Brown（1996）が提唱したCalm Technologyは「主張しすぎない技術」の概念だ。情報や刺激が最小限で、人間の注意を穏やかに保ちながら機能する設計思想。Human-side Alignmentは、この思想をAI時代の空間設計に拡張する。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>実践：世界観マーケティングとの関係</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>世界観マーケティングとは、最終的にはHuman-side Alignmentを実践することに他ならない。ノイズを減らし、余白を作り、空気を整える——これらすべてが、人間が「呼吸できる場所」を設計する行為だ。</p>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/pre-meaning", type: "lab" as const, title: "Pre-Meaning", description: "身体感覚の先行" },

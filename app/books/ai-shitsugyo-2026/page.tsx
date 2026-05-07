@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'AI失業2026 — Books | kansei.info',
   description: 'AIによって失われる仕事と、感性・世界観という人間固有の価値の逆説的な上昇を論じる。日米のAIリストラ動向を分析し、AI時代に生き残る戦略を提示。',
 }
+
+const faqs = [
+  { question: "「AI失業2026」はどんな本ですか？", answer: "AIによって失われる仕事と、感性・世界観という人間固有の価値の逆説的な上昇を論じた本です。日米のAIリストラ動向を分析し、AI時代に生き残る戦略を提示します。AIが便利さを最適化するほど、人間の感性・身体感覚・世界観の価値が上がるという逆説を具体的に解説します。" },
+  { question: "AI時代に価値が上がる仕事は何ですか？", answer: "感性の設計者・世界観の構築者・身体体験の提供者が価値を増します。AIが生成できない「その場にいた感覚」「空気」「Pre-Meaning」を設計する能力が、AI時代の最も重要なスキルです。世界観マーケティングはまさにこの能力の実践フレームワークです。" },
+]
 
 export default function Page() {
   return (
@@ -45,6 +51,8 @@ export default function Page() {
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/human-side-alignment", type: "lab" as const, title: "Human-side Alignment", description: "人間性の守り方" },

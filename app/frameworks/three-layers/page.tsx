@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '世界観の三層構造 — Frameworks | kansei.info',
   description: '第一層：意味層（なぜ存在するのか）/ 第二層：感覚層（Atmospheric UX）/ 第三層：社会層（誰とそこにいるのか）。三層が有機的に接続されている状態が世界観。',
 }
+
+const faqs = [
+  { question: "世界観の三層構造とは何ですか？", answer: "世界観は三つの層で構成されます。第一層：意味層（なぜ存在するのか——理念・哲学・物語）。第二層：感覚層（音・匂い・光・温度・素材感——Atmospheric UX）。第三層：社会層（誰とそこにいるのか——常連・店主・地域・コミュニティ）。三層が有機的に接続されている状態が「世界観」です。" },
+  { question: "三層のうちどれが最も重要ですか？", answer: "三層はすべて重要ですが、意味層（第一層）が根本です。「なぜ存在するのか」が明確でなければ、感覚層の設計に迷い、社会層が形成されません。ただし顧客が最初に感じるのは感覚層（第二層）です。意味層を軸に、感覚層で体験させ、社会層で定着させる——この順番で設計することが有効です。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
             ← フレームワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/atmospheric-ux", type: "lab" as const, title: "Atmospheric UX", description: "感覚層の設計概念" },

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: '文脈継続性（Contextual Continuity） — Frameworks | kansei.info',
   description: 'SNSで見た世界観→地域へ向かう道→駐車場→入口→匂い→音→店員→料理→帰り道→再訪。この「流れ」に矛盾が少ないことが「また帰りたい」を生む。',
 }
+
+const faqs = [
+  { question: "文脈継続性とは何ですか？", answer: "文脈継続性（Contextual Continuity）とは、顧客がSNSで見た世界観から、移動・到着・体験・帰宅後の記憶まで、すべてのプロセスで世界観の文脈に矛盾が生じないことです。この連続性が高いほど「また帰りたい」という感情が生まれやすくなります。楠木健の「因果論理の一貫性」を顧客体験の時間的連鎖へ拡張した藤井実彦の独自概念です。" },
+  { question: "文脈継続性を高めるための最初のステップは何ですか？", answer: "「何を削るか」を考えることが核心です。世界観と合わないBGM・過剰なPOP・情報過多——これらのノイズを一つずつ排除することで、文脈継続性は高まります。「足す」より「引く」。強い場所ほど「削っている」という観察が、文脈継続性の設計原則を体現しています。" },
+]
 
 export default function Page() {
   return (
@@ -42,6 +48,8 @@ export default function Page() {
             ← フレームワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/labs/contextual-continuity", type: "lab" as const, title: "文脈継続性（Labs）", description: "概念の詳細" },

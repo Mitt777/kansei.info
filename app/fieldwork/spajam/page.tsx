@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'スパジアム・ジャポン — Fieldwork | kansei.info',
   description: '那須の静けさとは真逆——賑やかさが価値になる都市型スーパー銭湯。「静けさだけが世界観ではない」という発見を得た地元施設。',
 }
+
+const faqs = [
+  { question: "スパジアムジャポンから世界観について何が学べますか？", answer: "「静けさだけが世界観ではない」という発見です。那須のSHOZO CAFEが「静けさ」を核とするなら、スパジアムは「賑やかさ・多様性・都市型の非日常」を核とします。重要なのはどちらが優れているかではなく、選んだ世界観を一貫させることです。都市型施設における世界観設計の事例として参考になります。" },
+  { question: "都市型施設の世界観設計で重要なことは何ですか？", answer: "地域の空気を借景することが難しい都市型施設は、施設そのものが世界観を創出する必要があります。「日常から完全に切り離された非日常空間」「多様な体験の選択肢」「社交の場としての機能」など、都市ならではの強みを原初物語の核に据えることが有効です。" },
+]
 
 export default function Page() {
   return (
@@ -38,6 +44,8 @@ export default function Page() {
             ← フィールドワーク一覧
           </Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "分析のフレームワーク" },

@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata: Metadata = {
   title: 'なすぱらTV活動報告（44日間） — Research | kansei.info',
   description: 'Instagram保存・YouTube比較検討・TikTok衝動——Save/Plan/Impulse三分類が具体的な数字で現れ始めた中期観測。25日版からの「変化」と「発見の深化」を記録。',
 }
+
+const faqs = [
+  { question: "44日間の観測で新たに何がわかりましたか？", answer: "44日目になると、Save・Plan・Impulseのパターンが明確な数字として現れてきました。特にInstagramでの「保存率」が世界観の強さと相関することが判明しました。単なる情報提供ではなく「その場にいた感覚」を伝える動画が高い保存率を示しました。" },
+  { question: "SNSの反応と来店の関係はどうでしたか？", answer: "Instagram保存率が高い動画は、数週間後の来店につながるケースが多く観測されました。YouTube視聴時間が長い動画は、実際に訪問した顧客からの「事前に調べていた」という言及が多かった。プラットフォームによって来店までの時間軸が異なることも確認されました。" },
+]
 
 export default function Page() {
   return (
@@ -40,6 +46,8 @@ export default function Page() {
           </Link>
           <Link href="/research/nasupara-60days" className="btn-primary">60日間（集大成）へ →</Link>
         </div>
+        <FaqSection faqs={faqs} />
+
         <RelatedKnowledge
           items={[
             { href: "/research/nasupara-25days", type: "research" as const, title: "25日間報告", description: "出発点" },
