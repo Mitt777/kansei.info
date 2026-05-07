@@ -60,7 +60,7 @@ export default function SekaikanBookPage() {
                   序章から読む →
                 </Link>
                 <a
-                  href="https://amazon.co.jp"
+                  href="https://amzn.asia/d/0dPiL65s"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
