@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: 'kansei.info — 世界観マーケティングと知識の設計',
     description: 'AI時代の知識OS。世界観マーケティング・HCI研究・フィールドワーク・書籍を統合した知識空間。',
   },
+  verification: { google: 'eohbvP2-x7ROpbtyTjG5mPQIDSQ6nsHiAtXyVhx7FD8' },
   robots: {
     index: true,
     follow: true,
