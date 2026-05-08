@@ -223,7 +223,11 @@ function KindleFooter() {
         <h2>{book.title}</h2>
         <p>{book.subtitle}</p>
       </div>
-      <a href={kindleUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">Open Kindle Page</a>
+      {kindleUrl ? (
+        <a href={kindleUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">Open Kindle Page</a>
+      ) : (
+        <span className="btn-primary whb-disabled-button">Kindle link coming soon</span>
+      )}
     </section>
   )
 }

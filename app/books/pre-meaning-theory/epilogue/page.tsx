@@ -36,7 +36,7 @@ export default function Page() {
         </div>
         <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "32px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
           <Link href="/books/pre-meaning-theory/chapter-10" style={{ fontSize: "13px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>← chapter-10</Link>
-          <a href="https://amzn.asia/d/0gOnyYvO" target="_blank" rel="noopener noreferrer" className="btn-primary">Amazonで購入 →</a>
+          <a href="https://amzn.asia/d/0dzEREB7" target="_blank" rel="noopener noreferrer" className="btn-primary">Amazonで購入 →</a>
         </div>
         <RelatedKnowledge
           items={[

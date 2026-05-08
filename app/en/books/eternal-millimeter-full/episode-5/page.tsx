@@ -38,7 +38,7 @@ export default function Page() {
           <Link href="/en/books/eternal-millimeter-full" style={{ fontSize: "13px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>
             ← Back to Contents
           </Link>
-          <a href="https://amzn.asia/d/0gOnyYvO" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href="https://amzn.asia/d/0fD4p0N3" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Get on Amazon →
           </a>
         </div>

@@ -33,7 +33,7 @@ export default function Page() {
           This is not a story of AI losing. This is not a story of humans winning. It is that neither becomes complete. An AI meeting asks: why has the final replacement of humans not been completed? The answer lies in The Eternal 1mm — the gap that AI cannot reach, because the moment it is named, it is lost.
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "40px" }}>
-          <a href="https://amzn.asia/d/0gOnyYvO" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href="https://amzn.asia/d/0fD4p0N3" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Get on Amazon →
           </a>
           <Link href="/en" className="btn-secondary">Back to EN Top</Link>

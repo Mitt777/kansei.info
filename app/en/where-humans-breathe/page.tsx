@@ -23,7 +23,11 @@ export default function WhereHumansBreathePage() {
           </p>
           <div className="whb-actions">
             <Link href="/en/introduction" className="btn-primary">Read Introduction</Link>
-            <a href={kindleUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">Kindle Page</a>
+            {kindleUrl ? (
+              <a href={kindleUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">Kindle Page</a>
+            ) : (
+              <span className="btn-secondary whb-disabled-button">Kindle link coming soon</span>
+            )}
           </div>
         </div>
         <div className="whb-cover" aria-label="Atmospheric cover image for Where Humans Breathe">
@@ -110,7 +114,11 @@ export default function WhereHumansBreathePage() {
           <h2>Where Humans Breathe</h2>
           <p>{book.subtitle}</p>
         </div>
-        <a href={kindleUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">Open Kindle Page</a>
+        {kindleUrl ? (
+          <a href={kindleUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">Open Kindle Page</a>
+        ) : (
+          <span className="btn-primary whb-disabled-button">Kindle link coming soon</span>
+        )}
       </section>
 
       <section className="rk-section whb-related">

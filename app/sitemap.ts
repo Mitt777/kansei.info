@@ -100,7 +100,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/books/ai-shitsugyo-2026`, priority: 0.85, changeFrequency: 'monthly' },
     { url: `${base}/books/ai-creator`, priority: 0.85, changeFrequency: 'monthly' },
     { url: `${base}/books/ai-local`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/company-disappears`, priority: 0.85, changeFrequency: 'monthly' },
 
     // English
     { url: `${base}/en/books/spi-regional-dx`, priority: 0.85, changeFrequency: 'monthly' },

@@ -3,7 +3,7 @@ import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
   title: 'Books — 著作抜粋公開',
-  description: '日本語6冊・英語3冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
+  description: '日本語6冊・英語4冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
 }
 
 const jpBooks = [
@@ -28,7 +28,7 @@ const jpBooks = [
     meta: '抜粋公開 / ネクストドアー出版',
   },
   {
-    href: '/books/pre-meaning',
+    href: '/books/pre-meaning-theory',
     label: '2024',
     labelJa: 'Pre-Meaning概論',
     title: 'AI時代のPre-Meaning概論',
@@ -67,19 +67,19 @@ const jpBooks = [
     tags: ['地方', '一次産業', 'AI活用', '個人企業化'],
     meta: '抜粋公開 / 日本語',
   },
-  {
-    href: '/books/company-disappears',
-    label: '2024',
-    labelJa: '会社消滅論',
-    title: '【完全解説】2026年 会社は消える',
-    description: 'AI時代の組織・働き方の変革。会社という形態が変容していく中で、個人と組織はどう再設計されるべきかを論じる。',
-    accentColor: 'var(--color-books)',
-    tags: ['組織変革', 'AI時代', '2026', '働き方'],
-    meta: '抜粋公開 / 日本語',
-  },
 ]
 
 const enBooks = [
+  {
+    href: '/en/where-humans-breathe',
+    label: 'English 2026',
+    labelJa: 'Atmosphere / Experience',
+    title: 'Where Humans Breathe',
+    description: 'Atmosphere, Experience, and Return Motivation in the AI Era. A quiet English section for the new Kindle book and its conceptual archive.',
+    accentColor: 'var(--color-en)',
+    tags: ['English', 'Atmospheric UX', 'Return Motivation', 'AI Era'],
+    meta: 'Kindle button ready / Link coming soon',
+  },
   {
     href: '/en/books/spi-regional-dx',
     label: 'English 2024',
@@ -120,7 +120,7 @@ export default function BooksPage() {
           <div className="bk-label">Books — 著作抜粋公開</div>
           <h1 className="bk-title">著作・調査レポートの<br />抜粋公開</h1>
           <p className="bk-desc">
-            日本語6冊・英語3冊・調査レポート8本。
+            日本語6冊・英語4冊・調査レポート8本。
             知識は公開することで価値を持つ——各著作の抜粋や概要をこの知識空間で公開する。
             書籍として手元に置きたい方はAmazonからも購入できる。
           </p>
@@ -131,14 +131,14 @@ export default function BooksPage() {
       </div>
 
       <div className="bk-grid-area">
-        <div className="bk-group-label">日本語書籍 — 7 Books in Japanese</div>
+        <div className="bk-group-label">日本語書籍 — 6 Books in Japanese</div>
         <div className="bk-grid">
           {jpBooks.map((b) => (
             <SectionCard key={b.href} {...b} />
           ))}
         </div>
 
-        <div className="bk-group-label">English Books — 3 Books in English</div>
+        <div className="bk-group-label">English Books — 4 Books in English</div>
         <div className="bk-grid">
           {enBooks.map((b) => (
             <SectionCard key={b.href} {...b} />

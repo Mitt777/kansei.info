@@ -1,4 +1,4 @@
-export const kindleUrl = 'https://www.amazon.co.jp/s?k=Where+Humans+Breathe+Mitsuhiko+Fujii'
+export const kindleUrl = ''
 
 export const book = {
   title: 'Where Humans Breathe',

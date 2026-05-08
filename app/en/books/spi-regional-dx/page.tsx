@@ -36,7 +36,7 @@ export default function Page() {
           <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>HCII2026</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>Kansei Design</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>Regional DX</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>Field Study</span> <span style={{ fontSize: "12px", padding: "3px 10px", border: "1px solid var(--color-border)", borderRadius: "2px", color: "var(--color-text-sub)", fontFamily: "var(--font-mono)" }}>SNS Behavior</span>
         </div>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '64px' }}>
-          <a href="https://amzn.asia/d/0gtxTp55" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href="https://amzn.asia/d/0fTid5xU" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Buy on Amazon →
           </a>
           <Link href="/about" className="btn-secondary">About the Author</Link>

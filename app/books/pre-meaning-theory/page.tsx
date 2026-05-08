@@ -32,7 +32,7 @@ export default function Page() {
           那須フィールドワークから生まれ、HCII2026国際学会採択論文の思考の記録。
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "40px" }}>
-          <a href="https://amzn.asia/d/0gOnyYvO" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href="https://amzn.asia/d/0dzEREB7" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Amazonで購入 →
           </a>
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
