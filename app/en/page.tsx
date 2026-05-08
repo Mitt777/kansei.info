@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const enSections = [
   {
+    href: '/en/where-humans-breathe',
+    label: 'Book Section — English',
+    labelJa: '',
+    title: 'Where Humans Breathe',
+    description: 'Atmosphere, Experience, and Return Motivation in the AI Era. A quiet English section for the Kindle book and its conceptual archive.',
+    accentColor: 'var(--color-en)',
+    tags: ['Book', 'Atmosphere', 'Return Motivation', 'AI Era'],
+  },
+  {
     href: '/en/manifesto',
     label: 'Manifesto — English',
     labelJa: '',
@@ -113,6 +122,7 @@ export default function EnPage() {
             worldview marketing theory into an integrated knowledge space for the AI era.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
+            <Link href="/en/where-humans-breathe" className="btn-primary">Where Humans Breathe</Link>
             <Link href="/en/books/spi-regional-dx" className="btn-primary">Read English Books →</Link>
             <Link href="/research/hcii2026" className="btn-secondary">HCII2026 Research</Link>
             <Link href="/about" className="btn-secondary">About the Author</Link>

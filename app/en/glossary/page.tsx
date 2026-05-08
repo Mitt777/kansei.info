@@ -116,6 +116,8 @@ const glossaryItems = [
 
 const internalLinks = [
   { href: '/en', label: 'English Home', description: 'International knowledge space' },
+  { href: '/en/where-humans-breathe', label: 'Where Humans Breathe', description: 'English book section' },
+  { href: '/en/glossary-kansei-concepts', label: 'Concept Glossary', description: 'Book section concept map' },
   { href: '/en/manifesto', label: 'English Manifesto', description: 'Why this knowledge space exists' },
   { href: '/labs/atmospheric-ux', label: 'Atmospheric UX', description: 'Original concept page' },
   { href: '/labs/pre-meaning', label: 'Pre-Meaning', description: 'Original concept page' },

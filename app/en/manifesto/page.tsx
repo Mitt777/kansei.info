@@ -71,6 +71,7 @@ const sections = [
 
 const links = [
   { href: '/en', label: 'English Home', description: 'International knowledge space' },
+  { href: '/en/where-humans-breathe', label: 'Where Humans Breathe', description: 'English book section' },
   { href: '/en/glossary', label: 'Glossary of Kansei Concepts', description: 'Concept bridges for the AI era' },
   { href: '/labs/pre-meaning', label: 'Pre-Meaning', description: 'The territory before language' },
   { href: '/labs/atmospheric-ux', label: 'Atmospheric UX', description: 'Atmosphere as experience design' },
