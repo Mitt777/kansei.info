@@ -1,4 +1,4 @@
-export const kindleUrl = ''
+export const kindleUrl = 'https://a.co/d/04790Scy'
 
 export const book = {
   title: 'Where Humans Breathe',
