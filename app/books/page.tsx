@@ -3,10 +3,20 @@ import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
   title: 'Books — 著作抜粋公開',
-  description: '日本語6冊・英語4冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
+  description: '日本語7冊・英語4冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
 }
 
 const jpBooks = [
+  {
+    href: "/books/seo-to-geo",
+    label: "GEO / AI Search",
+    labelJa: "AI時代のWeb思想",
+    title: "SEOの終わり、GEOの始まり",
+    description:
+      "検索順位の時代から、AIに理解される時代へ。SEO史、Google Maps、口コミ、SNS、生成AI推薦をつなぐGEO知識アーカイブ。",
+    meta: "章別全文公開 / 日本語",
+    tags: ["GEO", "知識OS", "AI検索", "実体と情報の一致"],
+  },
   {
     href: '/books/sekaikan',
     label: '新刊 2025',
@@ -120,7 +130,7 @@ export default function BooksPage() {
           <div className="bk-label">Books — 著作抜粋公開</div>
           <h1 className="bk-title">著作・調査レポートの<br />抜粋公開</h1>
           <p className="bk-desc">
-            日本語6冊・英語4冊・調査レポート8本。
+            日本語7冊・英語4冊・調査レポート8本。
             知識は公開することで価値を持つ——各著作の抜粋や概要をこの知識空間で公開する。
             書籍として手元に置きたい方はAmazonからも購入できる。
           </p>

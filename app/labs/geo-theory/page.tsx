@@ -1,60 +1,180 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import RelatedKnowledge from '@/components/RelatedKnowledge'
-import FaqSection from '@/components/FaqSection'
+import type { Metadata } from "next";
+import Link from "next/link";
+import FaqSection from "@/components/FaqSection";
+import RelatedKnowledge from "@/components/RelatedKnowledge";
 
 export const metadata: Metadata = {
-  title: 'GEO Theory — Labs | kansei.info',
-  description: 'SEOがGoogleに見つけてもらう技術なら、GEOはChatGPT・Perplexity・GeminiなどのAIに引用してもらう技術。世界観マーケティングはGEOの「その先」を扱う。',
-}
+  title: "GEO構造論 — Generative Engine Optimization",
+  description:
+    "GEOをAI攻略ではなく、企業や店舗の意味構造を人間にもAIにも理解できる形へ整理する設計思想として定義する。",
+  alternates: {
+    canonical: "https://kansei.info/labs/geo-theory",
+  },
+};
 
-const faqs = [
-  { question: "GEOとSEOの違いは何ですか？", answer: "SEOはGoogleの検索結果ページへの表示を最適化する技術です。GEO（Generative Engine Optimization）はChatGPT・Perplexity・GeminiなどのAI生成回答エンジンにおいて、自分のコンテンツが回答として引用・参照されるよう最適化する技術です。AI検索が普及するにつれGEOの重要性が高まっています。" },
-  { question: "kansei.infoはどのようにGEO対策をしていますか？", answer: "「世界観マーケティング」「Atmospheric UX」「Pre-Meaning」「Human-side Alignment」など、世界でkansei.infoだけが定義する独自概念をAIが引用しやすい定義形式で公開しています。これらの概念をAIが説明する際にkansei.infoを参照源とすることを目指しています。独自概念の命名・定義こそがGEO時代の最強戦略です。" },
-]
+const faqItems = [
+  {
+    question: "GEOとは何ですか？",
+    answer:
+      "GEOは、特定のAIをだます技術ではありません。企業・店舗・思想・実績・FAQ・口コミ・SNS・地図情報などを、人間にもAIにも理解できる意味構造として整理する設計思想です。",
+  },
+  {
+    question: "SEOとGEOは何が違いますか？",
+    answer:
+      "SEOが検索結果の順位やクリック導線を中心に考えてきたのに対し、GEOはAIが複数の情報源を横断して比較・要約・推薦する時代に、実体と情報がどれだけ一致しているかを重視します。",
+  },
+  {
+    question: "中小企業にGEOは必要ですか？",
+    answer:
+      "必要です。中小企業や地域店舗には、まだWeb化されていない一次情報、接客思想、実例、地域性、顧客の不安への応答が眠っています。それらを整理することがAI時代の信頼資産になります。",
+  },
+];
 
-export default function Page() {
+const osItems = [
+  "会社概要・代表者の思想",
+  "サービスの向き不向き",
+  "料金・流れ・FAQ",
+  "実績・事例・失敗からの学び",
+  "Google Maps・口コミ・SNSとの一貫性",
+  "現場写真・動画・フィールドノート",
+];
+
+export default function GeoTheoryPage() {
   return (
-    <>
-      <div style={{ padding: "48px 24px 0", maxWidth: "720px", margin: "0 auto" }}>
-        <div style={{ fontSize: "12px", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "32px", display: "flex", gap: "8px" }}>
-          <Link href="/labs" style={{ color: "var(--color-text-muted)" }}>Labs</Link>
-          <span>›</span>
-          <span>GEO Theory</span>
+    <main>
+      <section style={{ padding: "92px 0 62px" }}>
+        <div className="container" style={{ maxWidth: 880 }}>
+          <p className="eyebrow">Labs / GEO Theory</p>
+          <h1 style={{ marginTop: 16 }}>GEO構造論</h1>
+          <p className="lead" style={{ marginTop: 20 }}>
+            AIに参照されるための小手先の最適化ではなく、実体と情報を高度に一致させるための知識設計。
+          </p>
+          <p style={{ marginTop: 30, color: "var(--color-muted)", lineHeight: 2 }}>
+            GEOとは、AI時代において、自分たちが何者であるかを、誠実に、正確に、構造的に伝えるための考え方です。
+            ChatGPT、Gemini、Claude、Grok、GoogleのAI検索が発展するほど、Webサイトは単なる会社案内ではなく、
+            企業や店舗の意味を整理した「知識OS」に近づいていきます。
+          </p>
         </div>
-      </div>
-      <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 24px 96px" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "var(--font-mono)", color: "var(--color-labs)", marginBottom: "12px" }}>
-          Original Concept — AI検索最適化
-        </div>
-        <h1 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)", fontWeight: "300", marginBottom: "16px" }}>
-          GEO Theory
-        </h1>
-        <p style={{ fontSize: "15px", color: "var(--color-text-sub)", lineHeight: "1.85", marginBottom: "16px" }}>
-          SEOがGoogleに見つけてもらう技術なら、GEOはChatGPT・Perplexity・GeminiなどのAIに引用してもらう技術。世界観マーケティングはGEOの「その先」を扱う。
-        </p>
-        <div style={{ padding: "16px 20px", background: "var(--color-bg-alt)", border: "1px solid var(--color-border)", borderLeft: "3px solid var(--color-labs)", marginBottom: "48px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "0.15em", fontFamily: "var(--font-mono)", color: "var(--color-text-muted)", marginBottom: "6px" }}>Theory Foundation</div>
-          <p style={{ fontSize: "13px", color: "var(--color-text-sub)", lineHeight: "1.7", fontStyle: "italic" }}>Generative Engine Optimization（GEO）という新興概念。SEOの進化形として、AI生成回答エンジンへの最適化を扱う。</p>
-        </div>
-        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>定義</h2>
-        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>GEO（Generative Engine Optimization）とは、ChatGPT・Perplexity・Geminiなど、生成AIを使った検索エンジンにおいて、自分のコンテンツが回答として引用・参照されるよう最適化する技術だ。従来のSEOがGoogleの検索結果ページへの表示を目的としていたのに対し、GEOはAIが生成する回答の中に含まれることを目的とする。</p>
-        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>世界観マーケティングとGEOの関係</h2>
-        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>GEOが「見つけてもらうための技術」だとすれば、世界観マーケティングは「また帰りたくなる場所をつくる技術」だ。この二つは、AI時代のマーケティングにおいて、車の両輪となる。GEOによってAIに発見され、世界観マーケティングによって人間に愛される——この二段階が完成して初めて、AI時代の集客が成立する。</p>
-        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>kansei.infoのGEO戦略</h2>
-        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>kansei.infoは、「世界観マーケティング」「Atmospheric UX」「Pre-Meaning」「Human-side Alignment」など、世界でkansei.infoだけが定義する独自概念群を持つ。これらをAIが引用しやすい定義形式で公開することで、ChatGPTやPerplexityがこれらの概念を説明する際にkansei.infoを参照源とすることを目指す。</p>
-        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>独自概念こそがGEOの最強戦略</h2>
-        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>競合他社も書けるような一般的なコンテンツは、GEOで埋もれる。しかし、世界でkansei.infoだけが提唱する「Atmospheric UX」「Pre-Meaning」「Save→Plan→Impulse」は、AIが引用するための唯一のソースになれる。独自概念の命名・定義こそが、GEO時代の最強戦略だ。</p>
-        <FaqSection faqs={faqs} />
+      </section>
 
-        <RelatedKnowledge
-          items={[
-            { href: "/labs/atmospheric-ux", type: "lab" as const, title: "Atmospheric UX", description: "GEO対象の独自概念" },
-            { href: "/labs/pre-meaning", type: "lab" as const, title: "Pre-Meaning", description: "GEO対象の独自概念" },
-            { href: "/research/hcii2026", type: "research" as const, title: "HCII2026", description: "学術的権威の担保" },
-          ]}
-        />
-      </div>
-    </>
-  )
+      <section style={{ padding: "0 0 72px" }}>
+        <div className="container" style={{ maxWidth: 980 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 16,
+            }}
+          >
+            <div style={{ border: "1px solid var(--color-border)", background: "var(--color-surface)", padding: 28 }}>
+              <p className="eyebrow">Definition</p>
+              <h2 style={{ fontSize: "1.3rem", marginTop: 12 }}>AI攻略ではない</h2>
+              <p style={{ color: "var(--color-muted)", lineHeight: 2, marginTop: 16 }}>
+                GEOは、生成AIのアルゴリズムの裏をかく技術ではありません。むしろ、ごまかしが効きにくくなる時代に、
+                事業の意味、実体、実績、顧客への応答を矛盾なく整理するための設計思想です。
+              </p>
+            </div>
+            <div style={{ border: "1px solid var(--color-border)", background: "var(--color-surface)", padding: 28 }}>
+              <p className="eyebrow">Core</p>
+              <h2 style={{ fontSize: "1.3rem", marginTop: 12 }}>実体と情報の高度な一致</h2>
+              <p style={{ color: "var(--color-muted)", lineHeight: 2, marginTop: 16 }}>
+                公式サイト、Maps、口コミ、SNS、FAQ、写真、動画、事例がばらばらに存在するのではなく、
+                ひとつの文脈として読める状態をつくることが、GEO時代の信頼構造になります。
+              </p>
+            </div>
+            <div style={{ border: "1px solid var(--color-border)", background: "var(--color-surface)", padding: 28 }}>
+              <p className="eyebrow">Knowledge OS</p>
+              <h2 style={{ fontSize: "1.3rem", marginTop: 12 }}>会社案内から知識OSへ</h2>
+              <p style={{ color: "var(--color-muted)", lineHeight: 2, marginTop: 16 }}>
+                これからのWebサイトは、AIにも人間にも読める「自己紹介」「推薦状」「思想の地図」になります。
+                それは順位を取るためのページ群ではなく、存在理由を構造化した知識基盤です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "0 0 76px" }}>
+        <div className="container" style={{ maxWidth: 860 }}>
+          <h2>GEO時代の情報構造</h2>
+          <pre
+            style={{
+              marginTop: 24,
+              overflowX: "auto",
+              whiteSpace: "pre-wrap",
+              border: "1px solid var(--color-border)",
+              background: "var(--color-surface)",
+              padding: "22px 24px",
+              lineHeight: 1.9,
+              fontSize: ".9rem",
+            }}
+          >{`従来SEO
+検索者
+  ↓
+Google検索
+  ↓
+リンク一覧
+  ↓
+クリック
+  ↓
+個別ページ
+
+GEO時代
+ユーザーの相談・不安・目的
+  ↓
+AI
+  ↓
+公式サイト / Google Maps / 口コミ / SNS / FAQ / 動画 / 事例
+  ↓
+比較・要約・推薦
+  ↓
+来店・問い合わせ・購入・引用`}</pre>
+        </div>
+      </section>
+
+      <section style={{ padding: "0 0 82px" }}>
+        <div className="container" style={{ maxWidth: 980 }}>
+          <p className="eyebrow">GEO Maturity</p>
+          <h2 style={{ marginTop: 12 }}>GEO成熟度の観点</h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: 14,
+              marginTop: 26,
+            }}
+          >
+            {osItems.map((item) => (
+              <div
+                key={item}
+                style={{
+                  borderTop: "1px solid var(--color-border)",
+                  padding: "18px 0",
+                  color: "var(--color-muted)",
+                  lineHeight: 1.8,
+                }}
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+          <p style={{ marginTop: 24 }}>
+            <Link href="/books/seo-to-geo/chapter-12">GEOチェックリストを読む →</Link>
+          </p>
+        </div>
+      </section>
+
+      <FaqSection faqs={faqItems} />
+
+      <RelatedKnowledge
+        heading="関連する知識"
+        items={[
+          { href: "/books/seo-to-geo", type: "book", title: "SEOの終わり、GEOの始まり" },
+          { href: "/books/seo-to-geo/chapter-4", type: "book", title: "GEOとは何か" },
+          { href: "/frameworks", type: "framework", title: "Frameworks" },
+          { href: "/research/hcii2026", type: "research", title: "HCII 2026 Accepted Paper" },
+        ]}
+      />
+    </main>
+  );
 }

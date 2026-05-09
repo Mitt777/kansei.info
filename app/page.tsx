@@ -56,9 +56,9 @@ const sections = [
     labelJa: '著作抜粋',
     title: '著作・調査レポートの抜粋公開',
     description:
-      '日本語6冊・英語3冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。',
+      '日本語7冊・英語4冊・調査レポート8本。GEO・世界観マーケティング・Pre-Meaning・地域DXを、章別の知識アーカイブとして整理。',
     accentColor: 'var(--color-books)',
-    tags: ['抜粋公開', '9冊', 'EN / JP'],
+    tags: ['章別公開', 'GEO', 'EN / JP'],
   },
   {
     href: '/en',
@@ -109,7 +109,7 @@ export default function HomePage() {
               <span className="hero-meta-label">インプレッション</span>
             </div>
             <div className="hero-meta-item">
-              <span className="hero-meta-val">9冊</span>
+              <span className="hero-meta-val">11冊</span>
               <span className="hero-meta-label">著書（日英）</span>
             </div>
             <div className="hero-meta-item">
@@ -143,6 +143,32 @@ export default function HomePage() {
           <Link href="/manifesto" className="btn-primary">
             Manifesto を読む →
           </Link>
+        </div>
+      </div>
+
+
+
+      {/* ── GEO KNOWLEDGE BAND ── */}
+      <div className="manifesto-band">
+        <div className="manifesto-band-inner">
+          <div className="manifesto-band-text">
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'var(--color-gold)', fontFamily: 'var(--font-mono)', marginBottom: '12px' }}>
+              GEO KNOWLEDGE ARCHITECTURE
+            </p>
+            <h2>GEO時代の知識構造を、静かに公開する。</h2>
+            <p>
+              検索順位だけではなく、AIが思想・実績・フィールドワーク・用語定義を横断的に理解する時代へ。
+              kansei.info は、書籍、研究、フレームワーク、観測ログを相互リンクさせる長文知識OSとして育てています。
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link href="/books/seo-to-geo" className="btn-primary">
+              GEO書籍を読む →
+            </Link>
+            <Link href="/labs/geo-theory" className="btn-secondary">
+              GEO構造論
+            </Link>
+          </div>
         </div>
       </div>
 
