@@ -118,6 +118,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/books/ai-local`, priority: 0.85, changeFrequency: 'monthly' },
 
     // English
+    { url: `${base}/en/books/seo-to-geo`, priority: 0.9, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/introduction`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-1`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-2`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-3`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-4`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-5`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-6`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-7`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/chapter-8`, priority: 0.82, changeFrequency: 'monthly' },
+    { url: `${base}/en/books/seo-to-geo/conclusion`, priority: 0.82, changeFrequency: 'monthly' },
     { url: `${base}/en/books/spi-regional-dx`, priority: 0.85, changeFrequency: 'monthly' },
     { url: `${base}/en/books/eternal-millimeter-short`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${base}/en/books/eternal-millimeter-full`, priority: 0.8, changeFrequency: 'monthly' },

@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const enSections = [
   {
+    href: '/en/books/seo-to-geo',
+    label: 'Book — English / GEO',
+    labelJa: '',
+    title: 'From SEO to GEO',
+    description: 'The End of Search Rankings and the Beginning of AI Understanding. A condensed English edition on GEO, AI search, knowledge architecture, and trust infrastructure.',
+    accentColor: 'var(--color-en)',
+    tags: ['GEO', 'AI Search', 'Knowledge OS', 'Trust'],
+  },
+  {
     href: '/en/where-humans-breathe',
     label: 'Book Section — English',
     labelJa: '',
@@ -123,6 +132,7 @@ export default function EnPage() {
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
             <Link href="/en/where-humans-breathe" className="btn-primary">Where Humans Breathe</Link>
+            <Link href="/en/books/seo-to-geo" className="btn-primary">From SEO to GEO</Link>
             <Link href="/en/books/spi-regional-dx" className="btn-primary">Read English Books →</Link>
             <Link href="/research/hcii2026" className="btn-secondary">HCII2026 Research</Link>
             <Link href="/about" className="btn-secondary">About the Author</Link>
@@ -131,7 +141,7 @@ export default function EnPage() {
             {[
               { val: '468', label: 'Field videos observed' },
               { val: '3M+', label: 'Impressions recorded' },
-              { val: '9', label: 'Books published (EN/JP)' },
+              { val: '12', label: 'Books published (EN/JP)' },
               { val: 'HCII', label: 'International HCI adopted' },
             ].map((s) => (
               <div key={s.label}>

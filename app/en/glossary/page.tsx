@@ -100,6 +100,19 @@ const glossaryItems = [
     related: ['Sekaikan', 'Save → Plan → Impulse', 'Contextual Continuity'],
   },
   {
+    term: 'GEO / Generative Engine Optimization',
+    origin: 'GEO構造論',
+    rendering: 'Generative Engine Optimization',
+    variants: ['AI Search Readability', 'Knowledge Architecture for AI', 'Trust Infrastructure Design'],
+    definition:
+      'A design philosophy for organizing the meaning structure of a company, place, book, or idea so that both humans and generative AI systems can understand it accurately.',
+    note:
+      'GEO is not a technique for tricking AI. It is the advanced alignment between reality and information: website, maps, reviews, SNS, FAQ, photos, videos, and worldview becoming readable as one coherent structure.',
+    why:
+      'As AI systems increasingly compare, summarize, and recommend across multiple sources, businesses and knowledge spaces must become understandable rather than merely visible. GEO explains how trust, evidence, atmosphere, and meaning become AI-readable.',
+    related: ['Knowledge OS', 'Sekaikan', 'Contextual Continuity', 'Atmospheric UX'],
+  },
+  {
     term: 'Kansei Driven Regional DX',
     origin: '感性ドリブン地域DX',
     rendering: 'Kansei Driven Regional DX',
@@ -115,6 +128,7 @@ const glossaryItems = [
 ]
 
 const internalLinks = [
+  { href: '/en/books/seo-to-geo', label: 'From SEO to GEO', description: 'English GEO knowledge archive' },
   { href: '/en', label: 'English Home', description: 'International knowledge space' },
   { href: '/en/where-humans-breathe', label: 'Where Humans Breathe', description: 'English book section' },
   { href: '/en/glossary-kansei-concepts', label: 'Concept Glossary', description: 'Book section concept map' },
