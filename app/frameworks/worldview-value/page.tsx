@@ -43,6 +43,18 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>常連客のコミュニティ・店主との関係・地域とのつながりが形成されている状態。「ここに来ると、少し自分が落ち着く」という感覚は、社会的帰属から生まれることが多い。崩れる時：顧客が「よそ者」になった時——新しい客層ばかりを追い、常連が離れていく時。</p>
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>伝播性</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>SNS投稿・口コミ・再訪・ファン化のサイクルが回っている状態。「あの場所にいた自分」を記憶しているから、また戻りたくなる。そしてその記憶を、誰かに伝えたくなる。崩れる時：「語りたくなる瞬間」がない時——体験が平均的すぎて、記憶に残らない時。</p>
+
+        <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>世界観は、AIにも読まれる情報構造になる</h2>
+        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>世界観は、人間だけが感じるものではない。AI検索や生成AIが、Webサイト、口コミ、SNS、地図情報、FAQ、写真、動画を横断的に読む時代には、企業や場所の世界観もまた、情報構造として読み取られるようになる。</p>
+        <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>そのため、世界観マーケティングは単なるブランディングではなく、GEO時代における「実体と情報の高度な一致」を支える基盤になる。語り口、空気感、口コミ、写真、サービス説明、FAQが矛盾なくつながっているとき、AIにも人間にも「この場所は何者か」が伝わりやすくなる。</p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", margin: "8px 0 20px" }}>
+          <Link href="/labs/geo-theory" style={{ fontSize: "13px", color: "var(--color-frameworks)", fontFamily: "var(--font-mono)" }}>
+            GEO構造論を読む →
+          </Link>
+          <Link href="/books/seo-to-geo/chapter-7" style={{ fontSize: "13px", color: "var(--color-frameworks)", fontFamily: "var(--font-mono)" }}>
+            第7章：AIは文脈を読み始める →
+          </Link>
+        </div>
         <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: "32px", marginTop: "48px" }}>
           <Link href="/frameworks" style={{ fontSize: "13px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>
             ← フレームワーク一覧
@@ -55,6 +67,8 @@ export default function Page() {
             { href: "/diagnosis", type: "framework" as const, title: "7層診断ツール", description: "四要素を自己診断" },
             { href: "/frameworks/7layers", type: "framework" as const, title: "7層モデル", description: "方程式と7層の対応" },
             { href: "/books/sekaikan/chapter-3", type: "book" as const, title: "第三章", description: "方程式の詳細解説" },
+            { href: "/labs/geo-theory", type: "lab" as const, title: "GEO構造論", description: "世界観をAI時代の情報構造へ接続" },
+            { href: "/books/seo-to-geo/chapter-7", type: "book" as const, title: "SEOの終わり、GEOの始まり 第7章", description: "AIはスペックではなく文脈を読み始める" },
           ]}
         />
       </div>

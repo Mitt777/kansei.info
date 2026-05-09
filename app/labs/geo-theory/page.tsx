@@ -132,6 +132,27 @@ AI
         </div>
       </section>
 
+
+
+      <section style={{ padding: "0 0 78px" }}>
+        <div className="container" style={{ maxWidth: 860 }}>
+          <p className="eyebrow">Worldview Connection</p>
+          <h2 style={{ marginTop: 12 }}>AIは情報だけでなく、文脈・一貫性・世界観を読む</h2>
+          <p style={{ marginTop: 24, color: "var(--color-muted)", lineHeight: 2 }}>
+            GEOで重要なのは、情報量だけではありません。AIは、公式サイト、Google Maps、口コミ、SNS、FAQ、写真、動画、記事、書籍ページを横断しながら、
+            その企業や場所が「何者なのか」を推測します。
+          </p>
+          <p style={{ marginTop: 18, color: "var(--color-muted)", lineHeight: 2 }}>
+            そのとき読まれるのは、単なるスペックではなく、語り口の一貫性、顧客への向き合い方、空間の雰囲気、写真の印象、口コミに現れる感情、
+            そして全体としての世界観です。つまりGEOは、世界観マーケティングをAI時代の情報構造へ接続する考え方でもあります。
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 26 }}>
+            <Link href="/frameworks/worldview-value">世界観価値の方程式を読む →</Link>
+            <Link href="/books/seo-to-geo/chapter-7">第7章：AIは文脈を読み始める →</Link>
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: "0 0 82px" }}>
         <div className="container" style={{ maxWidth: 980 }}>
           <p className="eyebrow">GEO Maturity</p>
@@ -171,7 +192,8 @@ AI
         items={[
           { href: "/books/seo-to-geo", type: "book", title: "SEOの終わり、GEOの始まり" },
           { href: "/books/seo-to-geo/chapter-4", type: "book", title: "GEOとは何か" },
-          { href: "/frameworks", type: "framework", title: "Frameworks" },
+          { href: "/frameworks/worldview-value", type: "framework", title: "世界観価値の方程式" },
+          { href: "/labs/atmospheric-ux", type: "lab", title: "Atmospheric UX" },
           { href: "/research/hcii2026", type: "research", title: "HCII 2026 Accepted Paper" },
         ]}
       />

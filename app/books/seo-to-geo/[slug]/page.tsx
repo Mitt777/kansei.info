@@ -114,6 +114,29 @@ export default function SeoToGeoChapterPage({ params }: Props) {
               })}
             </div>
 
+            {chapter.slug === "chapter-7" && (
+              <aside
+                style={{
+                  borderTop: "1px solid var(--color-border)",
+                  borderBottom: "1px solid var(--color-border)",
+                  marginTop: 52,
+                  padding: "26px 0",
+                }}
+              >
+                <p className="eyebrow">Related Concepts</p>
+                <h2 style={{ fontSize: "1.24rem", marginTop: 12 }}>GEOと世界観マーケティングをつなぐ概念</h2>
+                <p style={{ color: "var(--color-muted)", lineHeight: 2, marginTop: 16 }}>
+                  AIが読む文脈とは、情報の羅列ではありません。語り口の一貫性、空間の雰囲気、口コミの感情、写真の印象、FAQの誠実さ、
+                  そしてその企業や場所が持つ世界観の連続性です。この章は、GEOを世界観価値・Atmospheric UX・文脈継続性へ接続する入口です。
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 22 }}>
+                  <Link href="/frameworks/worldview-value">世界観価値の方程式 →</Link>
+                  <Link href="/labs/geo-theory">GEO構造論 →</Link>
+                  <Link href="/labs/atmospheric-ux">Atmospheric UX →</Link>
+                </div>
+              </aside>
+            )}
+
             <nav
               style={{
                 borderTop: "1px solid var(--color-border)",
@@ -147,7 +170,7 @@ export default function SeoToGeoChapterPage({ params }: Props) {
           items={[
             { href: "/books/seo-to-geo", type: "book", title: "SEOの終わり、GEOの始まり" },
             { href: "/labs/geo-theory", type: "lab", title: "GEO構造論" },
-            { href: "/frameworks", type: "framework", title: "Frameworks" },
+            { href: "/frameworks/worldview-value", type: "framework", title: "世界観価値の方程式" },
             { href: "/research", type: "research", title: "Research" },
           ]}
         />
