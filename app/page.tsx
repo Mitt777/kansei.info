@@ -224,11 +224,11 @@ export default function HomePage() {
 
         <div className="store-diagnosis-bridge">
           <div>
-            <p className="store-diagnosis-label">FIELD IMPLEMENTATION</p>
-            <h3>実店舗の「見え方」を、来店前の不安まで含めて測る。</h3>
+            <p className="store-diagnosis-label">FIELD IMPLEMENTATION / BETA</p>
+            <h3>実店舗の「見え方」を測るβ版診断を、現場で試しています。</h3>
             <p>
               世界観力の自己診断を、Google Maps・口コミ・SNS・簡易SEO・Save→Plan→Impulseへ拡張した
-              実店舗向けの診断サービスをβ公開しました。那須・栃木の小規模店舗から、現場で検証を始めています。
+              実店舗向けのβ版診断です。那須・栃木の小規模店舗から、来店前不安や選ばれ方の見え方を検証しています。
             </p>
           </div>
           <div className="store-diagnosis-actions">
@@ -238,10 +238,10 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              お客様どっと混むで店舗診断する →
+              β版の店舗診断を試す →
             </a>
             <span>
-              世界観設計・地域SNS・来店前不安・GEOを、店舗支援へ翻訳する実装版。
+              世界観設計・地域SNS・来店前不安・GEOを、店舗支援へ翻訳する実験的な実装版。
             </span>
           </div>
         </div>
