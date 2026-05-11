@@ -19,7 +19,7 @@ export const aiSnsVideoBook = {
     "AI時代に、小さなお店がバズを追わず、本来つながるべきお客様と出会うためのSNS動画実践書。なすぱらTVの900本超の実践、HCII 2026採択のSave → Plan → Impulse理論、SEO→MEO→GEOの知識OSを接続する全文アーカイブ。",
   author: "Mitsuhiko Fujii",
   canonical: "https://kansei.info/books/ai-sns-video",
-  amazonUrl: null as string | null,
+  amazonUrl: "https://amzn.asia/d/0fQ6wsVL" as string | null,
 } as const;
 
 export const aiSnsVideoChapters: AiSnsVideoChapter[] = [
