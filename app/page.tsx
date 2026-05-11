@@ -221,6 +221,30 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+
+        <div className="store-diagnosis-bridge">
+          <div>
+            <p className="store-diagnosis-label">FIELD IMPLEMENTATION</p>
+            <h3>実店舗の「見え方」を、来店前の不安まで含めて測る。</h3>
+            <p>
+              世界観力の自己診断を、Google Maps・口コミ・SNS・簡易SEO・Save→Plan→Impulseへ拡張した
+              実店舗向けの診断サービスをβ公開しました。那須・栃木の小規模店舗から、現場で検証を始めています。
+            </p>
+          </div>
+          <div className="store-diagnosis-actions">
+            <a
+              href="https://okyakusa-ma.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              お客様どっと混むで店舗診断する →
+            </a>
+            <span>
+              世界観設計・地域SNS・来店前不安・GEOを、店舗支援へ翻訳する実装版。
+            </span>
+          </div>
+        </div>
       </div>
     </>
   )
