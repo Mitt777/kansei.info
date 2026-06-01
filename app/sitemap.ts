@@ -1,160 +1,100 @@
+import fs from 'fs'
+import path from 'path'
 import { MetadataRoute } from 'next'
+import { aiSnsVideoChapters } from './books/ai-sns-video/content'
+import { seoToGeoChapters } from './books/seo-to-geo/content'
+import { enSeoToGeoSections } from './en/books/seo-to-geo/content'
+import { chapters as whbChapters, concepts as whbConcepts } from './en/where-humans-breathe/content'
+
+const base = 'https://kansei.info'
+
+type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
+
+type RouteConfig = {
+  path: string
+  priority?: number
+  changeFrequency?: ChangeFrequency
+}
+
+function normalizeRoute(routePath: string) {
+  if (!routePath || routePath === '/') return '/'
+  return `/${routePath.replace(/^\/+|\/+$/g, '')}`
+}
+
+function walkStaticPages(dir: string, prefix = ''): string[] {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    if (entry.name.startsWith('_') || entry.name.startsWith('.')) return []
+
+    const fullPath = path.join(dir, entry.name)
+    const routePrefix = entry.name === 'page.tsx' ? prefix : path.posix.join(prefix, entry.name)
+
+    if (entry.isDirectory()) {
+      if (entry.name.startsWith('[') && entry.name.endsWith(']')) return []
+      return walkStaticPages(fullPath, routePrefix)
+    }
+
+    if (entry.name !== 'page.tsx') return []
+    return [normalizeRoute(prefix)]
+  })
+}
+
+function priorityFor(routePath: string) {
+  if (routePath === '/') return 1
+  if (routePath === '/diagnosis') return 0.9
+  if (routePath.startsWith('/books/')) return routePath.split('/').length <= 3 ? 0.9 : 0.84
+  if (routePath.startsWith('/research/')) return 0.88
+  if (routePath.startsWith('/frameworks/')) return 0.86
+  if (routePath.startsWith('/labs/')) return 0.84
+  if (routePath.startsWith('/fieldwork/')) return 0.82
+  if (routePath.startsWith('/en/')) return 0.82
+  return 0.8
+}
+
+function changeFrequencyFor(routePath: string): ChangeFrequency {
+  return routePath === '/' ? 'weekly' : 'monthly'
+}
+
+function toUrl(routePath: string) {
+  return routePath === '/' ? base : `${base}${routePath}`
+}
+
+function uniqueRoutes(routes: RouteConfig[]) {
+  const seen = new Map<string, RouteConfig>()
+  routes.forEach((route) => {
+    const normalized = normalizeRoute(route.path)
+    if (!seen.has(normalized)) {
+      seen.set(normalized, {
+        ...route,
+        path: normalized,
+      })
+    }
+  })
+  return [...seen.values()].sort((a, b) => {
+    if (a.path === '/') return -1
+    if (b.path === '/') return 1
+    return a.path.localeCompare(b.path)
+  })
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://kansei.info'
   const now = new Date()
+  const appDir = path.join(process.cwd(), 'app')
 
-  const routes = [
-    // トップ・主要ページ
-    { url: base, priority: 1.0, changeFrequency: 'weekly' },
-    { url: `${base}/manifesto`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/about`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/contact`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/diagnosis`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/en`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/en/where-humans-breathe`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/en/introduction`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/chapter-1-beyond-information`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/chapter-2-atmosphere-as-experience`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/chapter-3-save-plan-impulse`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/chapter-4-worldview-and-sense-of-place`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/chapter-5-fieldwork-rural-japan`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/chapter-6-human-experience-ai-era`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/glossary-kansei-concepts`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/en/atmospheric-ux`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/human-side-alignment`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/pre-meaning`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/sekaikan`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/contextual-continuity`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/spi-model`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/manifesto`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/en/glossary`, priority: 0.85, changeFrequency: 'monthly' },
+  const staticRoutes = walkStaticPages(appDir).map((routePath) => ({ path: routePath }))
 
-    // Frameworks
-    { url: `${base}/frameworks`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers`, priority: 0.95, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/origin-story`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/world-contact`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/threshold-crossing`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/immersive-environment`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/anticipation`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/peak-experience`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/7layers/propagation`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/three-types`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/worldview-value`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/resonance-economy`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/three-layers`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/frameworks/contextual-continuity`, priority: 0.85, changeFrequency: 'monthly' },
+  const dynamicRoutes: RouteConfig[] = [
+    ...aiSnsVideoChapters.map((chapter) => ({ path: `/books/ai-sns-video/${chapter.slug}`, priority: 0.86 })),
+    ...seoToGeoChapters.map((chapter) => ({ path: `/books/seo-to-geo/${chapter.slug}`, priority: 0.86 })),
+    ...enSeoToGeoSections.map((section) => ({ path: `/en/books/seo-to-geo/${section.slug}`, priority: 0.82 })),
+    ...whbChapters.map((chapter) => ({ path: `/en/${chapter.slug}`, priority: 0.82 })),
+    ...whbConcepts.map((concept) => ({ path: `/en/${concept.slug}`, priority: 0.82 })),
+    { path: '/en/glossary-kansei-concepts', priority: 0.86 },
+  ]
 
-    // Labs
-    { url: `${base}/labs`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/labs/atmospheric-ux`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/labs/pre-meaning`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/labs/human-side-alignment`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/labs/spi-model`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/labs/contextual-continuity`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/labs/geo-theory`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/labs/calm-technology`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/labs/worldview-design`, priority: 0.85, changeFrequency: 'monthly' },
-
-    // Research
-    { url: `${base}/research`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/research/hcii2026`, priority: 0.95, changeFrequency: 'monthly' },
-    { url: `${base}/research/nasupara-60days`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/research/nasupara-44days`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/research/nasupara-25days`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/research/kansei-hado`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/research/kansei-hado-theory`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/research/1000stores-strategy`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/research/integrated-theory`, priority: 0.85, changeFrequency: 'monthly' },
-
-    // Fieldwork
-    { url: `${base}/fieldwork`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/nasu`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/shozo`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/kusatsu`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/pennyln`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/franklins`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/disney`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/sanrio`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/nasu-animal`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/spajam`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/ashino-onsen`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/bakery-my`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/fieldwork/ramen-takahashi`, priority: 0.8, changeFrequency: 'monthly' },
-
-    // Books
-    { url: `${base}/books`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video`, priority: 0.95, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/introduction`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-1`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-2`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-3`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-4`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-5`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-6`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-7`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-8`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-9`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-10`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-11`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/chapter-12`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/closing`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/profile`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-sns-video/colophon`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo`, priority: 0.95, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/prologue`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-1`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-2`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-3`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-4`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-5`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-6`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-7`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-8`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-9`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-10`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-11`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/chapter-12`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/epilogue`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/seo-to-geo/afterword`, priority: 0.86, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan`, priority: 0.95, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/prologue`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-1`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-2`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-3`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-4`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-5`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-6`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/chapter-7`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/sekaikan/epilogue`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/spi-regional-dx`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/books/pre-meaning-theory`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-shitsugyo-2026`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-creator`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/books/ai-local`, priority: 0.85, changeFrequency: 'monthly' },
-
-    // English
-    { url: `${base}/en/books/seo-to-geo`, priority: 0.9, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/introduction`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-1`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-2`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-3`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-4`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-5`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-6`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-7`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/chapter-8`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/seo-to-geo/conclusion`, priority: 0.82, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/spi-regional-dx`, priority: 0.85, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/eternal-millimeter-short`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${base}/en/books/eternal-millimeter-full`, priority: 0.8, changeFrequency: 'monthly' },
-  ] as const
-
-  return routes.map(route => ({
-    url: route.url,
+  return uniqueRoutes([...staticRoutes, ...dynamicRoutes]).map((route) => ({
+    url: toUrl(route.path),
     lastModified: now,
-    changeFrequency: route.changeFrequency as 'weekly' | 'monthly',
-    priority: route.priority,
+    changeFrequency: route.changeFrequency ?? changeFrequencyFor(route.path),
+    priority: route.priority ?? priorityFor(route.path),
   }))
 }
