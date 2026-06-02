@@ -3,10 +3,20 @@ import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
   title: 'Books — 著作抜粋公開',
-  description: '日本語8冊・英語4冊・調査レポート8本。一部を無料公開。世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
+  description: '日本語9冊・英語4冊・調査レポート8本。一部を無料公開。観光記憶圏・世界観マーケティング・AI失業・Pre-Meaning・Save→Plan→Impulse。藤井実彦の著作一覧。',
 }
 
 const jpBooks = [
+  {
+    href: "/books/tourism-memory-zone",
+    label: "AIRS / Tourism Memory",
+    labelJa: "観光記憶圏試論",
+    title: "観光記憶圏試論",
+    description:
+      "AI時代に、人はなぜその場所を忘れないのか。那須での二年間・900本超の動画制作・100店舗超のフィールドワークから、AIRSシステムの理論的バックボーンを整理する試論。",
+    meta: "章別全文公開 / Kindle出版済",
+    tags: ["AIRS", "観光記憶圏", "場所の記憶", "那須"],
+  },
   {
     href: "/books/ai-sns-video",
     label: "SNS Video / AI Era",
@@ -140,7 +150,7 @@ export default function BooksPage() {
           <div className="bk-label">Books — 著作抜粋公開</div>
           <h1 className="bk-title">著作・調査レポートの<br />抜粋公開</h1>
           <p className="bk-desc">
-            日本語8冊・英語4冊・調査レポート8本。
+            日本語9冊・英語4冊・調査レポート8本。
             知識は公開することで価値を持つ——各著作の抜粋や概要をこの知識空間で公開する。
             書籍として手元に置きたい方はAmazonからも購入できる。
           </p>
@@ -151,7 +161,7 @@ export default function BooksPage() {
       </div>
 
       <div className="bk-grid-area">
-        <div className="bk-group-label">日本語書籍 — 8 Books in Japanese</div>
+        <div className="bk-group-label">日本語書籍 — 9 Books in Japanese</div>
         <div className="bk-grid">
           {jpBooks.map((b) => (
             <SectionCard key={b.href} {...b} />

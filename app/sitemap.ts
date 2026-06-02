@@ -3,6 +3,7 @@ import path from 'path'
 import { MetadataRoute } from 'next'
 import { aiSnsVideoChapters } from './books/ai-sns-video/content'
 import { seoToGeoChapters } from './books/seo-to-geo/content'
+import { tourismMemoryChapters } from './books/tourism-memory-zone/content'
 import { enSeoToGeoSections } from './en/books/seo-to-geo/content'
 import { chapters as whbChapters, concepts as whbConcepts } from './en/where-humans-breathe/content'
 
@@ -83,6 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = walkStaticPages(appDir).map((routePath) => ({ path: routePath }))
 
   const dynamicRoutes: RouteConfig[] = [
+    ...tourismMemoryChapters.map((chapter) => ({ path: `/books/tourism-memory-zone/${chapter.slug}`, priority: 0.88 })),
     ...aiSnsVideoChapters.map((chapter) => ({ path: `/books/ai-sns-video/${chapter.slug}`, priority: 0.86 })),
     ...seoToGeoChapters.map((chapter) => ({ path: `/books/seo-to-geo/${chapter.slug}`, priority: 0.86 })),
     ...enSeoToGeoSections.map((section) => ({ path: `/en/books/seo-to-geo/${section.slug}`, priority: 0.82 })),

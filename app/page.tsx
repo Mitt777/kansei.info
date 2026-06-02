@@ -56,7 +56,7 @@ const sections = [
     labelJa: '著作抜粋',
     title: '著作・調査レポートの抜粋公開',
     description:
-      '日本語7冊・英語4冊・調査レポート8本。GEO・世界観マーケティング・Pre-Meaning・地域DXを、章別の知識アーカイブとして整理。',
+      '日本語9冊・英語4冊・調査レポート8本。観光記憶圏・GEO・世界観マーケティング・Pre-Meaning・地域DXを、章別の知識アーカイブとして整理。',
     accentColor: 'var(--color-books)',
     tags: ['章別公開', 'GEO', 'EN / JP'],
   },
@@ -92,6 +92,9 @@ export default function HomePage() {
             <Link href="/manifesto" className="btn-primary">
               思想を読む →
             </Link>
+            <Link href="/books/tourism-memory-zone" className="btn-secondary">
+              観光記憶圏試論を読む
+            </Link>
             <Link href="/frameworks" className="btn-secondary">
               7層モデルを見る
             </Link>
@@ -109,7 +112,7 @@ export default function HomePage() {
               <span className="hero-meta-label">インプレッション</span>
             </div>
             <div className="hero-meta-item">
-              <span className="hero-meta-val">11冊</span>
+              <span className="hero-meta-val">13冊</span>
               <span className="hero-meta-label">著書（日英）</span>
             </div>
             <div className="hero-meta-item">
@@ -142,6 +145,25 @@ export default function HomePage() {
           </div>
           <Link href="/manifesto" className="btn-primary">
             Manifesto を読む →
+          </Link>
+        </div>
+      </div>
+
+      {/* ── TOURISM MEMORY ZONE BAND ── */}
+      <div className="manifesto-band">
+        <div className="manifesto-band-inner">
+          <div className="manifesto-band-text">
+            <p style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'var(--color-gold)', fontFamily: 'var(--font-mono)', marginBottom: '12px' }}>
+              AIRS SYSTEM CHARTER
+            </p>
+            <h2>観光記憶圏試論を、AIRSシステムの憲章として公開する。</h2>
+            <p>
+              人は場所を消費しているのではなく、場所と関係を作っている。
+              map-s、g-maps、お客様.COM、air-s、clip.air-sをつなぐ理論的バックボーンを章別に公開しました。
+            </p>
+          </div>
+          <Link href="/books/tourism-memory-zone" className="btn-primary">
+            章別全文を読む →
           </Link>
         </div>
       </div>
