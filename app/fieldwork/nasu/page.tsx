@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import SectionCard from '@/components/SectionCard'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
@@ -68,6 +69,8 @@ export default function NasuPage() {
             <SectionCard key={spot.href} {...spot} />
           ))}
         </div>
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[
