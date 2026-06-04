@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
+import PracticeBridge from "@/components/PracticeBridge";
 import { aiSnsVideoBook, aiSnsVideoChapters } from "./content";
 
 export const metadata: Metadata = {
@@ -146,6 +147,14 @@ export default function AiSnsVideoBookPage() {
             </div>
           </div>
         </section>
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="本で読んだ3カット動画を、そのまま試してみてください。"
+          description="clip.air-s.jp は、今日のお店の空気を1〜3カットで撮り、投稿文まで整えるための小さな撮影室です。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで3カット動画を試す →"
+        />
 
         <RelatedKnowledge
           heading="関連する知識"

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -49,6 +50,8 @@ export default function Page() {
           <Link href="/research/1000stores-strategy" className="btn-primary">1000店舗戦略へ →</Link>
         </div>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[

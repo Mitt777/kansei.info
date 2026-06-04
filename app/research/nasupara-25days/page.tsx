@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
@@ -88,6 +89,14 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>
           {"1つの店舗に対して少なくとも以下まで試す計画が出発点となった：①グルメ・商品紹介、②居心地よさ・雰囲気、③店主・スタッフの人物・物語、④「個人の挑戦・共感」（煩惩ダイエット等）、⑤街・地域の風景・文化、⑥ビフォー・アフター・觳身の流れ、⑦「山西道剩り何km」系テロップ。"}
         </p>
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="観測で見えた反応を、今日のお店の動画で試してみてください。"
+          description="1〜3本の短い動画から15秒以内の縦動画と投稿文を作る、店主さん向けの小さな撮影室です。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
 
         <RelatedKnowledge
           items={[

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: 'AI失業2026 一次産業・地方店舗復活編 — Books | kansei.info',
@@ -58,6 +59,12 @@ export default function Page() {
                 <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
               </Link>
         </div>
+
+        <PracticeBridge
+          title="地方店舗のAI活用を、まずはお店の見え方から試してみてください。"
+          description="お客様.COMは、Google Mapsや写真、口コミ、SNS、入りやすさを、初めて客目線で整理する無料診断です。"
+          linkLabel="お客様.COMで無料診断を試す →"
+        />
 
         <RelatedKnowledge
           items={[

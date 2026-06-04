@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: '世界観マーケティングと顧客体験の方程式 — 抜粋公開',
@@ -174,6 +175,12 @@ export default function SekaikanBookPage() {
             ))}
           </div>
         </div>
+
+        <PracticeBridge
+          title="世界観を読んだあとに、あなたのお店の見え方を確認してみてください。"
+          description="お客様.COMでは、Google Maps、口コミ、写真、SNS、入りやすさ、世界観を、初めて客目線のお店診断として整理できます。"
+          linkLabel="お客様.COMでお店の健康診断を試す →"
+        />
 
         <RelatedKnowledge
           items={[

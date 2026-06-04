@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -47,6 +48,8 @@ export default function Page() {
           <Link href="/research/hcii2026" className="btn-primary">HCII2026論文へ →</Link>
         </div>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[

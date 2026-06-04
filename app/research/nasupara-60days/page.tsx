@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
@@ -122,6 +123,14 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>
           {"60日間・468本の一次データが、国際人間コンピュータインタラクション学会（HCII2026）に採択された「Save-Plan-Impulse: Kansei Driven Regional DX」論文の実証的基盤となった。那須という地方から発した感性ドリブン地域DX論が国際的に認められた。"}
         </p>
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="黄金の動画パターンを、今日のお店の動画で試してみてください。"
+          description="60日間の観測から見えたSNS行動を、1〜3本の短い動画から15秒以内の投稿用動画へ変換できます。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
 
         <RelatedKnowledge
           items={[

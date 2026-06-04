@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: 'AI失業2026 — Books | kansei.info',
@@ -67,6 +68,12 @@ export default function Page() {
                 <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
               </Link>
         </div>
+
+        <PracticeBridge
+          title="AI時代に残る感性価値を、お店の見え方で確認してみてください。"
+          description="お客様.COMは、AIに置き換えにくいお店らしさ、入りやすさ、また行きたい理由を、初めて客目線で整理する入口です。"
+          linkLabel="お客様.COMで無料診断を試す →"
+        />
 
         <RelatedKnowledge
           items={[

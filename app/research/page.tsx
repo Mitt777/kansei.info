@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
@@ -147,6 +148,14 @@ export default function ResearchPage() {
             </div>
           </div>
         </div>
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="観測で見えたSNS行動を、今日のお店の動画で試してみてください。"
+          description="Save・Plan・Impulseの入口になる短い縦動画を、店主さんが迷わず作れる小さな撮影室です。1〜3本の動画から15秒以内の投稿用動画と投稿文まで進めます。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
       </div>
     </>
   )

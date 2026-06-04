@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
@@ -86,6 +87,14 @@ export default function Page() {
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>
           {"44日目時点では新たに「比較・Q&A・季節」の意思決定支援タイプの効果が判明。これにより7パターンから10パターンへの那須動町テンプレート標準化の見通しが径。最終的には観光客・地域住民・インバウンド層も包含する「黄金の16パターン」の構想が形式化された。"}
         </p>
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="Save・Plan・Impulseを、今日のお店の動画で試してみてください。"
+          description="観測で見えたSNS行動を、店主さんが迷わず使える3カット動画制作へ落とし込んだ小さな撮影室です。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
 
         <RelatedKnowledge
           items={[

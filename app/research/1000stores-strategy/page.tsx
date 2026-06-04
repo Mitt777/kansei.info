@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -47,6 +48,14 @@ export default function Page() {
           <Link href="/research/integrated-theory" className="btn-primary">統合理論へ →</Link>
         </div>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="1000店舗戦略の入口を、今日のお店の動画で試してみてください。"
+          description="店主さんが迷わず撮れる3カット動画から、15秒以内の縦動画と投稿文まで進める小さな撮影室です。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
 
         <RelatedKnowledge
           items={[

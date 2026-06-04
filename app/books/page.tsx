@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import SectionCard from '@/components/SectionCard'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: 'Books — 著作抜粋公開',
@@ -174,6 +175,12 @@ export default function BooksPage() {
             <SectionCard key={b.href} {...b} />
           ))}
         </div>
+
+        <PracticeBridge
+          title="理論を読んだあとに、実際のお店で確かめてみてください。"
+          description="観光記憶圏、GEO、世界観、SNS動画。各書籍で整理した考え方は、お客様.COM、g-maps.shop、clip.air-s.jp の実践ツールへつながっています。"
+          linkLabel="お客様.COMで無料診断を試す →"
+        />
       </div>
     </>
   )

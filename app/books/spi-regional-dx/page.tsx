@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: 'Save → Plan → Impulse 感性ドリブン地域DX論 — Books | kansei.info',
@@ -52,6 +53,14 @@ export default function Page() {
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="Save → Plan → Impulseを、今日のお店の動画で試してみてください。"
+          description="clip.air-s.jp は、保存されやすい余白、比較される情報、衝動につながる一瞬を、3カット動画として整える実験場です。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで3カット動画を試す →"
+        />
 
         <RelatedKnowledge
           items={[

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
+import PracticeBridge from "@/components/PracticeBridge";
 import { seoToGeoBook, seoToGeoChapters } from "./content";
 
 export const metadata: Metadata = {
@@ -109,6 +110,14 @@ export default function SeoToGeoBookPage() {
             </div>
           </div>
         </section>
+
+        <PracticeBridge
+          label="Maps Check"
+          title="GEOの入口として、Google Maps上の見え方を確認してみてください。"
+          description="Google Maps、口コミ、写真、営業時間、Web導線、AI検索での読み取られ方を、g-maps.shop で軽く診断できます。"
+          href="https://g-maps.shop"
+          linkLabel="g-maps.shopでGoogle Maps基礎診断を試す →"
+        />
 
         <section style={{ padding: "0 0 92px" }}>
           <div className="container" style={{ maxWidth: 980 }}>

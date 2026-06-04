@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: 'AI失業2026 クリエイター・フリーランス編 — Books | kansei.info',
@@ -82,6 +83,14 @@ export default function Page() {
                 <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
               </Link>
         </div>
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="感性設計を、まずは短い動画の実践に変えてみてください。"
+          description="clip.air-s.jp は、クリエイターや小さなお店が、1〜3カットで今日の空気を投稿できるようにする軽い制作ツールです。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで3カット動画を試す →"
+        />
 
         <RelatedKnowledge
           items={[

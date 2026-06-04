@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
+import PracticeBridge from '@/components/PracticeBridge'
 
 export const metadata: Metadata = {
   title: 'AI時代のPre-Meaning概論 — Books | kansei.info',
@@ -90,6 +91,11 @@ export default function Page() {
                 <span style={{ marginLeft: "auto", fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-mono)" }}>→</span>
               </Link>
         </div>
+        <PracticeBridge
+          title="意味になる前の感覚を、お店の入りやすさとして確認してみてください。"
+          description="お客様.COMは、言葉になる前の不安や安心感、また行きたい理由を、初めて客目線で診断する入口です。"
+          linkLabel="お客様.COMで無料診断を試す →"
+        />
         <RelatedKnowledge
           items={[
             { href: "/labs/pre-meaning", type: "lab" as const, title: "Pre-Meaning", description: "独自概念詳細" },

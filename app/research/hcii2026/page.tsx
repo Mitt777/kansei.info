@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -100,6 +101,14 @@ export default function Hcii2026Page() {
         </p>
 
         <FaqSection faqs={faqs} heading="HCII2026論文について" />
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="Save・Plan・Impulseを、今日のお店の動画で試してみてください。"
+          description="研究で見えたSNS行動モデルを、店主さんが迷わず使える3カット動画制作へ落とし込んだ小さな撮影室です。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
 
         <RelatedKnowledge
           items={[
