@@ -210,6 +210,58 @@ h1,h2,h3,h4,h5 { font-weight: 500; line-height: 1.35; }
 .rk-type { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; font-family: var(--font-mono); color: var(--item-color, var(--color-gold)); margin-bottom: 3px; }
 .rk-title { font-size: 13px; font-weight: 500; color: var(--color-text); line-height: 1.4; }
 .rk-desc { font-size: 12px; color: var(--color-text-muted); margin-top: 3px; line-height: 1.5; }
+.practice-bridge {
+  margin-top: 64px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.68);
+}
+.practice-bridge-label {
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.practice-bridge h2 {
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+.practice-bridge p {
+  max-width: 680px;
+  color: var(--color-text-sub);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.practice-bridge-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--color-text);
+  color: var(--color-text-inv);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.practice-bridge-link:hover {
+  opacity: 0.86;
+  transform: translateY(-1px);
+}
 .glossary-field-label {
   font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
   font-family: var(--font-mono); color: var(--color-text-muted); padding-top: 4px;
@@ -664,6 +716,16 @@ h1,h2,h3,h4,h5 { font-weight: 500; line-height: 1.35; }
   }
   .store-diagnosis-actions span {
     text-align: left;
+  }
+  .practice-bridge {
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+    padding: 24px 20px;
+  }
+  .practice-bridge-link {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
   }
   .hero-meta { gap: 20px; }
   .bk-grid { grid-template-columns: 1fr; }

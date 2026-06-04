@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PracticeBridge from '@/components/PracticeBridge'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
@@ -107,6 +108,8 @@ export default function FrameworksPage() {
             ))}
           </div>
         </div>
+
+        <PracticeBridge />
       </div>
     </>
   )

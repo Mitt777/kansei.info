@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
@@ -129,6 +130,8 @@ export default function ManifestoPage() {
             </Link>
           </div>
         </div>
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[

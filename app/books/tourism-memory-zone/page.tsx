@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 import { tourismMemoryBook, tourismMemoryChapters } from "./content";
 
@@ -112,6 +113,12 @@ export default function TourismMemoryZoneBookPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section style={{ padding: "0 0 12px" }}>
+          <div className="container" style={{ maxWidth: 980 }}>
+            <PracticeBridge />
           </div>
         </section>
 
