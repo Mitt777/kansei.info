@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MapBridge from "@/components/MapBridge";
 import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 import { tourismMemoryBook, tourismMemoryChapters } from "./content";
@@ -118,6 +119,12 @@ export default function TourismMemoryZoneBookPage() {
 
         <section style={{ padding: "0 0 12px" }}>
           <div className="container" style={{ maxWidth: 980 }}>
+            <MapBridge
+              title="観光記憶圏を、地域MAPとして見える形にする。"
+              description="観光記憶圏で定義した50エリアや、地域ごとのカフェ・ランチ・犬連れ・温泉・観光導線は、map-s.site の軽い地域MAPとして展開できます。"
+              href="https://map-s.site"
+              linkLabel="map-s.siteで地域MAPを見る →"
+            />
             <PracticeBridge />
           </div>
         </section>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import MapBridge from '@/components/MapBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 import PracticeBridge from '@/components/PracticeBridge'
@@ -53,6 +54,13 @@ export default function Page() {
           <Link href="/books" className="btn-secondary">著作一覧に戻る</Link>
         </div>
         <FaqSection faqs={faqs} />
+
+        <MapBridge
+          title="地域DXの入口を、地域MAPとして整える。"
+          description="Save → Plan → Impulseで観測した地域行動は、map-s.site の店舗MAPや観光MAPにすると、保存・比較・来訪の導線として使いやすくなります。"
+          href="https://map-s.site"
+          linkLabel="map-s.siteで地域MAPを見る →"
+        />
 
         <PracticeBridge
           label="Clip Practice"

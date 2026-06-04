@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import MapBridge from "@/components/MapBridge";
 import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 import { tourismMemoryBook, tourismMemoryChapters } from "../content";
@@ -118,6 +119,12 @@ export default function TourismMemoryZoneChapterPage({ params }: Props) {
               )}
             </nav>
 
+            <MapBridge
+              title="この章の考え方を、地域MAPの設計にもつなげる。"
+              description="場所の記憶、再訪理由、観光記憶圏という考え方は、地域ごとの店舗MAPや観光MAPを作るときの設計基準になります。"
+              href="https://map-s.site"
+              linkLabel="map-s.siteで地域MAPを見る →"
+            />
             <PracticeBridge />
           </div>
         </article>

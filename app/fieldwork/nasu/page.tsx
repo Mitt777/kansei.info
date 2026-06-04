@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import MapBridge from '@/components/MapBridge'
 import PracticeBridge from '@/components/PracticeBridge'
 import SectionCard from '@/components/SectionCard'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
@@ -70,6 +71,12 @@ export default function NasuPage() {
           ))}
         </div>
 
+        <MapBridge
+          title="那須で観測した場所を、那須MAPとして見る。"
+          description="カフェ、ランチ、犬連れ、温泉、黒磯、那須高原。那須フィールドワークで見えた場所のまとまりを、map-s.site の地域MAPへ接続します。"
+          href="https://map-s.site/nasu"
+          linkLabel="map-s.siteの那須MAPを見る →"
+        />
         <PracticeBridge />
 
         <RelatedKnowledge

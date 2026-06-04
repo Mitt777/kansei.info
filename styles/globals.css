@@ -262,6 +262,16 @@ h1,h2,h3,h4,h5 { font-weight: 500; line-height: 1.35; }
   opacity: 0.86;
   transform: translateY(-1px);
 }
+.map-bridge {
+  border-left-color: var(--color-fieldwork);
+  background: linear-gradient(135deg, rgba(255,255,255,0.74), rgba(245,250,247,0.82));
+}
+.map-bridge .practice-bridge-label {
+  color: var(--color-fieldwork);
+}
+.map-bridge-link {
+  background: var(--color-fieldwork);
+}
 .glossary-field-label {
   font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
   font-family: var(--font-mono); color: var(--color-text-muted); padding-top: 4px;

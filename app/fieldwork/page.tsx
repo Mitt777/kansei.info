@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import MapBridge from '@/components/MapBridge'
 import PracticeBridge from '@/components/PracticeBridge'
 import SectionCard from '@/components/SectionCard'
 
@@ -42,6 +43,12 @@ export default function FieldworkPage() {
             <SectionCard key={spot.href} {...spot} />
           ))}
         </div>
+        <MapBridge
+          title="現場で観測した場所を、地域MAPとして編み直す。"
+          description="Fieldworkで見えたお店・観光地・移動導線は、map-s.site 上で地域MAPとして整理できます。読んだ場所を、次に訪れる場所へ。"
+          href="https://map-s.site"
+          linkLabel="map-s.siteで地域MAPを見る →"
+        />
         <PracticeBridge />
       </div>
     </>

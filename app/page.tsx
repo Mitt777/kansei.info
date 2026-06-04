@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import MapBridge from '@/components/MapBridge'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
@@ -167,6 +168,17 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+
+      <section style={{ padding: '0 24px 56px' }}>
+        <div style={{ maxWidth: 'var(--max-width)', margin: '0 auto' }}>
+          <MapBridge
+            title="場所の記憶を、地域MAPとして見つけやすくする。"
+            description="map-s.site は、観光記憶圏で扱う地域・店舗・移動導線を、軽い公開MAPとして整理するAIRSの発見レイヤーです。"
+            href="https://map-s.site"
+            linkLabel="map-s.siteを見る →"
+          />
+        </div>
+      </section>
 
 
 
