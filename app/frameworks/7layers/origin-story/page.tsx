@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
@@ -104,6 +105,8 @@ export default function Page() {
             自分の場所を診断する →
           </Link>
         </div>
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[
