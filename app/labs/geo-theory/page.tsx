@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FaqSection from "@/components/FaqSection";
+import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 
 export const metadata: Metadata = {
@@ -186,6 +187,18 @@ AI
       </section>
 
       <FaqSection faqs={faqItems} />
+
+      <section style={{ padding: "0 0 12px" }}>
+        <div className="container" style={{ maxWidth: 980 }}>
+          <PracticeBridge
+            label="Maps Check"
+            title="AI時代の見え方を、Google Mapsから確認してみてください。"
+            description="GEOの入口として、まずはGoogle Maps上の公開情報、口コミ、写真、営業時間、Web導線、AI検索での読み取られ方を軽く診断できます。"
+            href="https://g-maps.shop"
+            linkLabel="g-maps.shopで無料診断を試す →"
+          />
+        </div>
+      </section>
 
       <RelatedKnowledge
         heading="関連する知識"

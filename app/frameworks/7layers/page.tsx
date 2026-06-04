@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 
 export const metadata: Metadata = {
@@ -205,6 +206,8 @@ export default function SevenLayersPage() {
             ))}
           </div>
         </div>
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[
