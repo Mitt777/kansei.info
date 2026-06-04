@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 import { aiSnsVideoBook, aiSnsVideoChapters } from "../content";
 
@@ -196,6 +197,14 @@ export default function AiSnsVideoChapterPage({ params }: Props) {
                 </Link>
               )}
             </nav>
+
+            <PracticeBridge
+              label="Clip Practice"
+              title="3カットで、今日のお店の空気を動画にしてみてください。"
+              description="高度な動画編集ではなく、1〜3本の短い動画から15秒以内の縦動画と投稿文を作るための、店主さん向けの小さな撮影室です。"
+              href="https://clip.air-s.jp"
+              linkLabel="clip.air-s.jpで試す →"
+            />
           </div>
         </article>
 

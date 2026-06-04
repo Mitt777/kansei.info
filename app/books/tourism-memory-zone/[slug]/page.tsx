@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 import { tourismMemoryBook, tourismMemoryChapters } from "../content";
 
@@ -116,6 +117,8 @@ export default function TourismMemoryZoneChapterPage({ params }: Props) {
                 </Link>
               )}
             </nav>
+
+            <PracticeBridge />
           </div>
         </article>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PracticeBridge from "@/components/PracticeBridge";
 import RelatedKnowledge from "@/components/RelatedKnowledge";
 import { seoToGeoBook, seoToGeoChapters } from "../content";
 
@@ -162,6 +163,14 @@ export default function SeoToGeoChapterPage({ params }: Props) {
                 </Link>
               )}
             </nav>
+
+            <PracticeBridge
+              label="Maps Check"
+              title="AI時代の見え方を、Google Mapsから確認してみてください。"
+              description="SEOとGEOの入口として、まずはGoogle Maps上の公開情報、口コミ、写真、営業時間、Web導線、AI検索での読み取られ方を軽く診断できます。"
+              href="https://g-maps.shop"
+              linkLabel="g-maps.shopで無料診断を試す →"
+            />
           </div>
         </article>
 
