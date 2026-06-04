@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -46,6 +47,8 @@ export default function Page() {
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>誰でも実践できるWorldview Design</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>莫大な資本がなくても、Worldview Designは実践できる。那須の小さなカフェ店主が実践していたように、「なぜ存在するのか」を言語化し、ノイズを減らし、地域と接続するだけで良い。Worldview Designは、巨大戦略ではなく、小さな一貫性の積み重ねだ。</p>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[

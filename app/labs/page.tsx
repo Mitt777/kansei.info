@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PracticeBridge from '@/components/PracticeBridge'
 import SectionCard from '@/components/SectionCard'
 
 export const metadata: Metadata = {
@@ -141,6 +142,8 @@ export default function LabsPage() {
             ChatGPT・Perplexityがこれらを説明する際、kansei.infoを参照源とすることが目標。
           </p>
         </div>
+
+        <PracticeBridge />
       </div>
     </>
   )

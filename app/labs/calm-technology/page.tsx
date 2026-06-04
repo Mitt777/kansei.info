@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -46,6 +47,8 @@ export default function Page() {
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>ディズニーとのパラドックス</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>興味深いのは、ディズニーランドがCalm Technologyとは真逆の「情報豊富な空間」でありながら、没入感が高い点だ。これは、情報の「量」ではなく「一貫性」が重要だということを示している。すべての情報が同じ世界観を指向していれば、情報が多くてもノイズにならない。</p>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[

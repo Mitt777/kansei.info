@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import FaqSection from '@/components/FaqSection'
 
@@ -46,6 +47,14 @@ export default function Page() {
         <h2 style={{ fontSize: "18px", fontWeight: "500", margin: "40px 0 14px", color: "var(--color-text)" }}>世界観マーケティングへの接続</h2>
         <p style={{ fontSize: "15px", lineHeight: "1.95", color: "var(--color-text-sub)", marginBottom: "20px" }}>このモデルは7層モデルの②世界観接触層と直結する。Instagramで「保存」された時点で、顧客の体験はすでに始まっている。媒体によって「期待の種類」が変わるため、SNS戦略も世界観設計の一部として考える必要がある。</p>
         <FaqSection faqs={faqs} />
+
+        <PracticeBridge
+          label="Clip Practice"
+          title="3カットで、今日のお店の空気を動画にしてみてください。"
+          description="Save・Plan・Impulseの入口になる短い縦動画を、店主さんが迷わず作れる小さな撮影室です。1〜3本の動画から15秒以内の投稿用動画と投稿文まで進めます。"
+          href="https://clip.air-s.jp"
+          linkLabel="clip.air-s.jpで試す →"
+        />
 
         <RelatedKnowledge
           items={[

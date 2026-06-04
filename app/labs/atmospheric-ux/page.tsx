@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PracticeBridge from '@/components/PracticeBridge'
 import RelatedKnowledge from '@/components/RelatedKnowledge'
 import DefinitionBox from '@/components/DefinitionBox'
 import FaqSection from '@/components/FaqSection'
@@ -97,6 +98,8 @@ export default function AtmosphericUxPage() {
         </p>
 
         <FaqSection faqs={faqs} heading="Atmospheric UXについて" />
+
+        <PracticeBridge />
 
         <RelatedKnowledge
           items={[
