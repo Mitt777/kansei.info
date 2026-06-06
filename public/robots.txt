@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://kansei.info/sitemap.xml
+Sitemap: https://kansei.info/sitemap-static.xml
